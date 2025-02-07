@@ -1,4 +1,4 @@
-# Getting up and running
+# Getting up and running - sean p
 
 1. Create and navigate to a new directory:
 
