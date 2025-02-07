@@ -33,3 +33,7 @@
    npm run dev
    ```
    > The development server features hot reloading - any changes you make to the code will automatically update in the browser without needing to refresh.
+
+# Contributors <!--Add yourself here!-->
+
+- Drew White
