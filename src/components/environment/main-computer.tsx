@@ -1,9 +1,14 @@
-import { ComputerScreen } from '../layout/computer-screen';
 import './main-computer.css';
 import { Html } from '@react-three/drei';
 import { Computer } from './prototype/computer';
+import { GameContext } from '../game-manager/game-manager';
+import { useContext } from 'react';
+import { ComputerScreenProvider } from '../layout/computer-screen-provider';
+import { ComputerScreen } from '../layout/computer-screen';
 
 export function MainComputer() {
+    const gameContext = useContext(GameContext);
+
     return (
         <>
             <group>
@@ -20,7 +25,10 @@ export function MainComputer() {
                         }}
                         scale={0.15}
                     >
-                        <ComputerScreen />
+                        {/* Need to forward context because we drei doesn’t allow passing context to HTML */}
+                        <ComputerScreenProvider gameContext={gameContext}>
+                            <ComputerScreen />
+                        </ComputerScreenProvider>
                     </Html>
                 </mesh>
                 <pointLight

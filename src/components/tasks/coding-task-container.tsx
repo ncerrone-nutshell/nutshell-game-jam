@@ -1,11 +1,9 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
 import './coding-task-container.css';
 
 import commits from '../../data/ccain-commits-sorted.json';
-
-interface CodingTaskContainerProps {
-    onComplete: (score: number) => void;
-}
+import { GameContextForwarded } from '../layout/computer-screen-provider';
+import { ActionType, CoreTaskType } from '../game-manager/game-manager';
 
 function pickRandomCommitMessage() {
     const randomIndex = Math.floor(Math.random() * commits.length);
@@ -44,7 +42,8 @@ function getScore(commitMessage: string, targetMessage: string) {
     return 0;
 }
 
-export function CodingTaskContainer(props: CodingTaskContainerProps) {
+export function CodingTaskContainer() {
+    const { dispatch } = useContext(GameContextForwarded);
     const [targetMessage, setTargetMessage] = useState(
         pickRandomCommitMessage()
     );
@@ -52,10 +51,16 @@ export function CodingTaskContainer(props: CodingTaskContainerProps) {
     const [commitMessage, setCommitMessage] = useState<string>('');
 
     const handleCommit = useCallback(() => {
-        props.onComplete(getScore(commitMessage, targetMessage));
+        dispatch({
+            type: ActionType.CompleteTask,
+            payload: {
+                type: CoreTaskType.Coding,
+                score: getScore(commitMessage, targetMessage),
+            },
+        });
         setTargetMessage(pickRandomCommitMessage());
         setCommitMessage('');
-    }, [commitMessage, targetMessage, props.onComplete]);
+    }, [commitMessage, targetMessage]);
 
     return (
         <div className="commit-container">

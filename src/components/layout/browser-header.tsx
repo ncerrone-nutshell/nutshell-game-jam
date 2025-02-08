@@ -1,11 +1,10 @@
 import './browser-header.css';
-import { CompletedTaskType, Tab } from './computer-screen';
+import { Tab } from './computer-screen';
 import { BrowserTabs } from './browser-tabs';
 
 type BrowserHeaderProps = {
     setActiveTab: (tab: Tab) => void;
     activeTab: Tab;
-    completedTasks: CompletedTaskType;
 };
 
 export function BrowserHeader(props: BrowserHeaderProps) {
@@ -17,7 +16,6 @@ export function BrowserHeader(props: BrowserHeaderProps) {
                 <div className="button maximize" />
             </div>
             <BrowserTabs
-                completedTasks={props.completedTasks}
                 activeTab={props.activeTab}
                 setActiveTab={props.setActiveTab}
             />
