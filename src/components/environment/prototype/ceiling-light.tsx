@@ -4,11 +4,12 @@ import { useMemo } from 'react';
 
 type LightsProps = {
     activeLights: boolean;
+    intensity: number;
 };
 
-type Props = LightsProps & EnvironmentProps;
+export type CeilingLightProps = LightsProps & EnvironmentProps;
 
-export function CeilingLight(props: Props) {
+export function CeilingLight(props: CeilingLightProps) {
     const spotlight = useMemo(() => new SpotLight('#fff'), []);
 
     return (
@@ -28,7 +29,7 @@ export function CeilingLight(props: Props) {
                         <primitive
                             object={spotlight}
                             position={[0, -3, 0]}
-                            intensity={1000}
+                            intensity={props.intensity}
                             penumbra={0.5}
                             castShadow
                         />

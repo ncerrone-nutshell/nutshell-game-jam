@@ -8,7 +8,7 @@ import './index.css';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <Canvas>
+        <Canvas shadows>
             <GameManager />
         </Canvas>
     </StrictMode>

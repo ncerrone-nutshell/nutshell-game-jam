@@ -2,12 +2,13 @@ import { Euler, Vector3 } from 'three';
 import { MainComputer } from './main-computer';
 import { Desk } from './prototype/desk';
 import { Computer } from './prototype/computer';
-import { CeilingLight } from './prototype/ceiling-light';
+import { CeilingLight, CeilingLightProps } from './prototype/ceiling-light';
+import { EnvironmentProps } from './helpers';
 
 const FORWARD_EULER = new Euler(0, 0, 0);
 const REVERSE_EULER = new Euler(0, Math.PI, 0);
 
-const DESK_CONFIG = [
+const DESK_CONFIG: EnvironmentProps[] = [
     { position: new Vector3(0, -3.5, 0), rotation: FORWARD_EULER },
     { position: new Vector3(25, -3.5, 0), rotation: FORWARD_EULER },
     { position: new Vector3(50, -3.5, 0), rotation: FORWARD_EULER },
@@ -22,7 +23,7 @@ const DESK_CONFIG = [
     { position: new Vector3(50, -3.5, -45), rotation: REVERSE_EULER },
 ];
 
-const COMPUTER_CONFIG = [
+const COMPUTER_CONFIG: EnvironmentProps[] = [
     { position: new Vector3(25, 0, 0), rotation: FORWARD_EULER },
     { position: new Vector3(50, 0, 0), rotation: FORWARD_EULER },
     { position: new Vector3(0, 0, -10), rotation: REVERSE_EULER },
@@ -36,11 +37,11 @@ const COMPUTER_CONFIG = [
     { position: new Vector3(50, 0, -45), rotation: REVERSE_EULER },
 ];
 
-const CEILING_LIGHT_CONFIG = [
-    { position: new Vector3(0, 20, -5), activeLights: false },
-    { position: new Vector3(50, 20, -5) },
-    { position: new Vector3(0, 20, -40) },
-    { position: new Vector3(50, 20, -40) },
+const CEILING_LIGHT_CONFIG: CeilingLightProps[] = [
+    { position: new Vector3(0, 20, -5), activeLights: true, intensity: 100 },
+    { position: new Vector3(50, 20, -5), activeLights: true, intensity: 1000 },
+    { position: new Vector3(0, 20, -40), activeLights: true, intensity: 1000 },
+    { position: new Vector3(50, 20, -40), activeLights: true, intensity: 1000 },
 ];
 
 type Props = {
@@ -75,7 +76,11 @@ export function OfficeSpace(props: Props) {
                     />
                 ))}
                 {/* FLOOR */}
-                <mesh position={[40, -8.3, -35]} scale={[125, 0.1, 100]}>
+                <mesh
+                    position={[40, -8.3, -35]}
+                    scale={[125, 0.1, 100]}
+                    receiveShadow
+                >
                     <boxGeometry />
                     <meshStandardMaterial color={'#996315'} />
                 </mesh>
@@ -111,9 +116,8 @@ export function OfficeSpace(props: Props) {
                         key={index}
                         position={config.position}
                         rotation={FORWARD_EULER}
-                        activeLights={
-                            (config.activeLights ?? true) && props.activeLights
-                        }
+                        activeLights={config.activeLights && props.activeLights}
+                        intensity={config.intensity}
                     />
                 ))}
             </group>
