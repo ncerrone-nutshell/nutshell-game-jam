@@ -10,6 +10,8 @@ import {
 } from '../game-manager/game-manager';
 import { DEV_MODE } from '../../main';
 
+const MAX_SCORE = 100;
+
 /**
  * This map defines the maximum length of commit you will be served in the
  * coding task. Messages selected will tend to be towards the higher end of
@@ -63,23 +65,18 @@ function getAccuracy(commitMessage: string, targetMessage: string): number {
 }
 
 function getScore(commitMessage: string, targetMessage: string) {
-    const accuracy = getAccuracy(commitMessage, targetMessage);
-
-    if (accuracy === 100) {
-        return 100;
-    } else if (accuracy >= 90) {
-        return 80;
-    } else if (accuracy >= 80) {
-        return 60;
-    } else if (accuracy >= 70) {
-        return 30;
-    } else if (accuracy >= 60) {
-        return 10;
-    } else if (accuracy >= 50) {
-        return 5;
+    if (DEV_MODE) {
+        return MAX_SCORE;
     }
 
-    return 0;
+    const accuracy = getAccuracy(commitMessage, targetMessage);
+
+    // Convert accuracy to decimal percentage (0-1)
+    const percentage = accuracy / 100;
+
+    // Apply x^4 interpolation and scale back to 0-100 range
+    // This creates a steeper curve that rewards higher accuracy
+    return Math.round(Math.pow(percentage, 4) * MAX_SCORE);
 }
 
 export function CodingTaskContainer() {
@@ -129,7 +126,6 @@ export function CodingTaskContainer() {
             {DEV_MODE && (
                 <button
                     onClick={() => {
-                        console.log('auto complete');
                         setCommitMessage(targetMessage);
                         handleCommit();
                     }}

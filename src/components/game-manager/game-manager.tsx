@@ -85,7 +85,7 @@ export type GameState = {
 };
 
 const SPRINT_METER_MAX = 100;
-const SPRINT_METER_DECAY_RATE = 0.5; // The rate at which the sprint meter decays per second
+const SPRINT_METER_DECAY_RATE = 1; // The rate at which the sprint meter decays per second
 const DAY_TIMER = 5; // 5 seconds
 
 export const GAME_STATE_DEFAULTS: GameState = {
@@ -146,6 +146,10 @@ function reducer(state: GameState, action: Action) {
             return {
                 ...state,
                 score: state.score + action.payload.score,
+                sprintMeterValue: Math.min(
+                    SPRINT_METER_MAX,
+                    state.sprintMeterValue + action.payload.sprintMeterGain
+                ),
                 completedTasks: CORE_TASKS_INITIAL_STATE,
             };
         }

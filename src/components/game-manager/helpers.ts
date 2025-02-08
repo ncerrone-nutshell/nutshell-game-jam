@@ -68,7 +68,6 @@ const RANDOM_EVENTS: Event[] = [
 
 // TODO: Scale event likelihood & difficulty based on day
 export function generateRandomEvents(day: number): Event[] {
-    console.log('day', day);
     if (day < 2) {
         return [];
     }
