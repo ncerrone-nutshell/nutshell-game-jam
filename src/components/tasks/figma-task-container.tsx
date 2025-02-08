@@ -1,7 +1,7 @@
-import './task.css'
+import './task.css';
 
 interface FigmaTaskContainerProps {
-    onComplete: () => void
+    onComplete: () => void;
 }
 
 export function FigmaTaskContainer(props: FigmaTaskContainerProps) {
@@ -9,10 +9,10 @@ export function FigmaTaskContainer(props: FigmaTaskContainerProps) {
         <button
             className="task-button figma"
             onClick={() => {
-                props.onComplete()
+                props.onComplete();
             }}
         >
             Create mock-up
         </button>
-    )
+    );
 }

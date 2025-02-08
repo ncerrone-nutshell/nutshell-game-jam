@@ -1,15 +1,15 @@
-import './browser-tabs.css'
-import { Tab } from './computer-screen'
-import GithubMark from '../../icons/github'
-import CursorMark from '../../icons/cursor'
-import FigmaMark from '../../icons/figma'
+import './browser-tabs.css';
+import { Tab } from './computer-screen';
+import GithubMark from '../../icons/github';
+import CursorMark from '../../icons/cursor';
+import FigmaMark from '../../icons/figma';
 
 export function BrowserTabs({
     activeTab,
     setActiveTab,
 }: {
-    activeTab: Tab
-    setActiveTab: (tab: Tab) => void
+    activeTab: Tab;
+    setActiveTab: (tab: Tab) => void;
 }) {
     return (
         <div className="browser-tabs">
@@ -44,5 +44,5 @@ export function BrowserTabs({
                 Figma
             </button>
         </div>
-    )
+    );
 }

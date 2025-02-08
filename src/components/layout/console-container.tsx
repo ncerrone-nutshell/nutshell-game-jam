@@ -1,14 +1,14 @@
-import { ConsoleHeader } from './console-header'
-import { ConsoleContent, ConsoleContentItemType } from './console-content'
+import { ConsoleHeader } from './console-header';
+import { ConsoleContent, ConsoleContentItemType } from './console-content';
 
-import './console-container.css'
+import './console-container.css';
 
 type ConsoleContainerProps = {
-    onTriggerEvent: (type: ConsoleContentItemType) => void
-    score: number
-    life: number
-    days: number
-}
+    onTriggerEvent: (type: ConsoleContentItemType) => void;
+    score: number;
+    life: number;
+    days: number;
+};
 
 export function ConsoleContainer(props: ConsoleContainerProps) {
     return (
@@ -21,5 +21,5 @@ export function ConsoleContainer(props: ConsoleContainerProps) {
                 days={props.days}
             />
         </div>
-    )
+    );
 }

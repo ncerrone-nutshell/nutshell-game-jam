@@ -1,7 +1,7 @@
-import './task.css'
+import './task.css';
 
 interface ReviewTaskContainerProps {
-    onComplete: () => void
+    onComplete: () => void;
 }
 
 export function ReviewTaskContainer(props: ReviewTaskContainerProps) {
@@ -9,10 +9,10 @@ export function ReviewTaskContainer(props: ReviewTaskContainerProps) {
         <button
             className="task-button review"
             onClick={() => {
-                props.onComplete()
+                props.onComplete();
             }}
         >
             Review PR
         </button>
-    )
+    );
 }

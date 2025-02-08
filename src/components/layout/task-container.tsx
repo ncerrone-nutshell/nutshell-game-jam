@@ -1,15 +1,15 @@
-import { Tab } from './computer-screen'
+import { Tab } from './computer-screen';
 import {
     CodingTaskContainer,
     ReviewTaskContainer,
     FigmaTaskContainer,
-} from '../tasks'
+} from '../tasks';
 
-import './task-container.css'
+import './task-container.css';
 
 interface TaskContainerProps {
-    activeTab: Tab
-    onComplete: () => void
+    activeTab: Tab;
+    onComplete: () => void;
 }
 
 export function TaskContainer(props: TaskContainerProps) {
@@ -18,24 +18,24 @@ export function TaskContainer(props: TaskContainerProps) {
             {props.activeTab === Tab.Coding && (
                 <CodingTaskContainer
                     onComplete={() => {
-                        props.onComplete()
+                        props.onComplete();
                     }}
                 />
             )}
             {props.activeTab === Tab.Review && (
                 <ReviewTaskContainer
                     onComplete={() => {
-                        props.onComplete()
+                        props.onComplete();
                     }}
                 />
             )}
             {props.activeTab === Tab.Figma && (
                 <FigmaTaskContainer
                     onComplete={() => {
-                        props.onComplete()
+                        props.onComplete();
                     }}
                 />
             )}
         </div>
-    )
+    );
 }

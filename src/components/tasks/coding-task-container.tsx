@@ -1,7 +1,7 @@
-import './task.css'
+import './task.css';
 
 interface CodingTaskContainerProps {
-    onComplete: () => void
+    onComplete: () => void;
 }
 
 export function CodingTaskContainer(props: CodingTaskContainerProps) {
@@ -9,10 +9,10 @@ export function CodingTaskContainer(props: CodingTaskContainerProps) {
         <button
             className="task-button coding"
             onClick={() => {
-                props.onComplete()
+                props.onComplete();
             }}
         >
             Run code
         </button>
-    )
+    );
 }

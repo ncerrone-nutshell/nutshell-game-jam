@@ -1,4 +1,4 @@
-import './console-header.css'
+import './console-header.css';
 
 export function ConsoleHeader() {
     return (
@@ -6,5 +6,5 @@ export function ConsoleHeader() {
             <div className="console-header-title">Console</div>
             <div className="console-header-close">X</div>
         </div>
-    )
+    );
 }

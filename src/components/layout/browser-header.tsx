@@ -1,11 +1,11 @@
-import './browser-header.css'
-import { Tab } from './computer-screen'
-import { BrowserTabs } from './browser-tabs'
+import './browser-header.css';
+import { Tab } from './computer-screen';
+import { BrowserTabs } from './browser-tabs';
 
 type BrowserHeaderProps = {
-    setActiveTab: (tab: Tab) => void
-    activeTab: Tab
-}
+    setActiveTab: (tab: Tab) => void;
+    activeTab: Tab;
+};
 
 export function BrowserHeader(props: BrowserHeaderProps) {
     return (
@@ -20,5 +20,5 @@ export function BrowserHeader(props: BrowserHeaderProps) {
                 setActiveTab={props.setActiveTab}
             />
         </div>
-    )
+    );
 }

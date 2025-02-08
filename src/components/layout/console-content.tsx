@@ -1,4 +1,4 @@
-import './console-content.css'
+import './console-content.css';
 
 export enum ConsoleContentItemType {
     Console = 'console',
@@ -7,35 +7,35 @@ export enum ConsoleContentItemType {
 }
 
 type ConsoleContentProps = {
-    onTriggerEvent: (type: ConsoleContentItemType) => void
-    score: number
-    days: number
-    life: number
-}
+    onTriggerEvent: (type: ConsoleContentItemType) => void;
+    score: number;
+    days: number;
+    life: number;
+};
 
 export function ConsoleContent(props: ConsoleContentProps) {
-    const { onTriggerEvent } = props
+    const { onTriggerEvent } = props;
 
     return (
         <div className="console-content">
             <div className="console-content-items">
                 <ConsoleContentItem
                     onClick={() => {
-                        onTriggerEvent(ConsoleContentItemType.Console)
+                        onTriggerEvent(ConsoleContentItemType.Console);
                     }}
                 >
                     Trigger hackathon
                 </ConsoleContentItem>
                 <ConsoleContentItem
                     onClick={() => {
-                        onTriggerEvent(ConsoleContentItemType.Console)
+                        onTriggerEvent(ConsoleContentItemType.Console);
                     }}
                 >
                     Trigger escalation process
                 </ConsoleContentItem>
                 <ConsoleContentItem
                     onClick={() => {
-                        onTriggerEvent(ConsoleContentItemType.Console)
+                        onTriggerEvent(ConsoleContentItemType.Console);
                     }}
                 >
                     Trigger arjun pong
@@ -53,20 +53,20 @@ export function ConsoleContent(props: ConsoleContentProps) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 type ConsoleContentItemProps = {
-    onClick: () => void
-    children: React.ReactNode
-}
+    onClick: () => void;
+    children: React.ReactNode;
+};
 
 function ConsoleContentItem(props: ConsoleContentItemProps) {
-    const { onClick, children } = props
+    const { onClick, children } = props;
 
     return (
         <div onClick={onClick} className="console-content-item">
             {'>'} {children}
         </div>
-    )
+    );
 }
