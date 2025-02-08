@@ -1,0 +1,15 @@
+.wrapper {
+    width: 300px;
+    height: 160px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.screen-text {
+    font-size: 14px;
+    color: #333;
+}
