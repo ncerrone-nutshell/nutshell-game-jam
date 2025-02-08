@@ -1,26 +1,32 @@
 import './browser-tabs.css';
-import { CompletedTaskType, Tab } from './computer-screen';
+import { CoreTaskTypeState } from '../game-manager/game-manager';
+
 import GithubMark from '../../icons/github';
 import CursorMark from '../../icons/cursor';
 import FigmaMark from '../../icons/figma';
 import JenkinsMark from '../../icons/jenkins';
+import { useContext } from 'react';
+import { GameContextForwarded } from './computer-screen-provider';
+import { Tab } from './computer-screen';
 
-function getJenkinsStatus(completedTasks: CompletedTaskType) {
+function getJenkinsStatus(completedTasks: CoreTaskTypeState) {
     let baseString = 'Jenkins';
 
-    Object.entries(completedTasks).forEach(([task, score]) => {
-        baseString += ` - ${task}: ${score.completedCount} / ${score.score}`;
-    });
-    return baseString;
+    const completedCounts = Object.values(completedTasks).map(
+        (task) => task.completedCount
+    );
+
+    return baseString + ` - ${completedCounts.join(' / ')}`;
 }
 
 type BrowserTabsProps = {
     activeTab: Tab;
     setActiveTab: (tab: Tab) => void;
-    completedTasks: CompletedTaskType;
 };
 
 export function BrowserTabs(props: BrowserTabsProps) {
+    const { completedTasks } = useContext(GameContextForwarded);
+
     return (
         <div className="browser-tabs">
             <button
@@ -69,7 +75,7 @@ export function BrowserTabs(props: BrowserTabsProps) {
                 <div className="browser-tab-icon">
                     <JenkinsMark height={20} width={16} fill="black" />
                 </div>
-                {getJenkinsStatus(props.completedTasks)}
+                {getJenkinsStatus(completedTasks)}
             </button>
         </div>
     );

@@ -1,4 +1,5 @@
-import { CompletedTaskType, TaskType } from './computer-screen';
+import { useContext } from 'react';
+import { GameContextForwarded } from './computer-screen-provider';
 import './console-content.css';
 
 export enum ConsoleContentItemType {
@@ -9,14 +10,12 @@ export enum ConsoleContentItemType {
 
 type ConsoleContentProps = {
     onTriggerEvent: (type: ConsoleContentItemType) => void;
-    score: number;
-    days: number;
-    life: number;
-    completedTasks: CompletedTaskType;
 };
 
 export function ConsoleContent(props: ConsoleContentProps) {
-    const { onTriggerEvent, completedTasks } = props;
+    const { day, score, completedTasks, sprintMeterValue } =
+        useContext(GameContextForwarded);
+    const { onTriggerEvent } = props;
 
     return (
         <div className="console-content">
@@ -56,13 +55,13 @@ export function ConsoleContent(props: ConsoleContentProps) {
                 ))}
                 <div className="console-content-status-item">
                     <div className="console-content-status-score">
-                        Score: {props.score}
+                        Score: {score}
                     </div>
                     <div className="console-content-status-life">
-                        Life: {props.life}
+                        Life: {sprintMeterValue}
                     </div>
                     <div className="console-content-status-days">
-                        Days: {props.days}
+                        Days: {day}
                     </div>
                 </div>
             </div>
