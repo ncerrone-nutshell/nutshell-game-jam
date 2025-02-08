@@ -12,17 +12,42 @@ export function GlobalUI(props: Props) {
         <Html fullscreen>
             <div
                 style={{
-                    position: 'absolute',
-                    bottom: '16px',
-                    left: '16px',
-                    height: `${props.sprintMeterPercentage}%`,
-                    width: '20px',
-                    backgroundColor: 'blue',
-                    padding: '8px 16px',
-                    borderRadius: '8px',
-                    opacity: 0.5,
+                    width: '8%',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '16px',
                 }}
-            />
+            >
+                <div
+                    style={{
+                        height: '80%',
+                        width: '100%',
+                        backgroundColor: 'blue',
+                        borderRadius: '8px',
+                        border: '1px solid #fff',
+                        zIndex: 1000,
+                        boxSizing: 'border-box',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        overflow: 'hidden',
+                    }}
+                >
+                    <div
+                        style={{
+                            height: `${100 - props.sprintMeterPercentage}%`,
+                            width: '100%',
+                            backgroundColor: 'grey',
+                        }}
+                    />
+                </div>
+                <div style={{ fontSize: '20px', textAlign: 'center' }}>
+                    Sprint Meter
+                </div>
+            </div>
         </Html>
     );
 }
