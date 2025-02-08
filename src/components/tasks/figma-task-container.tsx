@@ -105,7 +105,11 @@ export function FigmaTaskContainer() {
         maxY: 400,
     };
 
-    const handleStartClick = () => {
+    React.useEffect(() => {
+        generateNewMockup();
+    }, []);
+
+    const generateNewMockup = React.useCallback(() => {
         const { shapes: newShapes, shapeTargets: newTargets } = generateShapes(
             2,
             bounds
@@ -116,7 +120,7 @@ export function FigmaTaskContainer() {
         setShapeTargets(newTargets);
         setCompletedShapes([]);
         setActiveShapeId(null);
-    };
+    }, [bounds]);
 
     const handleShapeAtGoal = (shapeId: number, isAtGoal: boolean) => {
         setCompletedShapes((prev) => {
@@ -138,20 +142,12 @@ export function FigmaTaskContainer() {
                     score: 1,
                 },
             });
+            generateNewMockup();
         }
-    }, [completedShapes, shapes.length]);
+    }, [completedShapes, shapes.length, generateNewMockup]);
 
     return (
         <div className="figma-task-container">
-            <button
-                className="task-button figma"
-                onClick={() => {
-                    handleStartClick();
-                }}
-            >
-                Start!
-            </button>
-
             <div className="figma-task-container-shapes">
                 {shapes.map((shape, index) => (
                     <React.Fragment
