@@ -1,8 +1,9 @@
-import { Html } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as React from 'react';
 
 import { App } from '../../app';
+
+import { GlobalUI } from './global-ui';
 
 import { generateRandomEvents, RandomEvent } from './helpers';
 
@@ -56,36 +57,7 @@ export const GameManager = () => {
 
     return (
         <>
-            <Html fullscreen>
-                <div
-                    style={{
-                        position: 'absolute',
-                        bottom: '16px',
-                        left: '16px',
-                        height: `${sprintMeterValue}%`,
-                        width: '20px',
-                        backgroundColor: 'blue',
-                        padding: '8px 16px',
-                        borderRadius: '8px',
-                        opacity: 0.5,
-                    }}
-                />
-                <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'flex-end',
-                        justifyContent: 'space-between',
-                        height: '100%',
-                        padding: '32px',
-                    }}
-                >
-                    <div>
-                        <h1>Day {day}</h1>
-                        <p>Time left: {dayTimer.toFixed(0)}</p>
-                    </div>
-                    <div>Events today: {getEventsTodayString()}</div>
-                </div>
-            </Html>
+            <GlobalUI sprintMeterPercentage={sprintMeterValue} />
             <App />
         </>
     );
