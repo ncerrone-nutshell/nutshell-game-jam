@@ -16,9 +16,8 @@
     background-color: white;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    /* 57px is the height of the browser header and tabs */
-    height: calc(100% - 57px);
     border-top: 8px solid #3c3c3c;
+    height: calc(100% - 64px);
     margin-top: -10px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;

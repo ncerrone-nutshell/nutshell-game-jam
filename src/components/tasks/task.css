@@ -1,12 +1,17 @@
 .task-button {
     padding: 16px;
-    width: 150px;
-    border-radius: 10px;
-    color: white;
+    border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
+    color: white;
     transform: translateY(0);
     transition: transform 0.1s;
+    background-color: green;
+}
+
+.task-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 .task-button.coding {
@@ -21,6 +26,6 @@
     background-color: red;
 }
 
-.task-button:active {
+.task-button:active:not(:disabled) {
     transform: translateY(2px);
 }

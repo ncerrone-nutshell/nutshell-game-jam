@@ -1,0 +1,2610 @@
+[
+    {
+        "message": "New structure looks like:",
+        "chars": 25
+    },
+    {
+        "message": "Also removed unused props",
+        "chars": 25
+    },
+    {
+        "message": "Fewer fields and fragment",
+        "chars": 25
+    },
+    {
+        "message": "- Replaced GetChatDetails",
+        "chars": 25
+    },
+    {
+        "message": "Consistent disabled color",
+        "chars": 25
+    },
+    {
+        "message": "Turn on Notetaker for all",
+        "chars": 25
+    },
+    {
+        "message": "Transcribe button cleanup",
+        "chars": 25
+    },
+    {
+        "message": "Fix email report crashing",
+        "chars": 25
+    },
+    {
+        "message": "This is a hack to support",
+        "chars": 25
+    },
+    {
+        "message": "Landing pages \"new\" badge",
+        "chars": 25
+    },
+    {
+        "message": "rm hasTemplateGroups flag",
+        "chars": 25
+    },
+    {
+        "message": "rm hasConnectedForms flag",
+        "chars": 25
+    },
+    {
+        "message": "rm hasUpdatedSidebar flag",
+        "chars": 25
+    },
+    {
+        "message": "slightly subtler copy icon",
+        "chars": 26
+    },
+    {
+        "message": "little more breathing room",
+        "chars": 26
+    },
+    {
+        "message": "More subtle loading states",
+        "chars": 26
+    },
+    {
+        "message": "Copying existing art here.",
+        "chars": 26
+    },
+    {
+        "message": "fix audiences list spacing",
+        "chars": 26
+    },
+    {
+        "message": "rm polyfill.io from header",
+        "chars": 26
+    },
+    {
+        "message": "- Select a recipient state",
+        "chars": 26
+    },
+    {
+        "message": "- Showing entity page name",
+        "chars": 26
+    },
+    {
+        "message": "More naming / copy updates",
+        "chars": 26
+    },
+    {
+        "message": "Naming updates for clarity",
+        "chars": 26
+    },
+    {
+        "message": "Rome wasn't built in a day",
+        "chars": 26
+    },
+    {
+        "message": "crm experience is required",
+        "chars": 26
+    },
+    {
+        "message": "Bump DMARC time bomb 1 day",
+        "chars": 26
+    },
+    {
+        "message": "Show DMARC warnings to all",
+        "chars": 26
+    },
+    {
+        "message": "rm company enrichment flag",
+        "chars": 26
+    },
+    {
+        "message": "mv upsell below hero chart",
+        "chars": 26
+    },
+    {
+        "message": "optimized svg for 403 page",
+        "chars": 26
+    },
+    {
+        "message": "Only if 2+ template groups",
+        "chars": 26
+    },
+    {
+        "message": "migration to app2025 layout",
+        "chars": 27
+    },
+    {
+        "message": "Wire up collapsible sidebar",
+        "chars": 27
+    },
+    {
+        "message": "MVP navbar on top of screen",
+        "chars": 27
+    },
+    {
+        "message": "fix foundation pill styling",
+        "chars": 27
+    },
+    {
+        "message": "template creation modal wip",
+        "chars": 27
+    },
+    {
+        "message": "Message empty state cleanup",
+        "chars": 27
+    },
+    {
+        "message": "Consolidated header spacing",
+        "chars": 27
+    },
+    {
+        "message": "Fix flow in email directory",
+        "chars": 27
+    },
+    {
+        "message": "UI tweaks to domains tables",
+        "chars": 27
+    },
+    {
+        "message": "[linting] rm unused imports",
+        "chars": 27
+    },
+    {
+        "message": "rm hackday lead fields flag",
+        "chars": 27
+    },
+    {
+        "message": "Revert \"Abstract is better\"",
+        "chars": 27
+    },
+    {
+        "message": "Fix incorrect disabled logic",
+        "chars": 28
+    },
+    {
+        "message": "[minor] remove outdated TODO",
+        "chars": 28
+    },
+    {
+        "message": "[minor] documentation update",
+        "chars": 28
+    },
+    {
+        "message": "Slightly better loading feel",
+        "chars": 28
+    },
+    {
+        "message": "More expressive empty states",
+        "chars": 28
+    },
+    {
+        "message": "Message styling improvemnets",
+        "chars": 28
+    },
+    {
+        "message": "(also includes some spacing)",
+        "chars": 28
+    },
+    {
+        "message": "Button card needs an onClick",
+        "chars": 28
+    },
+    {
+        "message": "dont always have an assignee",
+        "chars": 28
+    },
+    {
+        "message": "Fix KB links on domains page",
+        "chars": 28
+    },
+    {
+        "message": "rm drip sequences capability",
+        "chars": 28
+    },
+    {
+        "message": "Add reports secondary sidebar",
+        "chars": 29
+    },
+    {
+        "message": "Add dummy sales secondary nav",
+        "chars": 29
+    },
+    {
+        "message": "- Error handling not wired up",
+        "chars": 29
+    },
+    {
+        "message": "real empty state copy + image",
+        "chars": 29
+    },
+    {
+        "message": "- rm \"no data to show\" banner",
+        "chars": 29
+    },
+    {
+        "message": "- Updated other documentation",
+        "chars": 29
+    },
+    {
+        "message": "Merge field insertion cleanup",
+        "chars": 29
+    },
+    {
+        "message": "Fix merge field insertion bug",
+        "chars": 29
+    },
+    {
+        "message": "analytics for adtech fx modal",
+        "chars": 29
+    },
+    {
+        "message": "More prominent selected state",
+        "chars": 29
+    },
+    {
+        "message": "Fix regression in sidebar nav",
+        "chars": 29
+    },
+    {
+        "message": "wip edition engagement filter",
+        "chars": 29
+    },
+    {
+        "message": "wip edition engagement filter",
+        "chars": 29
+    },
+    {
+        "message": "Implicit submenu open behavior",
+        "chars": 30
+    },
+    {
+        "message": "POC apollo + graphql in peanut",
+        "chars": 30
+    },
+    {
+        "message": "More gutting of CompIQ feature",
+        "chars": 30
+    },
+    {
+        "message": "- Adds new upsell button shell",
+        "chars": 30
+    },
+    {
+        "message": "Tooltip for assignee in header",
+        "chars": 30
+    },
+    {
+        "message": "Always turn on for trial users",
+        "chars": 30
+    },
+    {
+        "message": "Update app connect iframe link",
+        "chars": 30
+    },
+    {
+        "message": "Ignore react-window flow types",
+        "chars": 30
+    },
+    {
+        "message": "MVP marketing secondary sidebar",
+        "chars": 31
+    },
+    {
+        "message": "quick fix of error dialog shell",
+        "chars": 31
+    },
+    {
+        "message": "Open Prospector URLs in new tab",
+        "chars": 31
+    },
+    {
+        "message": "InboxSidebarHeader improvements",
+        "chars": 31
+    },
+    {
+        "message": "mv some responsibilities around",
+        "chars": 31
+    },
+    {
+        "message": "copy, sizing, and image updates",
+        "chars": 31
+    },
+    {
+        "message": "Restore ability to delete leads",
+        "chars": 31
+    },
+    {
+        "message": "deprecate existing popover sort",
+        "chars": 31
+    },
+    {
+        "message": "Rework custom click tracking UX",
+        "chars": 31
+    },
+    {
+        "message": "Add comparison engagement stats",
+        "chars": 31
+    },
+    {
+        "message": "Show A/B test text on card view",
+        "chars": 31
+    },
+    {
+        "message": "Remove revenue booster discount",
+        "chars": 31
+    },
+    {
+        "message": "Wire up MVP landing page editor",
+        "chars": 31
+    },
+    {
+        "message": "Always pass all filters to query",
+        "chars": 32
+    },
+    {
+        "message": "- Empty state when no recipients",
+        "chars": 32
+    },
+    {
+        "message": "Add StopIcon to library of icons",
+        "chars": 32
+    },
+    {
+        "message": "2024 limiting of pipelines in SA",
+        "chars": 32
+    },
+    {
+        "message": "rm all joyride code from the app",
+        "chars": 32
+    },
+    {
+        "message": "rename component for namespacing",
+        "chars": 32
+    },
+    {
+        "message": "Add deletedTime to activity type",
+        "chars": 32
+    },
+    {
+        "message": "rm should show zapier embed flag",
+        "chars": 32
+    },
+    {
+        "message": "copy for sending A/B test status",
+        "chars": 32
+    },
+    {
+        "message": "Works for existing threads so far",
+        "chars": 33
+    },
+    {
+        "message": "Wire up sending chats from peanut",
+        "chars": 33
+    },
+    {
+        "message": "- Still no instance-specific auth",
+        "chars": 33
+    },
+    {
+        "message": "Support text-primary icon buttons",
+        "chars": 33
+    },
+    {
+        "message": "Add CRM advertising embedded page",
+        "chars": 33
+    },
+    {
+        "message": "code cleanup and better alignment",
+        "chars": 33
+    },
+    {
+        "message": "fix saved list horizontal padding",
+        "chars": 33
+    },
+    {
+        "message": "Split up sending into two buttons",
+        "chars": 33
+    },
+    {
+        "message": "Updated empty state copy and icon",
+        "chars": 33
+    },
+    {
+        "message": "Prevent minimize opening cue card",
+        "chars": 33
+    },
+    {
+        "message": "Fix bug in lead route SA migrator",
+        "chars": 33
+    },
+    {
+        "message": "Launch landing pages for everyone",
+        "chars": 33
+    },
+    {
+        "message": "Stub a few more \"real\" sales pages",
+        "chars": 34
+    },
+    {
+        "message": "scaffolding for new sidebar layout",
+        "chars": 34
+    },
+    {
+        "message": "Scroll to bottom when new messages",
+        "chars": 34
+    },
+    {
+        "message": "Prevent inbox page outer scrolling",
+        "chars": 34
+    },
+    {
+        "message": "5 transcriptions per person, not 1",
+        "chars": 34
+    },
+    {
+        "message": "Track items clicked from checklist",
+        "chars": 34
+    },
+    {
+        "message": "Bump schema manager version to 600",
+        "chars": 34
+    },
+    {
+        "message": "We want this more front and center",
+        "chars": 34
+    },
+    {
+        "message": "Fix incorrect manage industry link",
+        "chars": 34
+    },
+    {
+        "message": "Better title for hovering contacts",
+        "chars": 34
+    },
+    {
+        "message": "Singular 'Field' implementation POC",
+        "chars": 35
+    },
+    {
+        "message": "- using Field instead of FieldArray",
+        "chars": 35
+    },
+    {
+        "message": "Optimistic response on message sent",
+        "chars": 35
+    },
+    {
+        "message": "Fix starting new threads w/ GraphQL",
+        "chars": 35
+    },
+    {
+        "message": "Allow Archive/Unarchiving Templates",
+        "chars": 35
+    },
+    {
+        "message": "Allow Archive/Unarchiving Templates",
+        "chars": 35
+    },
+    {
+        "message": "rm template stats, control bar tabs",
+        "chars": 35
+    },
+    {
+        "message": "link to nutshell.com from krispcall",
+        "chars": 35
+    },
+    {
+        "message": "Show upsell beneath sources section",
+        "chars": 35
+    },
+    {
+        "message": "- Still only shown to ICPs to start",
+        "chars": 35
+    },
+    {
+        "message": "We don't need search for 10 filters",
+        "chars": 35
+    },
+    {
+        "message": "Add usage footer for Nutshell Inbox",
+        "chars": 35
+    },
+    {
+        "message": "Build out real text automation card",
+        "chars": 35
+    },
+    {
+        "message": "Keep cursor at end of transcription",
+        "chars": 35
+    },
+    {
+        "message": "Fix empty connected forms list page",
+        "chars": 35
+    },
+    {
+        "message": "Fixed columns have grey backgrounds",
+        "chars": 35
+    },
+    {
+        "message": "Hide / show input based on checkbox",
+        "chars": 35
+    },
+    {
+        "message": "Fix missing notification bell label",
+        "chars": 35
+    },
+    {
+        "message": "ship reaction notifications for all",
+        "chars": 35
+    },
+    {
+        "message": "rm unused timeline email capability",
+        "chars": 35
+    },
+    {
+        "message": "help text belongs on the form field",
+        "chars": 35
+    },
+    {
+        "message": "getEffectiveStatus is now an action",
+        "chars": 35
+    },
+    {
+        "message": "UserError should be used in GraphQL",
+        "chars": 35
+    },
+    {
+        "message": "Additional tracking for MCFX send-to",
+        "chars": 36
+    },
+    {
+        "message": "- npm install @apollo/client graphql",
+        "chars": 36
+    },
+    {
+        "message": "Preserve line breaks in text threads",
+        "chars": 36
+    },
+    {
+        "message": "Don't show setup links to non-admins",
+        "chars": 36
+    },
+    {
+        "message": "More standard page layout convention",
+        "chars": 36
+    },
+    {
+        "message": "Better testing setup for sidebar nav",
+        "chars": 36
+    },
+    {
+        "message": "Show character limit in SA text form",
+        "chars": 36
+    },
+    {
+        "message": "- Loading state when swapping theads",
+        "chars": 36
+    },
+    {
+        "message": "Include avatar in textables dropdown",
+        "chars": 36
+    },
+    {
+        "message": "fix analytics of dashboard cue cards",
+        "chars": 36
+    },
+    {
+        "message": "Update cue cards for email blocklist",
+        "chars": 36
+    },
+    {
+        "message": "Add icons to specific column headers",
+        "chars": 36
+    },
+    {
+        "message": "Wire up in-progress engagement stats",
+        "chars": 36
+    },
+    {
+        "message": "This does not remove deprecated code",
+        "chars": 36
+    },
+    {
+        "message": "fix bad import from bad rebase by me",
+        "chars": 36
+    },
+    {
+        "message": "Fix scheduling an activity follow-up",
+        "chars": 36
+    },
+    {
+        "message": "Updated plan comparison table styling",
+        "chars": 37
+    },
+    {
+        "message": "Updated spacing / alignment / headers",
+        "chars": 37
+    },
+    {
+        "message": "Don't show list links when onboarding",
+        "chars": 37
+    },
+    {
+        "message": "Additional logging mcfx audience sync",
+        "chars": 37
+    },
+    {
+        "message": "Move \"must have\" fields into settings",
+        "chars": 37
+    },
+    {
+        "message": "Prevent reassigning the shelly thread",
+        "chars": 37
+    },
+    {
+        "message": "- Button still appears in lead footer",
+        "chars": 37
+    },
+    {
+        "message": "Better sales automation breadcrumbing",
+        "chars": 37
+    },
+    {
+        "message": "Show sender / recipient name on hover",
+        "chars": 37
+    },
+    {
+        "message": "Show 'Texts' sidebar item immediately",
+        "chars": 37
+    },
+    {
+        "message": "case insensitive check, copy clean-up",
+        "chars": 37
+    },
+    {
+        "message": "Support external linking from tab bar",
+        "chars": 37
+    },
+    {
+        "message": "Show cancelled landingpages plan text",
+        "chars": 37
+    },
+    {
+        "message": "Analytics for VisitorIQ page behavior",
+        "chars": 37
+    },
+    {
+        "message": "Unlocks are now credits (user facing)",
+        "chars": 37
+    },
+    {
+        "message": "style tweaks for sub item on marketing",
+        "chars": 38
+    },
+    {
+        "message": "Fix extraneous ResizeObserver warnings",
+        "chars": 38
+    },
+    {
+        "message": "Add first-pass at secondary nav shells",
+        "chars": 38
+    },
+    {
+        "message": "Clean-up associated pages w/ subdomain",
+        "chars": 38
+    },
+    {
+        "message": "More clear section deliniation, mainly",
+        "chars": 38
+    },
+    {
+        "message": "Fix being able to delete default input",
+        "chars": 38
+    },
+    {
+        "message": "MVP adtechfx modal behind feature flag",
+        "chars": 38
+    },
+    {
+        "message": "Auto-focus textfield when thread loads",
+        "chars": 38
+    },
+    {
+        "message": "Only show character count when focused",
+        "chars": 38
+    },
+    {
+        "message": "Get us closer to real text automations",
+        "chars": 38
+    },
+    {
+        "message": "Fix connected form debug page crashing",
+        "chars": 38
+    },
+    {
+        "message": "Fix bug preventing settings page crash",
+        "chars": 38
+    },
+    {
+        "message": "Implement tuneable for omitting LP CSP",
+        "chars": 38
+    },
+    {
+        "message": "Support distributing leads by lead tag",
+        "chars": 38
+    },
+    {
+        "message": "Addl. logging for deleting O365 events",
+        "chars": 38
+    },
+    {
+        "message": "Not helpful, but we're rollin' with it",
+        "chars": 38
+    },
+    {
+        "message": "We have code relying on changes in 600",
+        "chars": 38
+    },
+    {
+        "message": "Fix bug hiding A/B compare content bar",
+        "chars": 38
+    },
+    {
+        "message": "Revert \"wip edition engagement filter\"",
+        "chars": 38
+    },
+    {
+        "message": "Clean up for A/B test engagement stats",
+        "chars": 38
+    },
+    {
+        "message": "mutation rename for latest conventions",
+        "chars": 38
+    },
+    {
+        "message": "POC loading state for secondary sidebar",
+        "chars": 39
+    },
+    {
+        "message": "[POC] Two layers of edition abstraction",
+        "chars": 39
+    },
+    {
+        "message": "Fix plan comparison hover color in prod",
+        "chars": 39
+    },
+    {
+        "message": "cleaning up redux + flow for state user",
+        "chars": 39
+    },
+    {
+        "message": "Adds special states to sidebar contents",
+        "chars": 39
+    },
+    {
+        "message": "fix stageset select not loading options",
+        "chars": 39
+    },
+    {
+        "message": "Revert \"Added space for child overlays\"",
+        "chars": 39
+    },
+    {
+        "message": "Render overlay SVG in div via url param",
+        "chars": 39
+    },
+    {
+        "message": "More line height on option card chooser",
+        "chars": 39
+    },
+    {
+        "message": "Expose graphical for internal instances",
+        "chars": 39
+    },
+    {
+        "message": "rm feature flag for email sync controls",
+        "chars": 39
+    },
+    {
+        "message": "slightly better pixels on radio buttons",
+        "chars": 39
+    },
+    {
+        "message": "Fix images in explore even more sidebar",
+        "chars": 39
+    },
+    {
+        "message": "Add ab-test svg to onboarding directory",
+        "chars": 39
+    },
+    {
+        "message": "mv compare content bar to own component",
+        "chars": 39
+    },
+    {
+        "message": "rm unused hasReactionNotifications flag",
+        "chars": 39
+    },
+    {
+        "message": "Wire up previewing landing page content",
+        "chars": 39
+    },
+    {
+        "message": "Better copy for landing page embed modal",
+        "chars": 40
+    },
+    {
+        "message": "Slight style improvements of date picker",
+        "chars": 40
+    },
+    {
+        "message": "Removed set height/width to match others",
+        "chars": 40
+    },
+    {
+        "message": "Exclude more files from workspace search",
+        "chars": 40
+    },
+    {
+        "message": "Add rocketship star SVG to illustrations",
+        "chars": 40
+    },
+    {
+        "message": "Only display relevant onboarding options",
+        "chars": 40
+    },
+    {
+        "message": "If this is autofocused, the screen jumps",
+        "chars": 40
+    },
+    {
+        "message": "Version 1.7.1 to combine 1.7.0 and 1.6.2",
+        "chars": 40
+    },
+    {
+        "message": "better PeopleIQ copy for feature updates",
+        "chars": 40
+    },
+    {
+        "message": "Only non-admins get the deleteAll option",
+        "chars": 40
+    },
+    {
+        "message": "Support internal + blocklisted addresses",
+        "chars": 40
+    },
+    {
+        "message": "Fix 'strings' fields crashing list pages",
+        "chars": 40
+    },
+    {
+        "message": "fix broken links in starting lp template",
+        "chars": 40
+    },
+    {
+        "message": "Different copy / behavior for non-admins",
+        "chars": 40
+    },
+    {
+        "message": "Unify column picker styles slightly more",
+        "chars": 40
+    },
+    {
+        "message": "Add deletedTime to activity GraphQL type",
+        "chars": 40
+    },
+    {
+        "message": "Return up to 50 sequences in a list view",
+        "chars": 40
+    },
+    {
+        "message": "Add landing pages index page for testing",
+        "chars": 40
+    },
+    {
+        "message": "Just email because it gets chopped first",
+        "chars": 40
+    },
+    {
+        "message": "Prepare to send gating stays in marketing",
+        "chars": 41
+    },
+    {
+        "message": "Feature flag onyl when setting is enabled",
+        "chars": 41
+    },
+    {
+        "message": "  - Em\\OnceEdition (Broadcast,newsletter)",
+        "chars": 41
+    },
+    {
+        "message": "prefer explicit opt-outs and truthy cases",
+        "chars": 41
+    },
+    {
+        "message": "Update client/peanut/src/apollo-client.ts",
+        "chars": 41
+    },
+    {
+        "message": "Poll for new chat details every 5 seconds",
+        "chars": 41
+    },
+    {
+        "message": "- Still need to scroll after message sent",
+        "chars": 41
+    },
+    {
+        "message": "- Clearer \"this feature is broken\" banner",
+        "chars": 41
+    },
+    {
+        "message": "Also consolidated copy for responsiveness",
+        "chars": 41
+    },
+    {
+        "message": "Show more helpful 'post onboarding' state",
+        "chars": 41
+    },
+    {
+        "message": "Prevent fetching when \"data\" filters only",
+        "chars": 41
+    },
+    {
+        "message": "Don't allow fallback text for user fields",
+        "chars": 41
+    },
+    {
+        "message": "Show updated text automations w/o refresh",
+        "chars": 41
+    },
+    {
+        "message": "Wire up volume-based squiggles for speech",
+        "chars": 41
+    },
+    {
+        "message": "Support pagination for notes via REST API",
+        "chars": 41
+    },
+    {
+        "message": "rm unused tuneable const breaking CX dash",
+        "chars": 41
+    },
+    {
+        "message": "Add SpecechToText to global eslint ignore",
+        "chars": 41
+    },
+    {
+        "message": "Block non-admins from adding to Blocklist",
+        "chars": 41
+    },
+    {
+        "message": "Use tel: links for ring central customers",
+        "chars": 41
+    },
+    {
+        "message": "Backend GTM tag support for landing pages",
+        "chars": 41
+    },
+    {
+        "message": "Always return certain fields via REST API",
+        "chars": 41
+    },
+    {
+        "message": "Only show hover state for draggable cards",
+        "chars": 41
+    },
+    {
+        "message": "Wire up showing cue cards for admins only",
+        "chars": 41
+    },
+    {
+        "message": "Sefl-heal when required fields go missing",
+        "chars": 41
+    },
+    {
+        "message": "add images for people companies and leads",
+        "chars": 41
+    },
+    {
+        "message": "Properly get role icon based on role name",
+        "chars": 41
+    },
+    {
+        "message": "Send email \"service\" for sync email event",
+        "chars": 41
+    },
+    {
+        "message": "allowlist the two new onboarding settings",
+        "chars": 41
+    },
+    {
+        "message": "Push to email report from template groups",
+        "chars": 41
+    },
+    {
+        "message": "Allow configuring next steps for SMS drips",
+        "chars": 42
+    },
+    {
+        "message": "Get something working for settings sidebar",
+        "chars": 42
+    },
+    {
+        "message": "  - Sms\\OnceEdition (Broadcast,newsletter)",
+        "chars": 42
+    },
+    {
+        "message": "import table directly for embedded version",
+        "chars": 42
+    },
+    {
+        "message": "fix routing for new billing page customers",
+        "chars": 42
+    },
+    {
+        "message": "Better display for Shelly, stubbed threads",
+        "chars": 42
+    },
+    {
+        "message": "safety around getting additional attendees",
+        "chars": 42
+    },
+    {
+        "message": "Unify form submission value display modals",
+        "chars": 42
+    },
+    {
+        "message": "Allow introspection for internal instances",
+        "chars": 42
+    },
+    {
+        "message": "Update billing page copy for email booster",
+        "chars": 42
+    },
+    {
+        "message": "Fix ringcentral dialing from NS w/ new app",
+        "chars": 42
+    },
+    {
+        "message": "Update VisitorIQ acorn pill to be PeopleIQ",
+        "chars": 42
+    },
+    {
+        "message": "Help MCFX script to know parent of NS form",
+        "chars": 42
+    },
+    {
+        "message": "Related leads on a peep should be linkable",
+        "chars": 42
+    },
+    {
+        "message": "Hide my-account sidebar when no crm access",
+        "chars": 42
+    },
+    {
+        "message": "Set Office365 origin when syncing calendar",
+        "chars": 42
+    },
+    {
+        "message": "Allow asking for \"logged by\" w/o exception",
+        "chars": 42
+    },
+    {
+        "message": "Fix showing most recent last modified time",
+        "chars": 42
+    },
+    {
+        "message": "[copy] Test versions, not compare versions",
+        "chars": 42
+    },
+    {
+        "message": "Consolidate expand props to optional group",
+        "chars": 42
+    },
+    {
+        "message": "Youtube video instead of broken wistia link",
+        "chars": 43
+    },
+    {
+        "message": "- Still need to wire up optimistic response",
+        "chars": 43
+    },
+    {
+        "message": "Basically there, had to fix a few oddities.",
+        "chars": 43
+    },
+    {
+        "message": "Channels sometimes don't have phone numbers",
+        "chars": 43
+    },
+    {
+        "message": "fix tooltips on standalone comparison table",
+        "chars": 43
+    },
+    {
+        "message": "Remove CompIQ tabs, prevent changing config",
+        "chars": 43
+    },
+    {
+        "message": "Deprecated, don't want people setting it up",
+        "chars": 43
+    },
+    {
+        "message": "Prevent hover state when textfield disabled",
+        "chars": 43
+    },
+    {
+        "message": "AdTechFX upsell for admins of GICP accounts",
+        "chars": 43
+    },
+    {
+        "message": "Add Inbox beta flag for credit/copy changes",
+        "chars": 43
+    },
+    {
+        "message": "Wire up sending message styling for bubbles",
+        "chars": 43
+    },
+    {
+        "message": "New lead board sort component for better UX",
+        "chars": 43
+    },
+    {
+        "message": "Hide checklist for old users and non-trials",
+        "chars": 43
+    },
+    {
+        "message": "Display helper-text below role for NS roles",
+        "chars": 43
+    },
+    {
+        "message": "Prevent users w/o CRM access from CRM pages",
+        "chars": 43
+    },
+    {
+        "message": "Use comparison snapshot for A/B test widget",
+        "chars": 43
+    },
+    {
+        "message": "eav thumbnail for pages should be immutable",
+        "chars": 43
+    },
+    {
+        "message": "Delta for adding from_domain_id to lp_pages",
+        "chars": 43
+    },
+    {
+        "message": "Better UX on saving first website during OB",
+        "chars": 43
+    },
+    {
+        "message": "Rudimentary feature gating for SMS campaigns",
+        "chars": 44
+    },
+    {
+        "message": "Marketing SMS setup should stay in marketing",
+        "chars": 44
+    },
+    {
+        "message": "Do not poll when offline and widget disabled",
+        "chars": 44
+    },
+    {
+        "message": "Fix small size screen misalignment w/ header",
+        "chars": 44
+    },
+    {
+        "message": "Expose landing pages as new embeddable route",
+        "chars": 44
+    },
+    {
+        "message": "Temporary changes to support dogfood testing",
+        "chars": 44
+    },
+    {
+        "message": "Fix page crash when loading direct chat link",
+        "chars": 44
+    },
+    {
+        "message": "Fix styling regression from missing headlink",
+        "chars": 44
+    },
+    {
+        "message": "Hide competitorIQ option when not configured",
+        "chars": 44
+    },
+    {
+        "message": "Always clear selection on any setting change",
+        "chars": 44
+    },
+    {
+        "message": "mv popover concerns into AddPropsectsPopover",
+        "chars": 44
+    },
+    {
+        "message": "Auto focus fallback text when field selected",
+        "chars": 44
+    },
+    {
+        "message": "More entity page inbox sidebar header states",
+        "chars": 44
+    },
+    {
+        "message": "Add 'Open in MCFX' option to contact send-to",
+        "chars": 44
+    },
+    {
+        "message": "Reusable hook to subscribe to phtml checkbox",
+        "chars": 44
+    },
+    {
+        "message": "Naming: PowerAI is more than one feature now",
+        "chars": 44
+    },
+    {
+        "message": "Fix double clicking messing up transcription",
+        "chars": 44
+    },
+    {
+        "message": "Fix TwoLineButtonCard styling, accessibility",
+        "chars": 44
+    },
+    {
+        "message": "Always show archived pipelines if they exist",
+        "chars": 44
+    },
+    {
+        "message": "Pass array of strings, not objects as fields",
+        "chars": 44
+    },
+    {
+        "message": "Disable inaccessible stagesets in lead forms",
+        "chars": 44
+    },
+    {
+        "message": "Allow resuming or canceling problematic drip",
+        "chars": 44
+    },
+    {
+        "message": "temporarily fix users not showing up if >200",
+        "chars": 44
+    },
+    {
+        "message": "Expose landing page embed code via modal flow",
+        "chars": 45
+    },
+    {
+        "message": "MVP secondary sidebar for my account settings",
+        "chars": 45
+    },
+    {
+        "message": "Add first set of icons for updated navigation",
+        "chars": 45
+    },
+    {
+        "message": "Fix starting a new thread not showing content",
+        "chars": 45
+    },
+    {
+        "message": "Support sending chats via GraphQL from peanut",
+        "chars": 45
+    },
+    {
+        "message": "Don't need to hit recurly for plan comparison",
+        "chars": 45
+    },
+    {
+        "message": "This is clearer that it's not really a filter",
+        "chars": 45
+    },
+    {
+        "message": "Don't allow swapping pages from inbox sidebar",
+        "chars": 45
+    },
+    {
+        "message": "allow updating peep country in update actions",
+        "chars": 45
+    },
+    {
+        "message": "Fix non-admins w/ marketing permission access",
+        "chars": 45
+    },
+    {
+        "message": "Removed user emails aren't internal addresses",
+        "chars": 45
+    },
+    {
+        "message": "Fix subscribers filter returning wrong number",
+        "chars": 45
+    },
+    {
+        "message": "Allow disabling built-in MCFX tracking for LP",
+        "chars": 45
+    },
+    {
+        "message": "Clearer copy for deleting sidebar-based items",
+        "chars": 45
+    },
+    {
+        "message": "Fix fractional height scaling of lead chevron",
+        "chars": 45
+    },
+    {
+        "message": "don't sort crm plans on price on billing page",
+        "chars": 45
+    },
+    {
+        "message": "Abstract comparison fields into new component",
+        "chars": 45
+    },
+    {
+        "message": "New method for getting page html from BEE API",
+        "chars": 45
+    },
+    {
+        "message": "Feature flag UI and security of embedded pages",
+        "chars": 46
+    },
+    {
+        "message": "Co-authored-by: Conner Roy <croy@nutshell.com>",
+        "chars": 46
+    },
+    {
+        "message": "Fix image after white glove submission success",
+        "chars": 46
+    },
+    {
+        "message": "Update styling and copy of email source header",
+        "chars": 46
+    },
+    {
+        "message": "Add google/microsoft logos to email onboarding",
+        "chars": 46
+    },
+    {
+        "message": "- Clearer filter function name to match intent",
+        "chars": 46
+    },
+    {
+        "message": "Only show users in text automation \"send from\"",
+        "chars": 46
+    },
+    {
+        "message": "New component for character limiting textfield",
+        "chars": 46
+    },
+    {
+        "message": "hide unbounce from sidebar when not configured",
+        "chars": 46
+    },
+    {
+        "message": "Throw error when accessing campaign w/o access",
+        "chars": 46
+    },
+    {
+        "message": "Better looking subtitle, sorry modal component",
+        "chars": 46
+    },
+    {
+        "message": "Better loading state while websocket initiates",
+        "chars": 46
+    },
+    {
+        "message": "Prevent newlines between transcription updates",
+        "chars": 46
+    },
+    {
+        "message": "wip commit getting promise observables working",
+        "chars": 46
+    },
+    {
+        "message": "Performance optimization for lead card dynamic",
+        "chars": 46
+    },
+    {
+        "message": "Co-authored-by: Kendal Won <kwon@nutshell.com>",
+        "chars": 46
+    },
+    {
+        "message": "Kate's was broken, time to update all of these",
+        "chars": 46
+    },
+    {
+        "message": "Kate's was broken, time to update all of these",
+        "chars": 46
+    },
+    {
+        "message": "enable notify on goal met for nutshell dogfood",
+        "chars": 46
+    },
+    {
+        "message": "Add 403 page for more info on blocked requests",
+        "chars": 46
+    },
+    {
+        "message": "Add full page landing page preview w/o sidebar",
+        "chars": 46
+    },
+    {
+        "message": "Set proper origin when syncing O365 activities",
+        "chars": 46
+    },
+    {
+        "message": "Fix duplicate button routing to underlying card",
+        "chars": 47
+    },
+    {
+        "message": "FIx italy not appearing in country filter state",
+        "chars": 47
+    },
+    {
+        "message": "Fix optimistic response for C2C popover changes",
+        "chars": 47
+    },
+    {
+        "message": "fix flow and linting, rm unused query variables",
+        "chars": 47
+    },
+    {
+        "message": "Fix missing right border in thread list in prod",
+        "chars": 47
+    },
+    {
+        "message": "Hook up real beta flag to phone popover content",
+        "chars": 47
+    },
+    {
+        "message": "small styling updates to additional guests flow",
+        "chars": 47
+    },
+    {
+        "message": "Boilerplate frontend / client GraphQL for texts",
+        "chars": 47
+    },
+    {
+        "message": "centralized helper for api type from __typename",
+        "chars": 47
+    },
+    {
+        "message": "Give breathing room to our transcription button",
+        "chars": 47
+    },
+    {
+        "message": "Don't overlap placeholder form popover w/ edges",
+        "chars": 47
+    },
+    {
+        "message": "Emails associated w/ any user are also internal",
+        "chars": 47
+    },
+    {
+        "message": "Wire up inserting content into timeline creator",
+        "chars": 47
+    },
+    {
+        "message": "IconSparkle shouldn't be transparent by default",
+        "chars": 47
+    },
+    {
+        "message": "Wire up spam prevention type config to frontend",
+        "chars": 47
+    },
+    {
+        "message": "Embedded scheduler save button no longer hidden",
+        "chars": 47
+    },
+    {
+        "message": "Add globally blocklisted emails as managed col.",
+        "chars": 47
+    },
+    {
+        "message": "Support any/none filters for most custom fields",
+        "chars": 47
+    },
+    {
+        "message": "Fix next steps saving when goal is audience/tag",
+        "chars": 47
+    },
+    {
+        "message": "Add ability to add global GTM tag setting in LP",
+        "chars": 47
+    },
+    {
+        "message": "Co-authored-by: Andy Fowler <andy@nutshell.com>",
+        "chars": 47
+    },
+    {
+        "message": "Allow filtering on pipelines even w/ 1 stageset",
+        "chars": 47
+    },
+    {
+        "message": "Prevent linking to entities for no-access users",
+        "chars": 47
+    },
+    {
+        "message": "Add DMARC warning CTA banner in relevant places",
+        "chars": 47
+    },
+    {
+        "message": "Only reveal SEO scan page for non ICP customers",
+        "chars": 47
+    },
+    {
+        "message": "billing page frontend support for landing pages",
+        "chars": 47
+    },
+    {
+        "message": "Allow requiring accounts/contacts for lead form",
+        "chars": 47
+    },
+    {
+        "message": "[rebaseme] start for getting 404 and hello page",
+        "chars": 47
+    },
+    {
+        "message": "Actually show comparison icon on all card views",
+        "chars": 47
+    },
+    {
+        "message": "Fix flow by unsharing shells to email directory",
+        "chars": 47
+    },
+    {
+        "message": "Co-authored-by: Andy Fowler <andy@nutshell.com>",
+        "chars": 47
+    },
+    {
+        "message": "Co-authored-by: Andy Fowler <andy@nutshell.com>",
+        "chars": 47
+    },
+    {
+        "message": "Co-authored-by: Nick Maggi <nmaggi@nutshell.com>",
+        "chars": 48
+    },
+    {
+        "message": "Co-authored-by: Nick Maggi <nmaggi@nutshell.com>",
+        "chars": 48
+    },
+    {
+        "message": "Match usage scorecard styling to rest of summary",
+        "chars": 48
+    },
+    {
+        "message": "Fix spacing and styling of edition outreach list",
+        "chars": 48
+    },
+    {
+        "message": "Support inserting merge fields without fallbacks",
+        "chars": 48
+    },
+    {
+        "message": "Feature is now called PeopleIQ, link to right KB",
+        "chars": 48
+    },
+    {
+        "message": "Wire up feature flagged button in email composer",
+        "chars": 48
+    },
+    {
+        "message": "Add hCaptcha privacy badge for full-page enabled",
+        "chars": 48
+    },
+    {
+        "message": "Add submissionId to Wf\\Submission type, webhooks",
+        "chars": 48
+    },
+    {
+        "message": "Refs: https://content-security-policy.com/nonce/",
+        "chars": 48
+    },
+    {
+        "message": "Make delete button more obvious in sidebar forms",
+        "chars": 48
+    },
+    {
+        "message": "Don't limit legacy pro customers to 10 pipelines",
+        "chars": 48
+    },
+    {
+        "message": "Support thumbnailPosition in cue card collection",
+        "chars": 48
+    },
+    {
+        "message": "Fix peep tag options occasionally not showing up",
+        "chars": 48
+    },
+    {
+        "message": "hide cue cards that should eventually be dynamic",
+        "chars": 48
+    },
+    {
+        "message": "Only show landing pages help section if FF is on",
+        "chars": 48
+    },
+    {
+        "message": "Fix blank setup pages, wonky billing page layout",
+        "chars": 48
+    },
+    {
+        "message": "They don't affect behavior, but are clogging logs",
+        "chars": 49
+    },
+    {
+        "message": "Co-authored-by: Blake Brdak <bbrdak@nutshell.com>",
+        "chars": 49
+    },
+    {
+        "message": "Hacks to get plan comparison CSS working in embed",
+        "chars": 49
+    },
+    {
+        "message": "Fix error message spacing when subtitles included",
+        "chars": 49
+    },
+    {
+        "message": "Show SA text automation upsell / CTA if no config",
+        "chars": 49
+    },
+    {
+        "message": "Add Send text btn next to phone # in peep sidebar",
+        "chars": 49
+    },
+    {
+        "message": "Show additional attendees at bottom of submission",
+        "chars": 49
+    },
+    {
+        "message": "remove deprecated timeline form submission opener",
+        "chars": 49
+    },
+    {
+        "message": "Only show popover when first transcription or OOC",
+        "chars": 49
+    },
+    {
+        "message": "Feature flag for transcription button in timeline",
+        "chars": 49
+    },
+    {
+        "message": "Also show privacy warning on LP w/ embedded forms",
+        "chars": 49
+    },
+    {
+        "message": "Allow any/none option for long text custom fields",
+        "chars": 49
+    },
+    {
+        "message": "Show status of blocklisted/internal emails in eip",
+        "chars": 49
+    },
+    {
+        "message": "Prevent putting leads into inaccessible pipelines",
+        "chars": 49
+    },
+    {
+        "message": "mv domains/senders to EM sidebar when in embedded",
+        "chars": 49
+    },
+    {
+        "message": "Add updated send flow to tuneable, disable for us",
+        "chars": 49
+    },
+    {
+        "message": "Only record form submissions on successful submit",
+        "chars": 49
+    },
+    {
+        "message": "Default to 4 hours for new A/B test wait duration",
+        "chars": 49
+    },
+    {
+        "message": "Implement \"Add to audience\" goal for all customer",
+        "chars": 49
+    },
+    {
+        "message": "styling changes for fewer borders, better sections",
+        "chars": 50
+    },
+    {
+        "message": "- Fixed bug with refetch not taking correct params",
+        "chars": 50
+    },
+    {
+        "message": "Add links to created people/leads from control bar",
+        "chars": 50
+    },
+    {
+        "message": "Add avatar, initials, to selected textable display",
+        "chars": 50
+    },
+    {
+        "message": "Wire up setup section for lite note usage / toggle",
+        "chars": 50
+    },
+    {
+        "message": "Fix absolute position of PIQ badge on company page",
+        "chars": 50
+    },
+    {
+        "message": "mutation/query for spam prevention type in GraphQL",
+        "chars": 50
+    },
+    {
+        "message": "Prevent cue cards from looking clickable if no cta",
+        "chars": 50
+    },
+    {
+        "message": "Analytics status req should not block page content",
+        "chars": 50
+    },
+    {
+        "message": "Support auto distributing from forms and scheduler",
+        "chars": 50
+    },
+    {
+        "message": "Don't stop API keys w/o user impersonation in REST",
+        "chars": 50
+    },
+    {
+        "message": "Hide more footer actions for no-crm accessed users",
+        "chars": 50
+    },
+    {
+        "message": "Fix flow errors related to redux + shells invasion",
+        "chars": 50
+    },
+    {
+        "message": "Connected forms are always enabled, outdated param",
+        "chars": 50
+    },
+    {
+        "message": "include lead event CDs for outcome/stage/milestone",
+        "chars": 50
+    },
+    {
+        "message": "Revert \"fix card thumbnail image to fit correctly\"",
+        "chars": 50
+    },
+    {
+        "message": "Better empty states for email template groups page",
+        "chars": 50
+    },
+    {
+        "message": "- Updates existing method name to remove ambiguity",
+        "chars": 50
+    },
+    {
+        "message": "nth-last-child is more accurate (TIL this is real!)",
+        "chars": 51
+    },
+    {
+        "message": "ControlBar + StatusBar works well in this situation",
+        "chars": 51
+    },
+    {
+        "message": "Better implementation of email editor transcription",
+        "chars": 51
+    },
+    {
+        "message": "Feature flagged UI for just a few instances for now",
+        "chars": 51
+    },
+    {
+        "message": "mv non-cue card images onboarding out of onboarding",
+        "chars": 51
+    },
+    {
+        "message": "Need to think through sad path of drips not sending",
+        "chars": 51
+    },
+    {
+        "message": "Prevent sending A/B tested content from a list view",
+        "chars": 51
+    },
+    {
+        "message": "Lots to figure out here, and easier to just prevent",
+        "chars": 51
+    },
+    {
+        "message": "Was missing, want to stay consistent w/ other types",
+        "chars": 51
+    },
+    {
+        "message": "Wire up copying content from one edition to another",
+        "chars": 51
+    },
+    {
+        "message": "Halt content with social security in the description",
+        "chars": 52
+    },
+    {
+        "message": "Separate transcribe button out to separate component",
+        "chars": 52
+    },
+    {
+        "message": "Record cancellation form info in new analytics event",
+        "chars": 52
+    },
+    {
+        "message": "Styling isn't right, just playing around with things.",
+        "chars": 53
+    },
+    {
+        "message": "- Added webpack loader for .graphql files for codegen",
+        "chars": 53
+    },
+    {
+        "message": "Update plan comparison table for latest copy / limits",
+        "chars": 53
+    },
+    {
+        "message": "Add \"real\" Shelly message content for initial release",
+        "chars": 53
+    },
+    {
+        "message": "Prevent repositioning if company itself might be dupe",
+        "chars": 53
+    },
+    {
+        "message": "This is the feature flag to never display this at all",
+        "chars": 53
+    },
+    {
+        "message": "Also fixes up a bug in our validator for empty arrays",
+        "chars": 53
+    },
+    {
+        "message": "Co-authored-by: Arjun Gupta <arjungupta2908@gmail.com>",
+        "chars": 54
+    },
+    {
+        "message": "Fix positioning of activity modal transcription button",
+        "chars": 54
+    },
+    {
+        "message": "Co-Authored-By: Nico Figueroa <nfigueroa@nutshell.com>",
+        "chars": 54
+    },
+    {
+        "message": "- Unify using sample instead of outputFields for leads",
+        "chars": 54
+    },
+    {
+        "message": "Co-authored-by: Sean Polidori <seanpolidori0@gmail.com>",
+        "chars": 55
+    },
+    {
+        "message": "Dsiable entity list \"view tabs\" for no-CRM access users",
+        "chars": 55
+    },
+    {
+        "message": "Reset to Version A when toggling off content comparison",
+        "chars": 55
+    },
+    {
+        "message": "- MVP apollo-client + link, requiring CORS (see comment)",
+        "chars": 56
+    },
+    {
+        "message": "#\tclient/web/ui/landing-pages/landing-pages-list-page.js",
+        "chars": 56
+    },
+    {
+        "message": "We prevent other settings, just hide the sidebar entirely",
+        "chars": 57
+    },
+    {
+        "message": "- Moving some concerns around, styling got a bit messed up",
+        "chars": 58
+    },
+    {
+        "message": "They were seeing the limited user sidebar, not intentional",
+        "chars": 58
+    },
+    {
+        "message": "Update symfony/src/Nutshell/GraphQL/Type/Wf/Submission.php",
+        "chars": 58
+    },
+    {
+        "message": "Adds the ability to make thunbnails full width w/o padding",
+        "chars": 58
+    },
+    {
+        "message": "This commit does not touch any sort of unified preview bar",
+        "chars": 58
+    },
+    {
+        "message": "[WARNING]: This breaks our email extension, but that's ok!",
+        "chars": 58
+    },
+    {
+        "message": "Revert \"Disable create button if >10 pages in preview mode\"",
+        "chars": 59
+    },
+    {
+        "message": "Don't need an 'isEmbbeded' prop, can just remove the wrapper",
+        "chars": 60
+    },
+    {
+        "message": "- Adds new 'openedFromPhoneNumber' prop to the inbox sidebar",
+        "chars": 60
+    },
+    {
+        "message": "Shared some duration code and styling from email automations",
+        "chars": 60
+    },
+    {
+        "message": "This will help MCFX tie these back to particular submissions",
+        "chars": 60
+    },
+    {
+        "message": "- This is dismissible per-user if opened from sources section",
+        "chars": 61
+    },
+    {
+        "message": "- Right-aligned text always for failed and scheduled messages",
+        "chars": 61
+    },
+    {
+        "message": "This reverts commit 610c024ca11c29027c40a1da32ce91cc1fcb8f3c.",
+        "chars": 61
+    },
+    {
+        "message": "This reverts commit 339ce7342fe06c59c8e13ea15e089580a659b362.",
+        "chars": 61
+    },
+    {
+        "message": "This reverts commit abc69dbca3079cdbfef80aa7d8903f6fa2f3afea.",
+        "chars": 61
+    },
+    {
+        "message": "This reverts commit f512ff0bd864a9ec209380f5eec55e792f063d16.",
+        "chars": 61
+    },
+    {
+        "message": "This reverts commit 6897ff437c5651e7b60af2e5842a92bb705f0901.",
+        "chars": 61
+    },
+    {
+        "message": "This reverts commit 5efbd8e0a6c3200d52cae503bbb77190869148f8.",
+        "chars": 61
+    },
+    {
+        "message": "Fix auto focus not re-focusing on same entity different thread",
+        "chars": 62
+    },
+    {
+        "message": "- Added new \"Log activity\" trigger with shared activity fields",
+        "chars": 62
+    },
+    {
+        "message": "#\tclient/web/ui/email-marketing/templates/template-mutations.js",
+        "chars": 63
+    },
+    {
+        "message": "#\tclient/web/ui/email-marketing/templates/template-mutations.js",
+        "chars": 63
+    },
+    {
+        "message": "#\tclient/web/ui/landing-pages/create-page/create-page-button.js",
+        "chars": 63
+    },
+    {
+        "message": "This pattern feels a bit strange, but not fighting it right now.",
+        "chars": 64
+    },
+    {
+        "message": "It looks so weird, and I don't think a visual jump is a bad thing",
+        "chars": 65
+    },
+    {
+        "message": "This filter wasn't returning 'marketable' when filtering the list",
+        "chars": 65
+    },
+    {
+        "message": "Silly bug, if they have exactly 1 pipeline we won't show archived",
+        "chars": 65
+    },
+    {
+        "message": "Each answer will be its own meta property for the analytics event",
+        "chars": 65
+    },
+    {
+        "message": "The code diverged because 1.6.2 was never pushed up to our codebase",
+        "chars": 67
+    },
+    {
+        "message": "THe popover isn't flagged, so we might as well introduce everything",
+        "chars": 67
+    },
+    {
+        "message": "Refs: https://developers.google.com/tag-platform/security/guides/csp",
+        "chars": 68
+    },
+    {
+        "message": "#\tclient/web/ui/landing-pages/graphql/hooks/use-get-landing-pages.js",
+        "chars": 68
+    },
+    {
+        "message": "- The 'propertyOnUser' here needs to be the actual GraphQL type name.",
+        "chars": 69
+    },
+    {
+        "message": "- Made a reusable section header component to make this nice and easy",
+        "chars": 69
+    },
+    {
+        "message": "This is already blocked, but trying to reduce the number of redirects",
+        "chars": 69
+    },
+    {
+        "message": "We don't have knowledge of a thread here, small bug still but thats ok",
+        "chars": 70
+    },
+    {
+        "message": "Also turns off customization temporarily while we wait to turn this on",
+        "chars": 70
+    },
+    {
+        "message": "Logs are confusing CX, and it's unclear how these are getting blocked.",
+        "chars": 70
+    },
+    {
+        "message": "- Also made it so the sidebar doesn't shrink when the page content does",
+        "chars": 71
+    },
+    {
+        "message": "Had to move a number of things around to get the thread info we needed.",
+        "chars": 71
+    },
+    {
+        "message": "All of this \"just works\" it's just a matter of exposing it to the client",
+        "chars": 72
+    },
+    {
+        "message": "- Max width of 600px for wrapping messages (looks better, best practice)",
+        "chars": 72
+    },
+    {
+        "message": "Didn't make this dynamically update on the user manage page… such a PITA",
+        "chars": 72
+    },
+    {
+        "message": "- Extracted some styling from form header to reuse for subtitle component",
+        "chars": 73
+    },
+    {
+        "message": "Currently not wired up, but since we're in the beta group, doesn't matter!",
+        "chars": 74
+    },
+    {
+        "message": "Co-authored-by: Drew White <54377401+drewthemain@users.noreply.github.com>",
+        "chars": 74
+    },
+    {
+        "message": "Prevent mutating field options to avoid persistence between field insertion",
+        "chars": 75
+    },
+    {
+        "message": "Update client/web/ui/forms/form-page/create-rules/create-rules-card-lead.js",
+        "chars": 75
+    },
+    {
+        "message": "- New activity is now flowing through GraphQL and contains a lot more fields",
+        "chars": 76
+    },
+    {
+        "message": "Update client/web/ui/reports/activity/template-groups-via-email-report-cta.js",
+        "chars": 77
+    },
+    {
+        "message": "Different from StopCircleIcon, has more space, better looking for small spaces",
+        "chars": 78
+    },
+    {
+        "message": "In the case where GTM loads analytics, we don't want to double up the analyics",
+        "chars": 78
+    },
+    {
+        "message": "I'd like to confirm the MCFX audience id, since we're not seeing it in the logs.",
+        "chars": 80
+    },
+    {
+        "message": "We need to tie a page to a subdomain, which is technically an em_from_domain row",
+        "chars": 80
+    },
+    {
+        "message": "This was never implemented, but seems like a no-brainer. Implements this logic for…",
+        "chars": 83
+    },
+    {
+        "message": "- If GTM setting exists, insert our two templates into the correct place in the DOM",
+        "chars": 83
+    },
+    {
+        "message": "This doesnt block anything on the backend, but gets us 99% of the way for a real gate",
+        "chars": 85
+    },
+    {
+        "message": "- We'll use the instance from the context instead of passing it as a grahpql variable",
+        "chars": 85
+    },
+    {
+        "message": "- No need to muddy the state of the main content component for popover-only concerns.",
+        "chars": 85
+    },
+    {
+        "message": "- When failed or scheduled, the message content is still aligned with the user avatar",
+        "chars": 85
+    },
+    {
+        "message": "If scheduler booking, we'll show a the booking additional attendees, comma separated.",
+        "chars": 85
+    },
+    {
+        "message": "- Wiring this up also allows us to remove the state management in the component :tada:",
+        "chars": 86
+    },
+    {
+        "message": "Was accidentally removed in this PR: https://github.com/nutshellcrm/nutshell/pull/15132",
+        "chars": 87
+    },
+    {
+        "message": "Expected an ID, getting API ID from GraphQL. Need to accept both api id and integer ids",
+        "chars": 87
+    },
+    {
+        "message": "https://github.com/nutshellcrm/nutshell/commit/96508ce2ed536fa3ad34cf01b8b8d86e3d9d38cc",
+        "chars": 87
+    },
+    {
+        "message": "Was wired up as a one-off directly, this allows support from the collection file itself",
+        "chars": 87
+    },
+    {
+        "message": "Update client/web/ui/email/templates/template-groups/template-groups-email-report-cta.js",
+        "chars": 88
+    },
+    {
+        "message": "- Slight layout changes to get inbox send text button to relatively layout next to 'Call'",
+        "chars": 89
+    },
+    {
+        "message": "Trying to deprecate this thing. Can still access it via direct link, which I think is ok.",
+        "chars": 89
+    },
+    {
+        "message": "Can't space-bar select the button card, didn't have the right hover state, both fixed now",
+        "chars": 89
+    },
+    {
+        "message": "Fixes flow, and more correct on how we should handle the submission promise + refetch flow",
+        "chars": 90
+    },
+    {
+        "message": "https://stackoverflow.com/questions/65100704/gtm-not-propagating-nonce-to-custom-html-tags",
+        "chars": 90
+    },
+    {
+        "message": "Not feature complete, styling needs work, code needs work - enough to test out pages in app",
+        "chars": 91
+    },
+    {
+        "message": "Realized I called the wrong action – might be overloading this but wanted to get it working.",
+        "chars": 92
+    },
+    {
+        "message": "Not wired up to _stop_ showing up, need to figure out how much work we want to put into this",
+        "chars": 92
+    },
+    {
+        "message": "- Reworks our interaction with openableModals to allow passing optional phone number through",
+        "chars": 92
+    },
+    {
+        "message": "https://sansec.io/research/polyfill-supply-chain-attack + we don't need to support IE11 anymore",
+        "chars": 95
+    },
+    {
+        "message": "Accidentally removed the partial in this PR: https://github.com/nutshellcrm/nutshell/pull/13570",
+        "chars": 95
+    },
+    {
+        "message": "Trying out extending AbstractEdition to be an abstraction of email\\sms, not drips and \"editoins\"",
+        "chars": 96
+    },
+    {
+        "message": "If you navigate to a /entity/id#chat link, the leads haven't loaded, and we expect an array here.",
+        "chars": 97
+    },
+    {
+        "message": "Updated PopoverSort component, with the optional \"footerRow\" at the bottom for additional options.",
+        "chars": 98
+    },
+    {
+        "message": "- ContactCardCreateable ends up getting more powerful, less state management happening in form land",
+        "chars": 99
+    },
+    {
+        "message": "Need to specify \"summarization\" in our components since we're tracking usage of multiple things now",
+        "chars": 99
+    },
+    {
+        "message": "- If a custom pipeline limit is present, we will respect it, regardless of how old the instance is.",
+        "chars": 99
+    },
+    {
+        "message": "This will auto-close other sections – not sure if that's the behavior we want, but wanted to try it.",
+        "chars": 100
+    },
+    {
+        "message": "We're making this an opt-in so nobody can embed their landing pages without explicit support approval",
+        "chars": 101
+    },
+    {
+        "message": "Need to do this in CSS (not w/ listSpacing) because the spacing only looks good when the labels exist",
+        "chars": 101
+    },
+    {
+        "message": "We don't use the full GraphQL type for displaying, no reason to pass and recreate it across the system",
+        "chars": 102
+    },
+    {
+        "message": "- New function for hiding sidebar (separating responsibilities, previously it was a \"get and maybe show\"",
+        "chars": 104
+    },
+    {
+        "message": "In this case, 'strings' is isolated to 6 fields, \"contact/accountPhones\", \"contact/accountAddresses\" and",
+        "chars": 104
+    },
+    {
+        "message": "Not sure how this happens, but we want to ensure that when someone loses the \"name\" field it self-heals.",
+        "chars": 104
+    },
+    {
+        "message": "- Added some helpers for generating \"output fields\" to hopefully make output more consistent and dynamic",
+        "chars": 104
+    },
+    {
+        "message": "Originally just want to move the sliderVariants const out of the component, but then added addl clean-up",
+        "chars": 104
+    },
+    {
+        "message": "This wires up the landing pages full page preview, as well as remove the sidebar from the forms preview.",
+        "chars": 104
+    },
+    {
+        "message": "- Moving logic to an action on the backend to determine user-facing string w/ creator and origin of email",
+        "chars": 105
+    },
+    {
+        "message": "This is helpful for exposing our GraphQL API documentation for internal consumers building against our API",
+        "chars": 106
+    },
+    {
+        "message": "This was never implemented, since the icon variant expected this to be in a button context with a background",
+        "chars": 108
+    },
+    {
+        "message": "\"More options button\" was intended to have a primary click target, and then the chevron be a separate button",
+        "chars": 108
+    },
+    {
+        "message": "Ended up going to the react route for simplicity. The browser likes transform + scale for fast painting speed",
+        "chars": 109
+    },
+    {
+        "message": "- We'll show a separate sidebar in the \"context\" of landing pages, which only exposes landing pages and domains.",
+        "chars": 112
+    },
+    {
+        "message": "- Moved landing pages routes into shared routes (since they're now shared in embedded and non-embedded contexts!)",
+        "chars": 113
+    },
+    {
+        "message": "- Need to support a dynamic (per page load) nonce, which means we need to dynamically update the CSP on each load",
+        "chars": 113
+    },
+    {
+        "message": "From the Template List page, users can now Archive and Unarchive templates. Currently does not update until refresh.",
+        "chars": 116
+    },
+    {
+        "message": "From the Template List page, users can now Archive and Unarchive templates. Currently does not update until refresh.",
+        "chars": 116
+    },
+    {
+        "message": "SelectPickerMulti never got the updated disabled styles. Didn't feel like taking the effort to consolidate and share",
+        "chars": 116
+    },
+    {
+        "message": "We'll need a stronger system on the backend for enumerating stubbed entities, but getting something to work for now.",
+        "chars": 116
+    },
+    {
+        "message": "Can put css variables in a css variable. This was only breaking in prod because of how our local variable setup works",
+        "chars": 117
+    },
+    {
+        "message": "URL param is dynamic, server can't render this because we clip on a circle, makes more sense for the client to do it.",
+        "chars": 117
+    },
+    {
+        "message": "Yet another iteration of pipeline limitations. We're dealing with a number of factors, but the biggest change here is:",
+        "chars": 118
+    },
+    {
+        "message": "Previously we were migrating lead routes to ENTITY_CHANGED triggers, when really they should be STAGE_CHANGED triggers.",
+        "chars": 119
+    },
+    {
+        "message": "- Simplified helper method function definition – can infer the length of the selected contacts instead of passing it in.",
+        "chars": 120
+    },
+    {
+        "message": "Need to figure out why the plan-comparison css file isn't being created, but this should paper around the problem for now",
+        "chars": 121
+    },
+    {
+        "message": "- This matches the pipeline list - we don't need a container here and this reduces the pixels on the screen significantly.",
+        "chars": 122
+    },
+    {
+        "message": "- Fixed useEffect to only reset for props (the other parts were redundant and covered in the useEffect in prospector-page)",
+        "chars": 122
+    },
+    {
+        "message": "\"contact/accountEmails\" - these had a different format that we missed when migrating over to a shared system w/ lead cards.",
+        "chars": 123
+    },
+    {
+        "message": "Some of these are duplicated, but we're inconsistent on viewbox, fill color (not all are currentColor, etc) so this unifies that.",
+        "chars": 129
+    },
+    {
+        "message": "This also improves our prevention system to show a list of reasons instead of just \"required items\" since some can't be fixed now.",
+        "chars": 130
+    },
+    {
+        "message": "NOTE: This does not work. We believe that GraphQL does not support two layers of inherentence (at least when it comes to Interfaces)",
+        "chars": 132
+    },
+    {
+        "message": "This was caused by analytics status failing. This frontend should not be crashing the page, but this fixes the erroring query first.",
+        "chars": 132
+    },
+    {
+        "message": "About to replace, but still used in email sequence template v1 list, don't want to go through effort of deleting that branch of code",
+        "chars": 132
+    },
+    {
+        "message": "This commit also reworks the pipeline list to tell people how many pipelines are hidden, using the canAccess (or lack thereof) property",
+        "chars": 135
+    },
+    {
+        "message": "We don't wanna use \"new\" anymore, and we want to forcibly redirect away from the old billing page, in case there are dotcom links to it.",
+        "chars": 136
+    },
+    {
+        "message": "Memoizing a few obvious things, should probably move schema up in the chain but don't need to do this for performance (just better code)",
+        "chars": 136
+    },
+    {
+        "message": "- Decided not to use HTML parsing to insert the two tags, since it's slow and needs to happen on each load. The strpos is jank but works.",
+        "chars": 137
+    },
+    {
+        "message": "This stupid const was hidden - this makes Italy appear when selecting 'State' as the top-level location filter type under 'Exact location'",
+        "chars": 138
+    },
+    {
+        "message": "We had a jank modal that predated our new timeline styling, and we never went back and unified the two. This commit removes that entirely.",
+        "chars": 138
+    },
+    {
+        "message": "Empty white space was being created by this commit: https://github.com/nutshellcrm/nutshell/commit/e72ce03050d9dbfe4c46d68f2eb436d29aad615d",
+        "chars": 139
+    },
+    {
+        "message": "We now load the MCFX analytics script dynamically too instead of on publish. Because of this, we now strip the existing one dynamically too",
+        "chars": 139
+    },
+    {
+        "message": "Fixes some routes, and makes the SMS marketing setup process a bit more 'marketing'-focused - using Broadcast terminology and some redirects",
+        "chars": 140
+    },
+    {
+        "message": "This is expected, and we shouldn't be throwing an error when this occurs. Too much noise. Eventually we should warn users, but not right now.",
+        "chars": 141
+    },
+    {
+        "message": "I'd love to be able to show this to select internal instances as documentation. We hide this for security reasons so it should stay internal.",
+        "chars": 141
+    },
+    {
+        "message": "For MCFX customers that just have access to Nutshell Campaigns, they need the ability to edit domains and sender addresses. This provides that.",
+        "chars": 143
+    },
+    {
+        "message": "Fixes a regression where all three marketing cross sell pages were enabled for everyone, intention is only for the SEO scan to be available to all",
+        "chars": 146
+    },
+    {
+        "message": "Wires up the PagePreview mutation, as well as PagePreview action, which in turn calls HtmlMaterialize. Need to add tests, but wanted to get a POC up",
+        "chars": 148
+    },
+    {
+        "message": "We need this for legacy reasons. This specifically fixes an error from the outlook extension where we expect the fields array to contain the `owner` key",
+        "chars": 152
+    },
+    {
+        "message": "In order to do this, we simply needed to support this on the backend, which was _pretty much_ there (the PHP return types were right) but the code wasn't",
+        "chars": 153
+    },
+    {
+        "message": "Since we stopped showing character count when unfocused, the merge field button couldn't be clicked because the click would unfocus and unmount the popover.",
+        "chars": 156
+    },
+    {
+        "message": "Only want to show this for 'always-on' or 'invisible' mode. The real goal here is to provide confidence invisible mode is even doing anything for customers.",
+        "chars": 156
+    },
+    {
+        "message": "This adds a data-type-form to every Nutshell form in hopes of making it easier for the event capturing done via MCFX to know where the form is originating from",
+        "chars": 159
+    },
+    {
+        "message": "https://github.com/nutshellcrm/nutshell/commit/b01775b7d83c1a08c8f0856d27cb1d7ffb38c78b#diff-aa5ed3b1c5a0e94035c4e798aa91ca55b95746591e06272fd889d0e88cbda3b5L8",
+        "chars": 159
+    },
+    {
+        "message": "overflow: hidden combined with our content not quite matching is causing a bug where focusing the BEE editor shifts the compare content bar behind the status bar.",
+        "chars": 162
+    },
+    {
+        "message": "Nothing was broken, but Flow couldn't handle spiraling card updates (e.g. changes to existing shells) and it was slowing down our workflow within the web directory.",
+        "chars": 164
+    },
+    {
+        "message": "The rcmoobile app has fallen out of fashion, and the 'right' way to do this is to let the user configure their computer to open tel: links w/ the new RingCentral App",
+        "chars": 165
+    },
+    {
+        "message": "Some instances don't have pinned domains, but they still have user emails on contacts. These are fundamentally the same as internal addresses, so we should mark them as such",
+        "chars": 173
+    },
+    {
+        "message": "Not sure why this broke in the new nav, likely a DOM ordering problem. There's only a few of these left in the old world that are affected, so just blocklisted certain events",
+        "chars": 174
+    },
+    {
+        "message": "We changed the way audiences and tags are configured on the backend, and never updated this jank javascript to make it work. Didn't feel like refactoring was worth it right now.",
+        "chars": 177
+    },
+    {
+        "message": "MCFX has a help widget in the bottom right corner, occasionally we have an Intercom widget down there, etc – we shouldn't hide stuff in that corner, so moving the save button up.",
+        "chars": 178
+    },
+    {
+        "message": "This fixes a regression where changing settings filters _after_ other filters were applied wouldn't reset selection. Any filter that triggers a re-query should reset the selection.",
+        "chars": 180
+    },
+    {
+        "message": "We previously encoded the phone number for the old RC app. Not sure if we needed to or not, but NOW the numbers do not need to be URL encoded to work with the 2024 RingCentral client.",
+        "chars": 183
+    },
+    {
+        "message": "OOC = out of credits. We think telling people they're using a credit every time they click the button is more annoying than being shown you can't do anything unexpectedly after 5 usages",
+        "chars": 185
+    },
+    {
+        "message": "Mainly for WebFX, but this adds the ability to setup a goal where an audience member is added to an audience. Sometimes helpful when transitioning members from one audience to the next.",
+        "chars": 185
+    },
+    {
+        "message": "Our \"empty state\" is more on an onboarding state. This adds an additional CTA to the empty state which then shows a more helpful \"tell the user what to do\" state to get them adding filters.",
+        "chars": 189
+    },
+    {
+        "message": "Because this ratio wasn't 16:9, it was scaling horribly, causing the rendered height to be fractional pixels and not looking centered. I believe this to be a safe change based on some cursory QA",
+        "chars": 194
+    },
+    {
+        "message": "This commit unshares 6 components shared via shells to both web and email by re-creating dummy components (that do nothing) as placeholders until we're ready to re-commit to our email extension.",
+        "chars": 194
+    },
+    {
+        "message": "We recently added a getAction to the EmailController, but because of our loose routing rules and the fact it was above the cgetReportAction, it was being improperly hit when requesting the report.",
+        "chars": 196
+    },
+    {
+        "message": "We expected _some_ value from our omni-save of the setup form, and since that UI was behind it flag it wasn't saving. Since this has been released for all, removing the code instead of fixing the code.",
+        "chars": 201
+    },
+    {
+        "message": "This is deprecated, don't want to show \"coming soon\" for a feature that's not being developed. Don't want to allow users to reconfigure domains and competitors since we don't query for the data anymore.",
+        "chars": 202
+    },
+    {
+        "message": "We were hitting Recurly for plans but not really using anything from Recurly that can't be hardcoded. We already have a reliance on 5 hardcoded keys for the comparison, so felt right to avoid a live API call",
+        "chars": 207
+    },
+    {
+        "message": "Just because classic is less money doesn't mean Foundation (previously to the right) is an upgrade. We want to convey this to classic customers. Our plans API provides the \"correct\" order which is by capability",
+        "chars": 210
+    },
+    {
+        "message": "Tough choice here, but I did this because I'm anticipating these changing based on design feedback and other requirements as this feature progresses, and wanted to optimize for speedy iteration and fewer moving parts",
+        "chars": 216
+    },
+    {
+        "message": "Fixes a bug where we weren't providing react select with default options, so without typing it looked to the user like there weren't tags. I'm not 100% sure why this wasn't always happening, but didn't try to figure it out",
+        "chars": 222
+    },
+    {
+        "message": "Unfortunately, this also means removing some of the most helpful behavior from it which is no longer supported. We now hard delete MCFX form submission raw data once its processed, which means we can't show it here anymore.",
+        "chars": 223
+    },
+    {
+        "message": "We've decided that the act of previewing landing pages changes should trigger a \"materialize\" action of the bee body json, so this makes the landing page preview component fire a _mutation_ rather than a query, for semantics",
+        "chars": 224
+    },
+    {
+        "message": "This commit fixes a WIP \"form preview\" page that was never working, and updates our layouts so that we have a single \"full page preview\" layout that is responsible for taking an entityName and entityId and rendering the correct content.",
+        "chars": 236
+    },
+    {
+        "message": "The way BEE is configured is via the same bee.start() method, but instead passing a different token for landing pages. This commit adds a param to our token query to allow for dynamic initialization of BEE products (email vs. landing pages)",
+        "chars": 240
+    },
+    {
+        "message": "We purposefully hide the tooltip when dragging occurs, but this shouldn't happen at the RenderedValue level, but rather when someone actually goes to drag. This commit prevents the tooltip from rebuilding on every render, which was insanely slow",
+        "chars": 245
+    },
+    {
+        "message": "This removes the react-joyride package from client/web, along with all demo silo joyride code. There's an additional main-app joyride that was removed (email sequence template onboarding) that I didn't think was worth keeping around to maintain.",
+        "chars": 245
+    },
+    {
+        "message": "Previously if the analytics status request wasn't finished we wouldn't try to show page content. This is bad UX in general and feels slower than it needs to, but if this request fails the page content never loads, which is not necessary to prevent",
+        "chars": 247
+    },
+    {
+        "message": "Rips out the HashRouter (not recommended to use anymore) in favor of a simple index state. Might not be the best solution but gets everything working. Goal here is to make it so hitting \"Next\" saves, and routes to the next slide on callback success",
+        "chars": 248
+    },
+    {
+        "message": "There's a bug here that puts every new stream content on a newline. This is because our ReactQuill component will slap a <p> tag around any changes and treat it like HTML. Going to have to get creative on preventing this behaivor since it's all internal",
+        "chars": 253
+    },
+    {
+        "message": "13 years ago we decided to throw an exception when asking for the loggedByUser, but in our GraphQL world we want to request this frequently. Current patterns point us towards just returning `null` and handling this closer to the source if we want to throw an exception.",
+        "chars": 269
+    },
+    {
+        "message": "I believe this is caused because our inner-container's height is slightly too big, and the way the browser decides how to render overflow: hidden changes when we focus something in the bee editor (I think they scroll something into position?) – either way, adds a jank fix to make this work.",
+        "chars": 291
+    },
+    {
+        "message": "We've tried a few things to get GTM working inside of landing pages, and it usually works, but there are situations where child scripts get loaded via GTM-loaded scripts, and if those don't implement the 'nonce' security tag then it doesn't work for us. This is a slegehammer approach that will allow us to omit passing our CSP to any instance we deem secure via a setting in the DB.",
+        "chars": 383
+    },
+    {
+        "message": "We're calling out of shells to a redux-form related component, which I believe is somehow increasing the surface area of our flow coverage (good) but some of the new area started to fail. Some errors required upgrading from redux-form 8.1.0 to 8.2.3 (https://github.com/redux-form/redux-form/issues/4434, specifically we needed) and then the other errors required slightly better typing on our end. No functionality changes in this commit.",
+        "chars": 439
+    }
+]
