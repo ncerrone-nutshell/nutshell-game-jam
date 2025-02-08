@@ -1,3 +1,4 @@
+import { CompletedTaskType, TaskType } from './computer-screen';
 import './console-content.css';
 
 export enum ConsoleContentItemType {
@@ -11,10 +12,11 @@ type ConsoleContentProps = {
     score: number;
     days: number;
     life: number;
+    completedTasks: CompletedTaskType;
 };
 
 export function ConsoleContent(props: ConsoleContentProps) {
-    const { onTriggerEvent } = props;
+    const { onTriggerEvent, completedTasks } = props;
 
     return (
         <div className="console-content">
@@ -42,14 +44,26 @@ export function ConsoleContent(props: ConsoleContentProps) {
                 </ConsoleContentItem>
             </div>
             <div className="console-content-status">
-                <div className="console-content-status-score">
-                    Score: {props.score}
+                <div className="console-content-status-title">
+                    Current release:
                 </div>
-                <div className="console-content-status-life">
-                    Life: {props.life}
-                </div>
-                <div className="console-content-status-days">
-                    Days: {props.days}
+                {Object.entries(completedTasks).map(([task, score]) => (
+                    <div key={task} className="console-content-status-item">
+                        <div>{task}</div>
+                        <div>completed: {score.completedCount}</div>
+                        <div>score: {score.score}</div>
+                    </div>
+                ))}
+                <div className="console-content-status-item">
+                    <div className="console-content-status-score">
+                        Score: {props.score}
+                    </div>
+                    <div className="console-content-status-life">
+                        Life: {props.life}
+                    </div>
+                    <div className="console-content-status-days">
+                        Days: {props.days}
+                    </div>
                 </div>
             </div>
         </div>
