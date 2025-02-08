@@ -2,6 +2,7 @@ import { Euler, Vector3 } from 'three';
 import { MainComputer } from './main-computer';
 import { Desk } from './prototype/desk';
 import { Computer } from './prototype/computer';
+import { CeilingLight } from './prototype/ceiling-light';
 
 const FORWARD_EULER = new Euler(0, 0, 0);
 const REVERSE_EULER = new Euler(0, Math.PI, 0);
@@ -35,12 +36,29 @@ const COMPUTER_CONFIG = [
     { position: new Vector3(50, 0, -45), rotation: REVERSE_EULER },
 ];
 
-export function OfficeSpace() {
+const CEILING_LIGHT_CONFIG = [
+    { position: new Vector3(0, 20, -5), activeLights: false },
+    { position: new Vector3(50, 20, -5) },
+    { position: new Vector3(0, 20, -40) },
+    { position: new Vector3(50, 20, -40) },
+];
+
+type Props = {
+    activeLights: boolean;
+};
+
+export function OfficeSpace(props: Props) {
     return (
         <>
             <group>
-                <ambientLight />
-                <pointLight position={[1, 1, 1]} />
+                {/* LIGHTING */}
+                {props.activeLights && (
+                    <>
+                        <ambientLight intensity={0.1} color={'#d77d24'} />
+                        <ambientLight intensity={0.1} color={'#e4f13d'} />
+                        <ambientLight intensity={0.2} color={'#515dea'} />
+                    </>
+                )}
                 <MainComputer />
                 {DESK_CONFIG.map((config, index) => (
                     <Desk
@@ -87,6 +105,17 @@ export function OfficeSpace() {
                     <boxGeometry />
                     <meshStandardMaterial color={'#fff'} />
                 </mesh>
+                {/* CEILING LIGHTS */}
+                {CEILING_LIGHT_CONFIG.map((config, index) => (
+                    <CeilingLight
+                        key={index}
+                        position={config.position}
+                        rotation={FORWARD_EULER}
+                        activeLights={
+                            (config.activeLights ?? true) && props.activeLights
+                        }
+                    />
+                ))}
             </group>
         </>
     );

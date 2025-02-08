@@ -23,6 +23,12 @@ export function MainComputer() {
                         <ComputerScreen />
                     </Html>
                 </mesh>
+                <pointLight
+                    position={[0, 0, 3]}
+                    intensity={10}
+                    receiveShadow
+                    color={'#f3e8bb'}
+                />
             </group>
         </>
     );
