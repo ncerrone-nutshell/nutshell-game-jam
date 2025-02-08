@@ -3,6 +3,7 @@ import { BrowserHeader } from './browser-header';
 import { ConsoleContainer } from './console-container';
 import { ConsoleContentItemType } from './console-content';
 import { TaskContainer } from './task-container';
+import { RequiredTaskNotifications } from './required-task-notifications';
 
 import './computer-screen.css';
 
@@ -24,6 +25,7 @@ export function ComputerScreen() {
                     activeTab={activeTab}
                 />
                 <div className="content">
+                    <RequiredTaskNotifications />
                     <TaskContainer activeTab={activeTab} />
                     <ConsoleContainer
                         onTriggerEvent={(type: ConsoleContentItemType) => {

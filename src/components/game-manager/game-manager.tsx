@@ -45,8 +45,9 @@ export type GameContextType = {
     day: number;
     score: number;
     completedTasks: CoreTaskTypeState;
-    events: RandomEvent[];
+    events: Event[];
     sprintMeterValue: number;
+    requiredTasks: Event[];
     dispatch: (action: Action) => void;
 };
 
@@ -54,12 +55,13 @@ export type GameState = {
     day: number;
     score: number;
     completedTasks: CoreTaskTypeState;
-    events: RandomEvent[];
+    events: Event[];
     sprintMeterValue: number;
+    requiredTasks: Event[];
 };
 
 const SPRINT_METER_MAX = 100;
-const SPRINT_METER_DECAY_RATE = 5; // The rate at which the sprint meter decays per second
+const SPRINT_METER_DECAY_RATE = 0.5; // The rate at which the sprint meter decays per second
 const DAY_TIMER = 5; // 5 seconds
 
 export const GAME_STATE_DEFAULTS: GameState = {
@@ -68,6 +70,7 @@ export const GAME_STATE_DEFAULTS: GameState = {
     completedTasks: CORE_TASKS_INITIAL_STATE,
     events: [],
     sprintMeterValue: SPRINT_METER_MAX,
+    requiredTasks: [],
 };
 
 export const GAME_CONTEXT_DEFAULTS: GameContextType = {
@@ -79,7 +82,7 @@ export const GameContext = React.createContext<GameContextType>(
     GAME_CONTEXT_DEFAULTS
 );
 
-import { generateRandomEvents, RandomEvent } from './helpers';
+import { generateRandomEvents, Event } from './helpers';
 
 type Action = {
     type: ActionType;
@@ -118,6 +121,16 @@ function reducer(state: GameState, action: Action) {
                 completedTasks: CORE_TASKS_INITIAL_STATE,
             };
         }
+        case ActionType.StartRequiredTask: {
+            return {
+                ...state,
+                requiredTasks: addRequiredTask(
+                    state.requiredTasks,
+                    action.payload.task
+                ),
+                events: removeEventById(state.events, action.payload.task.id),
+            };
+        }
         case ActionType.CompleteTask: {
             const taskScore = getTaskScore(
                 action.payload.type,
@@ -138,6 +151,10 @@ function reducer(state: GameState, action: Action) {
     throw Error('Unknown action: ' + action.type);
 }
 
+function removeEventById(events: Event[], id: string) {
+    return events.filter((event) => event.id !== id);
+}
+
 function updateCompletedTasks(
     completedTasks: CoreTaskTypeState,
     type: CoreTaskType,
@@ -153,6 +170,10 @@ function updateCompletedTasks(
     };
 }
 
+function addRequiredTask(requiredTasks: Event[], task: Event) {
+    return [...requiredTasks, task];
+}
+
 // TODO: implement this
 function getTaskScore(type: TaskType, score: number) {
     return score;
@@ -166,6 +187,7 @@ export enum ActionType {
     SetEvents = 'set_events',
     CompleteTask = 'complete_task',
     PushRelease = 'push_release',
+    StartRequiredTask = 'start_required_task',
 }
 
 export const GameManager = () => {
@@ -201,6 +223,7 @@ export const GameManager = () => {
                     completedTasks: state.completedTasks,
                     events: state.events,
                     score: state.score,
+                    requiredTasks: state.requiredTasks,
                     dispatch,
                 }}
             >
