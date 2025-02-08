@@ -1,10 +1,9 @@
 import { Euler, Vector3 } from 'three';
 import { MainComputer } from './main-computer';
-import { Desk } from './prototype/desk';
-import { Computer } from './prototype/computer';
 import { CeilingLight, CeilingLightProps } from './prototype/ceiling-light';
 import { EnvironmentProps } from './helpers';
 import { Monitor } from './Monitor';
+import { Desk } from './desk';
 
 const FORWARD_EULER = new Euler(0, 0, 0);
 const REVERSE_EULER = new Euler(0, Math.PI, 0);
@@ -25,17 +24,17 @@ const DESK_CONFIG: EnvironmentProps[] = [
 ];
 
 const COMPUTER_CONFIG: EnvironmentProps[] = [
-    { position: new Vector3(25, 0, 0), rotation: FORWARD_EULER },
-    { position: new Vector3(50, 0, 0), rotation: FORWARD_EULER },
-    { position: new Vector3(0, 0, -10), rotation: REVERSE_EULER },
-    { position: new Vector3(25, 0, -10), rotation: REVERSE_EULER },
-    { position: new Vector3(50, 0, -10), rotation: REVERSE_EULER },
-    { position: new Vector3(0, 0, -35), rotation: FORWARD_EULER },
-    { position: new Vector3(25, 0, -35), rotation: FORWARD_EULER },
-    { position: new Vector3(50, 0, -35), rotation: FORWARD_EULER },
-    { position: new Vector3(0, 0, -45), rotation: REVERSE_EULER },
-    { position: new Vector3(25, 0, -45), rotation: REVERSE_EULER },
-    { position: new Vector3(50, 0, -45), rotation: REVERSE_EULER },
+    { position: new Vector3(25, 1.15, 0), rotation: FORWARD_EULER },
+    { position: new Vector3(50, 1.15, 0), rotation: FORWARD_EULER },
+    { position: new Vector3(0, 1.15, -10), rotation: REVERSE_EULER },
+    { position: new Vector3(25, 1.15, -10), rotation: REVERSE_EULER },
+    { position: new Vector3(50, 1.15, -10), rotation: REVERSE_EULER },
+    { position: new Vector3(0, 1.15, -35), rotation: FORWARD_EULER },
+    { position: new Vector3(25, 1.15, -35), rotation: FORWARD_EULER },
+    { position: new Vector3(50, 1.15, -35), rotation: FORWARD_EULER },
+    { position: new Vector3(0, 1.15, -45), rotation: REVERSE_EULER },
+    { position: new Vector3(25, 1.15, -45), rotation: REVERSE_EULER },
+    { position: new Vector3(50, 1.15, -45), rotation: REVERSE_EULER },
 ];
 
 const CEILING_LIGHT_CONFIG: CeilingLightProps[] = [

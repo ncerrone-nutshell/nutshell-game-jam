@@ -1,6 +1,5 @@
 import './main-computer.css';
 import { Html } from '@react-three/drei';
-import { Computer } from './prototype/computer';
 import { GameContext } from '../game-manager/game-manager';
 import { useContext } from 'react';
 import { ComputerScreenProvider } from '../layout/computer-screen-provider';
@@ -12,7 +11,7 @@ export function MainComputer() {
 
     return (
         <>
-            <group position={[0, 0.5, 0]}>
+            <group position={[0, 1.4, 0]}>
                 <Monitor position={[0, 0, 0.7]} scale={[1.1, 1.1, 1.1]} />
                 <mesh>
                     <Html

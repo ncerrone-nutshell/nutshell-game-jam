@@ -1,10 +1,11 @@
+import { NutCamera } from './components/camera/nut-camera';
 import { OfficeSpace } from './components/environment/office-space';
-import { OrbitControls } from '@react-three/drei';
 
 export function App() {
     return (
         <>
-            <OrbitControls />
+            {/* <OrbitControls /> */}
+            <NutCamera />
             {/* TODO: Toggle on and off active lights as a random event */}
             <OfficeSpace activeLights={true} />
         </>
