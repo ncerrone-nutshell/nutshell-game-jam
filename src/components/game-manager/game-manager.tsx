@@ -4,6 +4,8 @@ import { useReducer } from 'react';
 
 import { App } from '../../app';
 
+import { GlobalUI } from './global-ui';
+
 export enum TaskType {
     Coding = 'coding',
     Review = 'review',
@@ -39,7 +41,27 @@ export const CORE_TASKS_INITIAL_STATE: CoreTaskTypeState = {
     },
 };
 
-import { GlobalUI } from './global-ui';
+export enum Difficulty {
+    Easy = 1,
+    Medium = 2,
+    Hard = 3,
+}
+
+export const DIFFICULTY_DAY_THRESHOLDS: {
+    [key in Difficulty]: number;
+} = {
+    [Difficulty.Easy]: 10,
+    [Difficulty.Medium]: 20,
+    [Difficulty.Hard]: 30,
+};
+
+export const DIFFICULTY_DISPLAY_NAME_MAP: {
+    [key in Difficulty]: string;
+} = {
+    [Difficulty.Easy]: 'Jr. Software Engineer',
+    [Difficulty.Medium]: 'Software Engineer',
+    [Difficulty.Hard]: 'Senior Software Engineer',
+};
 
 export type GameContextType = {
     day: number;
@@ -48,6 +70,7 @@ export type GameContextType = {
     events: Event[];
     sprintMeterValue: number;
     requiredTasks: Event[];
+    difficulty: Difficulty;
     dispatch: (action: Action) => void;
 };
 
@@ -58,6 +81,7 @@ export type GameState = {
     events: Event[];
     sprintMeterValue: number;
     requiredTasks: Event[];
+    difficulty: Difficulty;
 };
 
 const SPRINT_METER_MAX = 100;
@@ -71,6 +95,7 @@ export const GAME_STATE_DEFAULTS: GameState = {
     events: [],
     sprintMeterValue: SPRINT_METER_MAX,
     requiredTasks: [],
+    difficulty: Difficulty.Easy,
 };
 
 export const GAME_CONTEXT_DEFAULTS: GameContextType = {
@@ -82,7 +107,7 @@ export const GameContext = React.createContext<GameContextType>(
     GAME_CONTEXT_DEFAULTS
 );
 
-import { generateRandomEvents, Event } from './helpers';
+import { generateRandomEvents, Event, getNewDifficulty } from './helpers';
 
 type Action = {
     type: ActionType;
@@ -94,10 +119,13 @@ function reducer(state: GameState, action: Action) {
         case ActionType.IncrementDay: {
             const newEvents = generateRandomEvents(state.day);
 
+            const newDifficulty = getNewDifficulty(state.difficulty, state.day);
+
             return {
                 ...state,
                 day: state.day + 1,
                 events: [...state.events, ...newEvents],
+                difficulty: newDifficulty,
             };
         }
         case ActionType.DecrementSprintMeter: {
@@ -224,6 +252,7 @@ export const GameManager = () => {
                     events: state.events,
                     score: state.score,
                     requiredTasks: state.requiredTasks,
+                    difficulty: state.difficulty,
                     dispatch,
                 }}
             >

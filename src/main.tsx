@@ -6,6 +6,8 @@ import { GameManager } from './components/game-manager/game-manager.tsx';
 
 import './index.css';
 
+export const DEV_MODE = true;
+
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <Canvas shadows>

@@ -3,6 +3,7 @@ export enum EventType {
     CsvImport = 'csv-import',
     AdoptionReport = 'adoption-report',
 }
+import { Difficulty, DIFFICULTY_DAY_THRESHOLDS } from './game-manager';
 
 export interface Event {
     user: string;
@@ -104,4 +105,17 @@ export function getTimeLeftPercentage(event: Event): number {
         endTimestampMilliseconds - currentTimeMilliseconds;
 
     return timeLeftMilliseconds / timeToCompleteMilliseconds;
+}
+
+export function getNewDifficulty(
+    currentDifficulty: Difficulty,
+    day: number
+): Difficulty {
+    const dayThreshold = DIFFICULTY_DAY_THRESHOLDS[currentDifficulty];
+
+    if (day >= dayThreshold) {
+        return Math.min(Difficulty.Hard, currentDifficulty + 1);
+    }
+
+    return currentDifficulty;
 }

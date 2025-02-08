@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { DIFFICULTY_DISPLAY_NAME_MAP } from '../game-manager/game-manager';
 import { GameContextForwarded } from './computer-screen-provider';
 import './console-content.css';
 
@@ -13,7 +14,7 @@ type ConsoleContentProps = {
 };
 
 export function ConsoleContent(props: ConsoleContentProps) {
-    const { day, score, completedTasks, sprintMeterValue } =
+    const { day, score, completedTasks, sprintMeterValue, difficulty } =
         useContext(GameContextForwarded);
     const { onTriggerEvent } = props;
 
@@ -62,6 +63,9 @@ export function ConsoleContent(props: ConsoleContentProps) {
                     </div>
                     <div className="console-content-status-days">
                         Days: {day}
+                    </div>
+                    <div className="console-content-status-difficulty">
+                        Difficulty: {DIFFICULTY_DISPLAY_NAME_MAP[difficulty]}
                     </div>
                 </div>
             </div>
