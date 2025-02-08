@@ -1,7 +1,7 @@
 import './task.css';
 
 interface FigmaTaskContainerProps {
-    onComplete: () => void;
+    onComplete: (score: number) => void;
 }
 
 export function FigmaTaskContainer(props: FigmaTaskContainerProps) {
@@ -9,7 +9,7 @@ export function FigmaTaskContainer(props: FigmaTaskContainerProps) {
         <button
             className="task-button figma"
             onClick={() => {
-                props.onComplete();
+                props.onComplete(1);
             }}
         >
             Create mock-up

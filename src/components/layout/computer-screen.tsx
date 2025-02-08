@@ -45,8 +45,8 @@ export function ComputerScreen() {
                 <div className="content">
                     <TaskContainer
                         activeTab={activeTab}
-                        onComplete={() => {
-                            setScore(score + 1);
+                        onComplete={(taskScore) => {
+                            setScore(score + taskScore);
                         }}
                     />
                     <ConsoleContainer

@@ -9,7 +9,7 @@ import './task-container.css';
 
 interface TaskContainerProps {
     activeTab: Tab;
-    onComplete: () => void;
+    onComplete: (score: number) => void;
 }
 
 export function TaskContainer(props: TaskContainerProps) {
@@ -17,22 +17,22 @@ export function TaskContainer(props: TaskContainerProps) {
         <div className="task-container">
             {props.activeTab === Tab.Coding && (
                 <CodingTaskContainer
-                    onComplete={() => {
-                        props.onComplete();
+                    onComplete={(score) => {
+                        props.onComplete(score);
                     }}
                 />
             )}
             {props.activeTab === Tab.Review && (
                 <ReviewTaskContainer
-                    onComplete={() => {
-                        props.onComplete();
+                    onComplete={(score) => {
+                        props.onComplete(score);
                     }}
                 />
             )}
             {props.activeTab === Tab.Figma && (
                 <FigmaTaskContainer
-                    onComplete={() => {
-                        props.onComplete();
+                    onComplete={(score) => {
+                        props.onComplete(score);
                     }}
                 />
             )}

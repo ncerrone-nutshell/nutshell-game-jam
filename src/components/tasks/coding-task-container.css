@@ -1,0 +1,76 @@
+.commit-container {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.commit-message {
+    position: relative;
+    font-size: 15px;
+    line-height: 1.5;
+    color: black;
+    margin: 16px 48px;
+    pointer-events: none;
+    padding: 48px;
+    box-sizing: border-box;
+    border: 1px solid #1f2020;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.commit-message.active {
+    border-color: #1f2020;
+    background-color: #fff;
+}
+
+.commit-control-bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -64px;
+    right: 0;
+}
+
+.commit-control-bar-text {
+    font-size: 15px;
+    color: #757575;
+    margin-right: 16px;
+}
+
+.commit-message-char {
+    font-size: 19px;
+}
+
+.commit-message-char.correct {
+    color: #008001;
+    font-weight: bold;
+}
+
+.commit-message-char.incorrect {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.commit-message-char.undetermined {
+    color: #757575;
+}
+
+.commit-container textarea {
+    position: absolute;
+    font-size: 15px;
+    line-height: 1.5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    opacity: 0;
+}
