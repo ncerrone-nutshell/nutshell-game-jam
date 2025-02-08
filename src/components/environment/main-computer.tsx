@@ -5,14 +5,15 @@ import { GameContext } from '../game-manager/game-manager';
 import { useContext } from 'react';
 import { ComputerScreenProvider } from '../layout/computer-screen-provider';
 import { ComputerScreen } from '../layout/computer-screen';
+import { Monitor } from './Monitor';
 
 export function MainComputer() {
     const gameContext = useContext(GameContext);
 
     return (
         <>
-            <group>
-                <Computer />
+            <group position={[0, 0.5, 0]}>
+                <Monitor position={[0, 0, 0.7]} scale={[1.1, 1.1, 1.1]} />
                 <mesh>
                     <Html
                         className="wrapper"

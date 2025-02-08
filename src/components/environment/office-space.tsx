@@ -4,6 +4,7 @@ import { Desk } from './prototype/desk';
 import { Computer } from './prototype/computer';
 import { CeilingLight, CeilingLightProps } from './prototype/ceiling-light';
 import { EnvironmentProps } from './helpers';
+import { Monitor } from './Monitor';
 
 const FORWARD_EULER = new Euler(0, 0, 0);
 const REVERSE_EULER = new Euler(0, Math.PI, 0);
@@ -69,7 +70,7 @@ export function OfficeSpace(props: Props) {
                     />
                 ))}
                 {COMPUTER_CONFIG.map((config, index) => (
-                    <Computer
+                    <Monitor
                         key={index}
                         position={config.position}
                         rotation={config.rotation}
