@@ -8,6 +8,25 @@ import JenkinsMark from '../../icons/jenkins';
 import { useContext } from 'react';
 import { GameContextForwarded } from './computer-screen-provider';
 import { Tab } from './computer-screen';
+import {
+    Event,
+    EventType,
+    getTimeLeftPercentage,
+} from '../game-manager/helpers';
+import WebfxMark from '../../icons/webfx';
+import SheetsMark from '../../icons/sheets';
+import RedashMark from '../../icons/redash';
+
+export function getTaskIcon(event: Event): React.ReactNode {
+    switch (event.type) {
+        case EventType.SystemRefresh:
+            return <WebfxMark width={16} height={16} />;
+        case EventType.CsvImport:
+            return <SheetsMark width={16} height={16} />;
+        case EventType.AdoptionReport:
+            return <RedashMark width={16} height={16} />;
+    }
+}
 
 function getJenkinsStatus(completedTasks: CoreTaskTypeState) {
     let baseString = 'Jenkins';
@@ -20,12 +39,12 @@ function getJenkinsStatus(completedTasks: CoreTaskTypeState) {
 }
 
 type BrowserTabsProps = {
-    activeTab: Tab;
-    setActiveTab: (tab: Tab) => void;
+    activeTab: string;
+    setActiveTab: (tab: string) => void;
 };
 
 export function BrowserTabs(props: BrowserTabsProps) {
-    const { completedTasks } = useContext(GameContextForwarded);
+    const { completedTasks, requiredTasks } = useContext(GameContextForwarded);
 
     return (
         <div className="browser-tabs">
@@ -77,6 +96,24 @@ export function BrowserTabs(props: BrowserTabsProps) {
                 </div>
                 {getJenkinsStatus(completedTasks)}
             </button>
+            {requiredTasks.map((task) => {
+                return (
+                    <button
+                        key={task.id}
+                        className="browser-tab"
+                        data-state={
+                            props.activeTab === task.id ? 'active' : 'inactive'
+                        }
+                        onClick={() => props.setActiveTab(task.id)}
+                    >
+                        <div className="browser-tab-icon">
+                            {getTaskIcon(task)}
+                        </div>
+                        {task.startButtonText} •{' '}
+                        {(getTimeLeftPercentage(task) * 100).toFixed(1)}%
+                    </button>
+                );
+            })}
         </div>
     );
 }

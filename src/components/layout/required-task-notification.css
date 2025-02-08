@@ -1,0 +1,64 @@
+.required-task-notification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 0;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 8px;
+    position: relative;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.required-task-notification:hover {
+    background-color: #f4f9ff;
+    cursor: pointer;
+}
+
+.required-task-notification-content-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 16px 0;
+}
+
+.required-task-notification-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.required-task-notification-icon {
+    padding: 16px;
+}
+
+.required-task-notification-user {
+    color: #1f2020;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.required-task-notification-header {
+    color: #8b8f8f;
+}
+
+.required-task-notification-button {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    color: #201a15;
+    border-top: 1px solid #e0e0e0;
+}
+
+.required-task-notification-progress-bar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    opacity: 0.1;
+}
+
+.required-task-notification-progress-bar-fill {
+    height: 100%;
+    background-color: blue;
+}
