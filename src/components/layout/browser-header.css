@@ -1,0 +1,34 @@
+.browser-header {
+    background-color: #1f2020;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+    border-bottom: 10px solid #1f2020;
+}
+
+.controls-container {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    margin-right: 32px;
+}
+
+.button {
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+}
+
+.close {
+    background-color: #ef4444;
+}
+
+.minimize {
+    background-color: #eab308;
+}
+
+.maximize {
+    background-color: #22c55e;
+}

@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 
-import { ComputerScreen } from './components/computer-screen.tsx'
+import { ComputerScreen } from './components/layout/computer-screen.tsx'
 
 import './index.css'
 import { Html } from '@react-three/drei'

@@ -1,0 +1,7 @@
+.console-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #282828;
+    border-left: 1px solid #3c3c3c;
+    width: 400px;
+}

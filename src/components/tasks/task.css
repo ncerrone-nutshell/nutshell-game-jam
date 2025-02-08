@@ -1,0 +1,26 @@
+.task-button {
+    padding: 16px;
+    width: 150px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: transform 0.1s;
+}
+
+.task-button.coding {
+    background-color: blue;
+}
+
+.task-button.review {
+    background-color: green;
+}
+
+.task-button.figma {
+    background-color: red;
+}
+
+.task-button:active {
+    transform: translateY(2px);
+}

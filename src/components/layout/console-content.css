@@ -1,0 +1,22 @@
+.console-content {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.console-content-item {
+    cursor: pointer;
+}
+
+.console-content-item:hover {
+    background-color: #3c3c3c;
+    color: #a8c7fa;
+}
+
+.console-content-status {
+    border-top: 1px solid #3c3c3c;
+    margin-top: 16px;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+}

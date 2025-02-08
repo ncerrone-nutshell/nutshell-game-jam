@@ -1,0 +1,46 @@
+.browser-tabs {
+    width: 100%;
+    background-color: #1f2020;
+    border-radius: 0;
+    display: flex;
+}
+
+.browser-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 8px 32px;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    margin: 0;
+    text-decoration: none;
+    appearance: none;
+    outline: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-right: 4px;
+}
+
+.browser-tab:hover {
+    background-color: #3c3c3c;
+}
+
+.browser-tab-icon {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    color: white;
+    margin-right: 8px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.browser-tab[data-state='active'] {
+    background-color: #3c3c3c;
+}

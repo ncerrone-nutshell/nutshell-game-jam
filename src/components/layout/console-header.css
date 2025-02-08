@@ -1,0 +1,14 @@
+.console-header {
+    display: flex;
+    padding: 8px 16px;
+    border-top: 1px solid #444746;
+    border-bottom: 1px solid #444746;
+    justify-content: space-between;
+}
+
+.console-header-title {
+    border-bottom: 3px solid #a8c7fa;
+    color: #a8c7fa;
+    font-size: 16px;
+    font-weight: bold;
+}
