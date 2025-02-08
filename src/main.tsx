@@ -1,18 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { Canvas } from '@react-three/fiber'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Canvas } from '@react-three/fiber';
 
-import { ComputerScreen } from './components/layout/computer-screen.tsx'
+import { GameManager } from './components/game-manager/game-manager.tsx';
 
-import './index.css'
-import { Html } from '@react-three/drei'
+import './index.css';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <Canvas>
-            <Html fullscreen>
-                <ComputerScreen />
-            </Html>
+            <GameManager />
         </Canvas>
     </StrictMode>
-)
+);

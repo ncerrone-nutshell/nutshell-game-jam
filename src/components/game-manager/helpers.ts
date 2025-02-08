@@ -1,11 +1,11 @@
 type EventDifficulty = 'easy' | 'medium' | 'hard';
 
-interface Event {
+export interface Event {
     name: string;
     difficulty: EventDifficulty;
 }
 
-interface RandomEvent extends Event {
+export interface RandomEvent extends Event {
     likelihood: number;
 }
 
@@ -17,13 +17,14 @@ const EXAMPLE_RANDOM_EVENT: RandomEvent = {
 
 const RANDOM_EVENTS: RandomEvent[] = [EXAMPLE_RANDOM_EVENT];
 
-export function generateRandomEvents(day: number) {
+// TODO: Scale event likelihood & difficulty based on day
+export function generateRandomEvents(day: number): RandomEvent[] {
     const events = RANDOM_EVENTS.map((event) => {
         const random = Math.random();
         if (random < event.likelihood) {
             return event;
         }
-        return;
     });
-    return events;
+
+    return events.filter((event) => event !== undefined) as RandomEvent[];
 }
