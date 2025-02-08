@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import './task.css';
+import './figma-task-container.css';
 
 import OrangeTriangle from '../../assets/orange-triangle.tsx';
 import OrangeTarget from '../../assets/orange-target.tsx';
