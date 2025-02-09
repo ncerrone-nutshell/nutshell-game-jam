@@ -1,16 +1,17 @@
 .task-controls {
     position: absolute;
     bottom: 16px;
-    padding: 0 16px;
-    left: 30%;
-    width: 40%;
-    max-height: 150px;
+    padding: 0 32px;
+    left: 16%;
+    width: 64%;
+    max-height: 200px;
     background-color: #1e1e1e;
     color: #7cc4f8;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    font-size: 25px;
 }
 
 .task-controls-row {
@@ -21,7 +22,7 @@
 
 .task-controls-row:nth-child(1),
 .task-controls-row:nth-child(2) {
-    margin-right: 16px;
+    margin-right: 32px;
 }
 
 .task-controls-row-control {

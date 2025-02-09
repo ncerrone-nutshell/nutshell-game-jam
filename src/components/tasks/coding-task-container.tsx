@@ -136,6 +136,7 @@ export function CodingTaskContainer() {
                         }
                     }
                 }}
+                autoFocus={true}
                 className="commit-input"
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
@@ -213,7 +214,7 @@ function ControlBar(props: ControlBarProps) {
                     : '--%'}
             </div>
             <button
-                className="task-button commit-btn"
+                className="commit-btn"
                 disabled={
                     props.commitMessage.length < props.targetMessage.length
                 }

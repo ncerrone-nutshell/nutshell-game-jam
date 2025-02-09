@@ -5,6 +5,7 @@ import { ConsoleContentItemType } from './console-content';
 import { TaskContainer } from './task-container';
 import { RequiredTaskNotifications } from './required-task-notifications';
 
+import { SHOW_CONSOLE } from '../../main';
 import './computer-screen.css';
 import { GameContextForwarded } from './computer-screen-provider';
 import { Login } from './login';
@@ -38,14 +39,18 @@ export function ComputerScreen() {
                     setActiveTab={setActiveTab}
                     activeTab={activeTab}
                 />
-                <div className="content">
-                    <RequiredTaskNotifications />
-                    <TaskContainer activeTab={activeTab} />
-                    <ConsoleContainer
-                        onTriggerEvent={(type: ConsoleContentItemType) => {
-                            console.log(type);
-                        }}
-                    />
+                <div className="content-container">
+                    <div className="content">
+                        <RequiredTaskNotifications />
+                        <TaskContainer activeTab={activeTab} />
+                    </div>
+                    {SHOW_CONSOLE && (
+                        <ConsoleContainer
+                            onTriggerEvent={(type: ConsoleContentItemType) => {
+                                console.log(type);
+                            }}
+                        />
+                    )}
                 </div>
             </div>
         </div>

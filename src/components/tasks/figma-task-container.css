@@ -12,6 +12,9 @@
 .task-completed-icon {
     width: 100px;
     height: 100px;
+    position: absolute;
+    top: 30%;
+    left: 0;
     background-color: #17d62a;
     border-radius: 50%;
     position: relative;

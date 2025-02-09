@@ -1,0 +1,57 @@
+.guru-card {
+    width: 400px;
+    background-color: #1e1e1e;
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #3c3c3c;
+    color: black;
+    margin-right: 16px;
+}
+
+.guru-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.guru-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    font-size: 19px;
+}
+
+.guru-card-body-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    width: 100%;
+    border-bottom: 1px solid #3c3c3c;
+    border-top: 1px solid #3c3c3c;
+    padding: 8px 0;
+    margin-bottom: 32px;
+}
+
+.guru-card-body-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #3c3c3c;
+    margin: 32px 0;
+}
+
+.guru-card-body-instructions-title {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.guru-card-body-instructions {
+    font-size: 19px;
+    line-height: 1.5;
+}

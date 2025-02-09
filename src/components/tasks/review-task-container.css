@@ -21,13 +21,30 @@
 
 .code-container-header {
     background-color: #151b23;
-    padding: 16px;
+    padding: 16px 32px;
     color: white;
     display: flex;
     align-items: center;
 }
 .code-container-header-icon {
     margin-right: 16px;
+}
+
+.code-container-header-approve {
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 12px 16px;
+    margin-left: auto;
+    font-weight: bold;
+    background-color: #238636;
+    cursor: pointer;
+}
+
+.code-container-header-approve:hover {
+    background-color: #2ea44f;
+    cursor: pointer;
 }
 
 .code-container-line-numbers {

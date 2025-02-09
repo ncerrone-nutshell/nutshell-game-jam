@@ -1,0 +1,145 @@
+.jenkins-task-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.jenkins-task-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    background-color: #f6faf2;
+    color: #555753;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.jenkins-task-content {
+    display: flex;
+    width: 100%;
+}
+
+.jenkins-task-sidebar {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    flex-shrink: 0;
+    color: #204a87;
+}
+
+.jenkins-task-sidebar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 19px;
+}
+
+.jenkins-task-sidebar-item {
+    display: flex;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.jenkins-task-sidebar-item.build-now-item {
+    cursor: pointer;
+}
+
+.jenkins-task-sidebar-item.build-now-item:hover {
+    background-color: #e6e9e0;
+}
+
+.jenkins-task-sidebar-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.jenkins-task-build-history-container {
+    font-size: 19px;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.build-history-header {
+    display: flex;
+    align-items: center;
+    background-color: #eeeeee;
+    width: 100%;
+    padding: 8px 16px;
+}
+
+.build-history-header img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.build-history-items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    min-height: 400px;
+}
+
+.build-history-item {
+    display: flex;
+    width: 100%;
+    padding: 16px 16px;
+    align-items: center;
+}
+
+.build-history-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.build-history-item-number {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+    margin: 0 8px;
+}
+
+.build-history-item-date {
+    color: #555753;
+    flex-grow: 1;
+    margin: 0 8px;
+}
+
+.jenkins-task-release-container {
+    display: flex;
+    flex-direction: column;
+    padding: 64px;
+    width: 100%;
+    color: black;
+    font-size: 19px;
+}
+
+.jenkins-task-release-header {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.jenkins-task-release-description {
+    font-size: 19px;
+}
+
+.jenkins-task-release-breakdown-container {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

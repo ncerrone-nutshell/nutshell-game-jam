@@ -53,13 +53,18 @@ const MAX_LINES = {
     3: MAX_LINES_HARD,
 };
 
+const FAILED_REASON_APPROVE_PR =
+    'You approved a PR with bugs. Try again in 5 seconds';
+const FAILED_REASON_REPORT_BUG =
+    'You reported a bug that was not there. Try again in 5 seconds';
+
 export function ReviewTaskContainer() {
     const [randomBugIndex, setRandomBugIndex] = useState<number | null>(null);
     const [bugCharacterIndex, setBugCharacterIndex] = useState<number | null>(
         null
     );
     const [numLines, setNumLines] = useState<number>(1);
-    const [failedTask, setFailedTask] = useState<boolean>(false);
+    const [failedTask, setFailedTask] = useState<string | null>(null);
     const [hoveredLineIndex, setHoveredLineIndex] = useState<number | null>(
         null
     );
@@ -98,7 +103,15 @@ export function ReviewTaskContainer() {
         if (index === randomBugIndex) {
             handleTaskCompleted();
         } else {
-            setFailedTask(true);
+            setFailedTask(FAILED_REASON_REPORT_BUG);
+        }
+    };
+
+    const handleApprovePullRequest = () => {
+        if (randomBugIndex === 1000) {
+            handleTaskCompleted();
+        } else {
+            setFailedTask(FAILED_REASON_APPROVE_PR);
         }
     };
 
@@ -111,19 +124,25 @@ export function ReviewTaskContainer() {
             const randomizedNumLines =
                 Math.floor(Math.random() * maxLines) + MIN_LINES;
 
-            setFailedTask(false);
+            setFailedTask(null);
             setIsReviewingLineIndex(null);
             setHoveredLineIndex(null);
             setNumLines(randomizedNumLines);
-            const randomBugIndex = Math.floor(
-                Math.random() * randomizedNumLines
-            );
-            setRandomBugIndex(randomBugIndex);
-            const bugCharacterIndex = Math.floor(
-                Math.random() * LINES[randomBugIndex].length
-            );
-            console.log(randomBugIndex, bugCharacterIndex);
-            setBugCharacterIndex(bugCharacterIndex);
+
+            const shouldSetBugIndexToInvalid = Math.random() < 0.1;
+            if (shouldSetBugIndexToInvalid) {
+                setRandomBugIndex(1000);
+                setBugCharacterIndex(1000);
+            } else {
+                const randomBugIndex = Math.floor(
+                    Math.random() * randomizedNumLines
+                );
+                setRandomBugIndex(randomBugIndex);
+                const bugCharacterIndex = Math.floor(
+                    Math.random() * LINES[randomBugIndex].length
+                );
+                setBugCharacterIndex(bugCharacterIndex);
+            }
         },
         [failedTask]
     );
@@ -131,7 +150,7 @@ export function ReviewTaskContainer() {
     useEffect(() => {
         if (failedTask) {
             setTimeout(() => {
-                setFailedTask(false);
+                setFailedTask(null);
             }, 5000);
         }
     }, [failedTask]);
@@ -148,11 +167,18 @@ export function ReviewTaskContainer() {
                     </div>
                     <Boxes />
                     {filename}
+                    <button
+                        className="code-container-header-approve"
+                        onClick={() => {
+                            handleApprovePullRequest();
+                        }}
+                    >
+                        Approve Pull Request (no bugs)
+                    </button>
                 </div>
                 {failedTask && (
                     <div className="code-container-failed-task-warning">
-                        You reported a bug that was not there. Please wait 5
-                        seconds before trying again
+                        {failedTask}
                     </div>
                 )}
                 <div className="code-container-content">
@@ -172,7 +198,7 @@ export function ReviewTaskContainer() {
                                 <div
                                     key={line + index}
                                     onClick={() => {
-                                        if (failedTask === false) {
+                                        if (!failedTask) {
                                             setHoveredLineIndex(null);
                                             setIsReviewingLineIndex(index);
                                         }
@@ -180,7 +206,7 @@ export function ReviewTaskContainer() {
                                     onMouseEnter={() => {
                                         if (
                                             isReviewingLineIndex === null &&
-                                            failedTask === false
+                                            !failedTask
                                         ) {
                                             setHoveredLineIndex(index);
                                         }

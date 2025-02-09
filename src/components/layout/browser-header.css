@@ -10,14 +10,14 @@
 
 .controls-container {
     display: flex;
-    gap: 8px;
-    padding: 12px;
+    gap: 16px;
+    padding: 12px 24px;
     margin-right: 32px;
 }
 
 .button {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     border-radius: 100px;
 }
 
