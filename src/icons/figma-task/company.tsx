@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as Company } from './company.svg';
 
 type Props = {

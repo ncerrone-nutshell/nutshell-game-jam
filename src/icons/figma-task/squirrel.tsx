@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as Squirrel } from './squirrel.svg';
 
 type Props = {

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as CompanyOutline } from './company-outline.svg';
 
 type Props = {

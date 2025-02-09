@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as JiraOutline } from './jira-outline.svg';
 
 type Props = {

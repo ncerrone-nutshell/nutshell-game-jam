@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as PersonOutline } from './person-outline.svg';
 
 type Props = {

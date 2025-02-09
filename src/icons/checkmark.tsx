@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as Checkmark } from './checkmark.svg';
 
 type Props = {

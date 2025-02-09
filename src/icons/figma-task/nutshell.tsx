@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as Nutshell } from './nutshell.svg';
 
 type NutshellIconProps = {

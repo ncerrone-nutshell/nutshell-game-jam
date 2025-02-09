@@ -1,3 +1,4 @@
-import { ReactComponent as FigmaMark } from './figma-mark.svg'
+// @ts-ignore
+import { ReactComponent as FigmaMark } from './figma-mark.svg';
 
-export default FigmaMark
+export default FigmaMark;

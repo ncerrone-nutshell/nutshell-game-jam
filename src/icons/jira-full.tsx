@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as JiraFull } from './jira-full.svg';
 
 type Props = {

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ReactComponent as NutshellOutline } from './nutshell-outline.svg';
 
 type Props = {

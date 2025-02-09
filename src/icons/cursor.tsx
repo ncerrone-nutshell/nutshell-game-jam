@@ -1,3 +1,4 @@
-import { ReactComponent as CursorMark } from './cursor-mark.svg'
+// @ts-ignore
+import { ReactComponent as CursorMark } from './cursor-mark.svg';
 
-export default CursorMark
+export default CursorMark;

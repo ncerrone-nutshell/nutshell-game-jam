@@ -1,3 +1,4 @@
-import { ReactComponent as GithubMark } from './github-mark.svg'
+// @ts-ignore
+import { ReactComponent as GithubMark } from './github-mark.svg';
 
-export default GithubMark
+export default GithubMark;
