@@ -74,6 +74,7 @@ export type GameContextType = {
     difficulty: Difficulty;
     status: GameStatus;
     isScreenFocused: boolean;
+    userName: string;
     dispatch: (action: Action) => void;
 };
 
@@ -91,6 +92,7 @@ export type GameState = {
     sprintMeterValue: number;
     difficulty: Difficulty;
     isScreenFocused: boolean;
+    userName: string;
     status: GameStatus;
 };
 
@@ -110,6 +112,7 @@ export const GAME_STATE_DEFAULTS: GameState = {
     sprintMeterValue: SPRINT_METER_MAX,
     difficulty: Difficulty.Easy,
     isScreenFocused: false,
+    userName: 'Unknown',
     status: GameStatus.NotStarted,
 };
 
@@ -218,6 +221,7 @@ function reducer(state: GameState, action: Action) {
             return {
                 ...GAME_STATE_DEFAULTS,
                 status: GameStatus.Playing,
+                userName: action.payload.userName,
             };
         }
         case ActionType.ResetGame: {
@@ -308,6 +312,7 @@ export const GameManager = () => {
                 difficulty: state.difficulty,
                 status: state.status,
                 isScreenFocused: state.isScreenFocused,
+                userName: state.userName,
                 dispatch,
             }}
         >

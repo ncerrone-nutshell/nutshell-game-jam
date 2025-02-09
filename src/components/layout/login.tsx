@@ -1,15 +1,21 @@
-import { useContext } from 'react';
+
+import { useContext, useState } from 'react';
 import { GameContextForwarded } from './computer-screen-provider';
 import { ActionType } from '../game-manager/game-manager';
 import NutshellIcon from '../../icons/figma-task/nutshell';
 
 export function Login() {
     const { dispatch } = useContext(GameContextForwarded);
+    const [name, setName] = useState('');
 
     const handleLogin = () => {
         dispatch({
             type: ActionType.StartGame,
+            payload: {
+                userName: name,
+            },
         });
+        console.log(name);
     };
 
     return (
@@ -56,6 +62,8 @@ export function Login() {
                 }}
                 className="data-1p-ignore"
                 type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your name to begin"
                 autoComplete="off"
                 onKeyDown={(e) => {
