@@ -8,9 +8,11 @@ import { useLoader } from '@react-three/fiber';
 import { useEffect } from 'react';
 import { PingPongTable } from './ping-pong-table';
 import { WoodenDoor } from './wooden_door';
+import { Shelf } from './shelf';
 
 const FORWARD_EULER = new Euler(0, 0, 0);
 const REVERSE_EULER = new Euler(0, Math.PI, 0);
+const SIDE_EULER = new Euler(0, Math.PI / 2, 0);
 
 const DESK_CONFIG: EnvironmentProps[] = [
     { position: new Vector3(0, -3.5, 0), rotation: FORWARD_EULER },
@@ -46,6 +48,15 @@ const CEILING_LIGHT_CONFIG: CeilingLightProps[] = [
     { position: new Vector3(50, 13, -5), activeLights: true, intensity: 1000 },
     { position: new Vector3(0, 13, -40), activeLights: true, intensity: 1000 },
     { position: new Vector3(50, 13, -40), activeLights: true, intensity: 1000 },
+];
+
+const BOOK_SHELF_CONFIG: EnvironmentProps[] = [
+    { position: new Vector3(37, 0, -50), rotation: SIDE_EULER },
+    { position: new Vector3(37, 0, -39), rotation: SIDE_EULER },
+    { position: new Vector3(12, 0, -50), rotation: SIDE_EULER },
+    { position: new Vector3(12, 0, -39), rotation: SIDE_EULER },
+    { position: new Vector3(37, 0, -12), rotation: SIDE_EULER },
+    { position: new Vector3(37, 0, -1), rotation: SIDE_EULER },
 ];
 
 type Props = {
@@ -127,6 +138,8 @@ export function OfficeSpace(props: Props) {
         ceilingNormalMap,
         ceilingAOMap,
     ]);
+
+    const texture = useLoader(TextureLoader, 'baywatch.jpg');
 
     return (
         <>
@@ -246,6 +259,23 @@ export function OfficeSpace(props: Props) {
                 <WoodenDoor
                     position={[99.5, -8, 15]}
                     rotation={[0, Math.PI, 0]}
+                />
+                {/* SHELVES */}
+                {BOOK_SHELF_CONFIG.map((config, index) => (
+                    <Shelf
+                        key={index}
+                        position={config.position}
+                        rotation={config.rotation}
+                    />
+                ))}
+                <mesh position={[50, 1, -34.5]}>
+                    <planeGeometry args={[7, 4]} />
+                    <meshStandardMaterial map={texture} />
+                </mesh>
+                <pointLight
+                    position={[50, 1, -33]}
+                    intensity={20}
+                    distance={20}
                 />
             </group>
         </>

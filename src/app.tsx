@@ -5,6 +5,7 @@ export function App() {
     return (
         <>
             <NutCamera />
+            {/* <OrbitControls /> */}
             {/* TODO: Toggle on and off active lights as a random event */}
             <OfficeSpace activeLights={true} />
         </>
