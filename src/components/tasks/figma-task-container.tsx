@@ -272,14 +272,15 @@ function Shape(props: ShapeProps) {
                 case 'd':
                     setRotation((prev) => {
                         const newRotation = prev + rotateBy;
-                        return newRotation % 360;
+                        return ((newRotation % 360) + 360) % 360;
                     });
                     break;
                 case 'a':
                     setRotation((prev) => {
+                        // For counterclockwise rotation, subtract but keep result positive
                         const newRotation = prev - rotateBy;
-                        const rotationMod = newRotation % 360;
-                        return rotationMod == -0 ? 0 : rotationMod;
+                        // Add 360 before modulo to handle negative numbers
+                        return ((newRotation % 360) + 360) % 360;
                     });
                     break;
             }
@@ -291,7 +292,9 @@ function Shape(props: ShapeProps) {
         const atGoal =
             Math.abs(position.x - props.positionGoal.x) <= 5 &&
             Math.abs(position.y - props.positionGoal.y) <= 5 &&
-            Math.abs(rotation - props.rotationGoal) <= 5;
+            // Fixes an issue where negative roations were not being check correctly
+            (Math.abs(rotation - props.rotationGoal) <= 5 ||
+                Math.abs(rotation + 360 - props.rotationGoal) <= 5);
         props.onAtGoal(props.shapeId, atGoal);
 
         return atGoal;
