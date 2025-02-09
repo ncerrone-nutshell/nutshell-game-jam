@@ -237,7 +237,7 @@ export function OfficeSpace(props: Props) {
                     scale={new Vector3(0.03, 0.03, 0.03)}
                 />
                 {/* DOORS */}
-                <WoodenDoor position={[-19.5, -8, -40]} />
+                <WoodenDoor position={[-19.6, -8, -40]} />
                 <WoodenDoor
                     position={[99.5, -8, 15]}
                     rotation={[0, Math.PI, 0]}

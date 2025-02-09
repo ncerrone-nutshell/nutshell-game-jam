@@ -32,7 +32,7 @@ export function NutCamera() {
 
     useFrame(() => {
         const nextStep = isScreenFocused ? new Vector2(0, 1) : mouse;
-        const alpha = isScreenFocused ? 0.05 : 0.01;
+        const alpha = isScreenFocused ? 0.05 : 0.03;
 
         setCurrent(current.lerp(nextStep, alpha));
 
