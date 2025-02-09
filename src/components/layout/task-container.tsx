@@ -8,7 +8,9 @@ import {
 
 import './task-container.css';
 import { GuruCard } from '../tasks/guru-card';
-import { TaskType } from '../game-manager/game-manager';
+import { GameContext, TaskType } from '../game-manager/game-manager';
+import { GameContextForwarded } from './computer-screen-provider';
+import { useContext } from 'react';
 
 interface TaskContainerProps {
     activeTab: Tab;
@@ -31,17 +33,52 @@ function getTaskTypeFromTab(tab: Tab) {
 
 export function TaskContainer(props: TaskContainerProps) {
     const { activeTab } = props;
-    const taskType = getTaskTypeFromTab(activeTab);
+    const { requiredTasks } = useContext(GameContextForwarded);
+    const customTask = requiredTasks.find((task) => task.id === activeTab);
+    const customTaskType = customTask?.type;
+
+    const taskType = customTaskType || getTaskTypeFromTab(activeTab);
 
     return (
         <div className="task-container">
             {taskType && <GuruCard taskType={taskType} />}
             <div className="task-content-container">
-                {props.activeTab === Tab.Coding && <CodingTaskContainer />}
-                {props.activeTab === Tab.Review && <ReviewTaskContainer />}
-                {props.activeTab === Tab.Figma && <FigmaTaskContainer />}
-                {props.activeTab === Tab.Jenkins && <JenkinsTaskContainer />}
+                {taskType === TaskType.Coding && <CodingTaskContainer />}
+                {taskType === TaskType.Review && <ReviewTaskContainer />}
+                {taskType === TaskType.Figma && <FigmaTaskContainer />}
+                {taskType === TaskType.Jenkins && <JenkinsTaskContainer />}
+                {taskType === TaskType.CsvImport && <CsvImportTaskContainer />}
+                {taskType === TaskType.SystemRefresh && (
+                    <SystemRefreshTaskContainer />
+                )}
+                {taskType === TaskType.AdoptionReport && (
+                    <AdoptionReportTaskContainer />
+                )}
             </div>
+        </div>
+    );
+}
+
+function CsvImportTaskContainer() {
+    return (
+        <div style={{ color: 'black', fontSize: 25, padding: 16 }}>
+            TODO: CsvImportTaskContainer
+        </div>
+    );
+}
+
+function SystemRefreshTaskContainer() {
+    return (
+        <div style={{ color: 'black', fontSize: 25, padding: 16 }}>
+            TODO:SystemRefreshTaskContainer
+        </div>
+    );
+}
+
+function AdoptionReportTaskContainer() {
+    return (
+        <div style={{ color: 'black', fontSize: 25, padding: 16 }}>
+            TODO: AdoptionReportTaskContainer
         </div>
     );
 }

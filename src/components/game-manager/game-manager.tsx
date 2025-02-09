@@ -12,6 +12,9 @@ export enum TaskType {
     Review = 'review',
     Figma = 'figma',
     Jenkins = 'jenkins',
+    CsvImport = EventType.CsvImport,
+    SystemRefresh = EventType.SystemRefresh,
+    AdoptionReport = EventType.AdoptionReport,
 }
 
 export enum CoreTaskType {
@@ -121,7 +124,12 @@ export const GameContext = React.createContext<GameContextType>(
     GAME_CONTEXT_DEFAULTS
 );
 
-import { generateRandomEvents, Event, getNewDifficulty } from './helpers';
+import {
+    generateRandomEvents,
+    Event,
+    getNewDifficulty,
+    EventType,
+} from './helpers';
 
 type Action = {
     type: ActionType;
