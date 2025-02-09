@@ -3,7 +3,7 @@ import GithubMark from '../../icons/github';
 import './review-task-container.css';
 
 import { GameContextForwarded } from '../layout/computer-screen-provider';
-import { ActionType, Difficulty, TaskType } from '../game-manager/game-manager';
+import { ActionType, CoreTaskType } from '../game-manager/game-manager';
 
 const LINES = [
     'const handleSubmit = (event) => {',
@@ -68,7 +68,7 @@ export function ReviewTaskContainer() {
             dispatch({
                 type: ActionType.CompleteTask,
                 payload: {
-                    type: TaskType.Review,
+                    type: CoreTaskType.Review,
                     score: 1,
                 },
             });

@@ -1,4 +1,4 @@
-import { Tab, TaskType } from './computer-screen';
+import { Tab } from './computer-screen';
 import {
     CodingTaskContainer,
     ReviewTaskContainer,

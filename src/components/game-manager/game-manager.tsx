@@ -6,6 +6,7 @@ import { App } from '../../app';
 
 import { GlobalUI } from './global-ui';
 
+// Currently unused, if we don't need this, let's remove it
 export enum TaskType {
     Coding = 'coding',
     Review = 'review',
@@ -71,8 +72,15 @@ export type GameContextType = {
     sprintMeterValue: number;
     requiredTasks: Event[];
     difficulty: Difficulty;
+    status: GameStatus;
     dispatch: (action: Action) => void;
 };
+
+export enum GameStatus {
+    NotStarted = 'not_started',
+    Playing = 'playing',
+    Lost = 'lost',
+}
 
 export type GameState = {
     day: number;
@@ -82,6 +90,7 @@ export type GameState = {
     sprintMeterValue: number;
     requiredTasks: Event[];
     difficulty: Difficulty;
+    status: GameStatus;
 };
 
 const SPRINT_METER_MAX = 100;
@@ -96,6 +105,7 @@ export const GAME_STATE_DEFAULTS: GameState = {
     sprintMeterValue: SPRINT_METER_MAX,
     requiredTasks: [],
     difficulty: Difficulty.Easy,
+    status: GameStatus.NotStarted,
 };
 
 export const GAME_CONTEXT_DEFAULTS: GameContextType = {
@@ -129,11 +139,25 @@ function reducer(state: GameState, action: Action) {
             };
         }
         case ActionType.DecrementSprintMeter: {
+            const newSprintMeterValue =
+                state.sprintMeterValue -
+                SPRINT_METER_DECAY_RATE * action.payload.delta;
+
+            if (newSprintMeterValue <= 0) {
+                // Handle losing
+
+                console.log('Game lost');
+
+                return {
+                    ...state,
+                    sprintMeterValue: 0,
+                    status: GameStatus.Lost,
+                };
+            }
+
             return {
                 ...state,
-                sprintMeterValue:
-                    state.sprintMeterValue -
-                    SPRINT_METER_DECAY_RATE * action.payload.delta,
+                sprintMeterValue: Math.max(0, newSprintMeterValue),
             };
         }
         case ActionType.IncrementScore: {
@@ -164,10 +188,7 @@ function reducer(state: GameState, action: Action) {
             };
         }
         case ActionType.CompleteTask: {
-            const taskScore = getTaskScore(
-                action.payload.type,
-                action.payload.score
-            );
+            const taskScore = action.payload.score;
 
             return {
                 ...state,
@@ -177,6 +198,18 @@ function reducer(state: GameState, action: Action) {
                     action.payload.type,
                     taskScore
                 ),
+            };
+        }
+        case ActionType.StartGame: {
+            return {
+                ...GAME_STATE_DEFAULTS,
+                status: GameStatus.Playing,
+            };
+        }
+        case ActionType.ResetGame: {
+            return {
+                ...GAME_STATE_DEFAULTS,
+                status: GameStatus.NotStarted,
             };
         }
     }
@@ -206,11 +239,6 @@ function addRequiredTask(requiredTasks: Event[], task: Event) {
     return [...requiredTasks, task];
 }
 
-// TODO: implement this
-function getTaskScore(type: TaskType, score: number) {
-    return score;
-}
-
 export enum ActionType {
     IncrementDay = 'incremented_day',
     DecrementSprintMeter = 'decremented_sprint_meter',
@@ -220,6 +248,8 @@ export enum ActionType {
     CompleteTask = 'complete_task',
     PushRelease = 'push_release',
     StartRequiredTask = 'start_required_task',
+    StartGame = 'start_game',
+    ResetGame = 'reset_game',
 }
 
 export const GameManager = () => {
@@ -227,6 +257,11 @@ export const GameManager = () => {
     const [state, dispatch] = useReducer(reducer, GAME_STATE_DEFAULTS);
 
     useFrame((_, delta) => {
+        // Do not progress the game if it's not playing
+        if (state.status !== GameStatus.Playing) {
+            return;
+        }
+
         // Decrease the day timer by the delta time
         dayTimer.current = dayTimer.current - delta;
         if (dayTimer.current <= 0) {
@@ -247,7 +282,9 @@ export const GameManager = () => {
 
     return (
         <>
-            <GlobalUI sprintMeterPercentage={state.sprintMeterValue} />
+            {state.status === GameStatus.Playing && (
+                <GlobalUI sprintMeterPercentage={state.sprintMeterValue} />
+            )}
             <GameContext.Provider
                 value={{
                     day: state.day,
@@ -257,6 +294,7 @@ export const GameManager = () => {
                     score: state.score,
                     requiredTasks: state.requiredTasks,
                     difficulty: state.difficulty,
+                    status: state.status,
                     dispatch,
                 }}
             >

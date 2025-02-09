@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { BrowserHeader } from './browser-header';
 import { ConsoleContainer } from './console-container';
 import { ConsoleContentItemType } from './console-content';
@@ -6,6 +6,10 @@ import { TaskContainer } from './task-container';
 import { RequiredTaskNotifications } from './required-task-notifications';
 
 import './computer-screen.css';
+import { GameContextForwarded } from './computer-screen-provider';
+import { Login } from './login';
+import { GameStatus } from '../game-manager/game-manager';
+import { LostScreen } from './lost';
 
 export enum Tab {
     Coding = 'coding',
@@ -15,7 +19,17 @@ export enum Tab {
 }
 
 export function ComputerScreen() {
+    const { status } = useContext(GameContextForwarded);
+
     const [activeTab, setActiveTab] = useState<Tab>(Tab.Coding);
+
+    if (status === GameStatus.NotStarted) {
+        return <Login />;
+    }
+
+    if (status === GameStatus.Lost) {
+        return <LostScreen />;
+    }
 
     return (
         <div className="screen-container">
