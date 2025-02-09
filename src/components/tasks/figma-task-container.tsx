@@ -281,9 +281,9 @@ function Shape(props: ShapeProps) {
 
     const checkIfAtGoal = React.useCallback(() => {
         const atGoal =
-            position.x === props.positionGoal.x &&
-            position.y === props.positionGoal.y &&
-            rotation === props.rotationGoal;
+            Math.abs(position.x - props.positionGoal.x) <= 5 &&
+            Math.abs(position.y - props.positionGoal.y) <= 5 &&
+            Math.abs(rotation - props.rotationGoal) <= 5;
         props.onAtGoal(props.shapeId, atGoal);
 
         return atGoal;
