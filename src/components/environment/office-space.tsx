@@ -6,6 +6,8 @@ import { Monitor } from './Monitor';
 import { Desk } from './desk';
 import { useLoader } from '@react-three/fiber';
 import { useEffect } from 'react';
+import { PingPongTable } from './ping-pong-table';
+import { WoodenDoor } from './wooden_door';
 
 const FORWARD_EULER = new Euler(0, 0, 0);
 const REVERSE_EULER = new Euler(0, Math.PI, 0);
@@ -40,10 +42,10 @@ const COMPUTER_CONFIG: EnvironmentProps[] = [
 ];
 
 const CEILING_LIGHT_CONFIG: CeilingLightProps[] = [
-    { position: new Vector3(0, 20, -5), activeLights: true, intensity: 300 },
-    { position: new Vector3(50, 20, -5), activeLights: true, intensity: 1000 },
-    { position: new Vector3(0, 20, -40), activeLights: true, intensity: 1000 },
-    { position: new Vector3(50, 20, -40), activeLights: true, intensity: 1000 },
+    { position: new Vector3(0, 13, -5), activeLights: true, intensity: 300 },
+    { position: new Vector3(50, 13, -5), activeLights: true, intensity: 1000 },
+    { position: new Vector3(0, 13, -40), activeLights: true, intensity: 1000 },
+    { position: new Vector3(50, 13, -40), activeLights: true, intensity: 1000 },
 ];
 
 type Props = {
@@ -213,7 +215,7 @@ export function OfficeSpace(props: Props) {
                     />
                 </mesh>
                 {/* CEILING */}
-                <mesh position={[40, 31.5, -35]} scale={[125, 0.1, 100]}>
+                <mesh position={[40, 25, -35]} scale={[125, 0.1, 100]}>
                     <boxGeometry />
                     <meshStandardMaterial
                         map={ceilingColorMap}
@@ -234,6 +236,17 @@ export function OfficeSpace(props: Props) {
                         intensity={config.intensity}
                     />
                 ))}
+                <PingPongTable
+                    position={[80, -7, -50]}
+                    rotation={new Euler(0, Math.PI / 2, 0)}
+                    scale={new Vector3(0.03, 0.03, 0.03)}
+                />
+                {/* DOORS */}
+                <WoodenDoor position={[-19.5, -8, -40]} />
+                <WoodenDoor
+                    position={[99.5, -8, 15]}
+                    rotation={[0, Math.PI, 0]}
+                />
             </group>
         </>
     );

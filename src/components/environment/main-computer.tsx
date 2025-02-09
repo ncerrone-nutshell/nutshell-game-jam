@@ -11,7 +11,7 @@ export function MainComputer() {
 
     return (
         <>
-            <group position={[0, 1.4, 0]}>
+            <group position={[0, 1.4, -0.5]}>
                 <Monitor position={[0, 0, 0.7]} scale={[1.1, 1.1, 1.1]} />
                 <mesh>
                     <Html
