@@ -74,15 +74,23 @@ function generateShapes(
 
     const shapes: ShapeData[] = [];
     const shapeTargets: ShapeTargetData[] = [];
+    var usedIndices: number[] = [];
 
     for (let i = 0; i < numShapes; i++) {
         const startPos = generateRandomPosition(bounds);
         const goalPos = generateRandomPosition(bounds);
 
+        var randomShapeIndex = 0;
+        do {
+            randomShapeIndex = Math.floor(Math.random() * shapeAssets.length);
+        } while (usedIndices.includes(randomShapeIndex));
+
+        usedIndices.push(randomShapeIndex);
+
         // Create shape
         shapes.push({
             id: i,
-            asset: shapeAssets[i % shapeAssets.length],
+            asset: shapeAssets[randomShapeIndex],
             startPosition: startPos,
             startRotation: generateRandomRotation(),
             goalPosition: goalPos,
@@ -92,7 +100,7 @@ function generateShapes(
         // Create corresponding target
         shapeTargets.push({
             id: i,
-            asset: targetAssets[i % targetAssets.length],
+            asset: targetAssets[randomShapeIndex],
             positionGoal: goalPos,
             rotationGoal: shapes[i].goalRotation, // Use same rotation as shape's goal
         });
