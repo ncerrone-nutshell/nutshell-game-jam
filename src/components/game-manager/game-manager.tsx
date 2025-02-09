@@ -71,7 +71,6 @@ export type GameContextType = {
     completedTasks: CoreTaskTypeState;
     events: Event[];
     sprintMeterValue: number;
-    requiredTasks: Event[];
     difficulty: Difficulty;
     status: GameStatus;
     isScreenFocused: boolean;
@@ -90,7 +89,6 @@ export type GameState = {
     completedTasks: CoreTaskTypeState;
     events: Event[];
     sprintMeterValue: number;
-    requiredTasks: Event[];
     difficulty: Difficulty;
     isScreenFocused: boolean;
     status: GameStatus;
@@ -110,7 +108,6 @@ export const GAME_STATE_DEFAULTS: GameState = {
     completedTasks: CORE_TASKS_INITIAL_STATE,
     events: [],
     sprintMeterValue: SPRINT_METER_MAX,
-    requiredTasks: [],
     difficulty: Difficulty.Easy,
     isScreenFocused: false,
     status: GameStatus.NotStarted,
@@ -140,14 +137,14 @@ type Action = {
 function reducer(state: GameState, action: Action) {
     switch (action.type) {
         case ActionType.IncrementDay: {
-            const newEvents = generateRandomEvents(state.day);
+            const events = generateRandomEvents(state.difficulty, state.events);
 
             const newDifficulty = getNewDifficulty(state.difficulty, state.day);
 
             return {
                 ...state,
                 day: state.day + 1,
-                events: [...state.events, ...newEvents],
+                events,
                 difficulty: newDifficulty,
             };
         }
@@ -192,13 +189,16 @@ function reducer(state: GameState, action: Action) {
             };
         }
         case ActionType.StartRequiredTask: {
+            let score = state.score;
+
+            if (!action.payload.success) {
+                score -= action.payload.task.penaltyScore;
+            }
+
             return {
                 ...state,
-                requiredTasks: addRequiredTask(
-                    state.requiredTasks,
-                    action.payload.task
-                ),
                 events: removeEventById(state.events, action.payload.task.id),
+                score,
             };
         }
         case ActionType.CompleteTask: {
@@ -255,10 +255,6 @@ function updateCompletedTasks(
     };
 }
 
-function addRequiredTask(requiredTasks: Event[], task: Event) {
-    return [...requiredTasks, task];
-}
-
 export enum ActionType {
     IncrementDay = 'incremented_day',
     DecrementSprintMeter = 'decremented_sprint_meter',
@@ -309,7 +305,6 @@ export const GameManager = () => {
                 completedTasks: state.completedTasks,
                 events: state.events,
                 score: state.score,
-                requiredTasks: state.requiredTasks,
                 difficulty: state.difficulty,
                 status: state.status,
                 isScreenFocused: state.isScreenFocused,

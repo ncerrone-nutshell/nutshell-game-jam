@@ -2,6 +2,7 @@ export enum EventType {
     SystemRefresh = 'system-refresh',
     CsvImport = 'csv-import',
     AdoptionReport = 'adoption-report',
+    ArjunPong = 'arjun-pong',
 }
 import { Difficulty, DIFFICULTY_DAY_THRESHOLDS } from './game-manager';
 
@@ -11,7 +12,6 @@ export interface Event {
     startButtonText: string;
     timeToCompleteDuration?: number;
     type: EventType;
-    likelihood: number;
     penaltyScore: number;
     id: string;
     tabText: string;
@@ -26,8 +26,7 @@ const SYSTEM_REFRESH_EVENT: Event = {
         'SECURITY ALERT! We’ve detected suspicious activity on your account. Please reset your password to ensure your account remains secure.',
     startButtonText: 'Reset password',
     type: EventType.SystemRefresh,
-    likelihood: 0.05,
-    timeToCompleteDuration: 30,
+    timeToCompleteDuration: 10,
     penaltyScore: 10,
     tabText: 'OperationsFX',
 };
@@ -40,8 +39,7 @@ const CSV_IMPORT_EVENT: Event = {
         'Hey can you help me fix this CSV file? This customer is totally lost',
     startButtonText: 'Open CSV',
     type: EventType.CsvImport,
-    likelihood: 0.05,
-    timeToCompleteDuration: 50,
+    timeToCompleteDuration: 10,
     penaltyScore: 10,
     tabText: 'CSV file',
 };
@@ -54,36 +52,72 @@ const ADOPTION_REPORT_EVENT: Event = {
         'Is anyone using the new product? I need to know if we’re on track',
     startButtonText: 'Open Redash',
     type: EventType.AdoptionReport,
-    likelihood: 0.05,
-    timeToCompleteDuration: 100,
+    timeToCompleteDuration: 7,
     penaltyScore: 10,
     tabText: 'Redash',
+};
+
+const ARJUN_PONG_EVENT: Event = {
+    id: crypto.randomUUID(),
+    startTimestamp: new Date().getTime(),
+    user: 'Arjun Pong',
+    headerText:
+        'Hey, I’m bored. Let’s play a game of Pong. I need to practice to beat Chris Cain 🏓',
+    startButtonText: 'Play Pong',
+    type: EventType.ArjunPong,
+    timeToCompleteDuration: 7,
+    penaltyScore: 10,
+    tabText: 'Pong',
 };
 
 const RANDOM_EVENTS: Event[] = [
     SYSTEM_REFRESH_EVENT,
     CSV_IMPORT_EVENT,
     ADOPTION_REPORT_EVENT,
+    ARJUN_PONG_EVENT,
 ];
 
-// TODO: Scale event likelihood & difficulty based on day
-export function generateRandomEvents(day: number): Event[] {
-    if (day < 2) {
-        return [];
+const EVENT_LIKELIHOOD_DIFFICULTY_MAP = {
+    1: 0.05,
+    2: 0.1,
+    3: 0.15,
+};
+
+const EVENT_MAX_COUNT_DIFFICULTY_MAP = {
+    1: 1,
+    2: 2,
+    3: 3,
+};
+
+export function generateRandomEvents(
+    difficulty: Difficulty,
+    currentEvents: Event[]
+): Event[] {
+    const maxCount = EVENT_MAX_COUNT_DIFFICULTY_MAP[difficulty];
+
+    if (currentEvents.length >= maxCount) {
+        return currentEvents;
     }
 
-    const events = RANDOM_EVENTS.map((event) => {
-        const random = Math.random();
-        if (random < event.likelihood) {
-            const startTimestamp = new Date().getTime();
+    let events = [...currentEvents];
 
-            return {
+    for (const event of RANDOM_EVENTS) {
+        if (events.length >= maxCount) {
+            break;
+        }
+
+        const random = Math.random();
+        const likelihood = EVENT_LIKELIHOOD_DIFFICULTY_MAP[difficulty];
+
+        if (random < likelihood) {
+            const startTimestamp = new Date().getTime();
+            events.push({
                 ...event,
                 id: crypto.randomUUID(),
                 startTimestamp,
-            };
+            });
         }
-    });
+    }
 
     return events.filter((event) => event !== undefined) as Event[];
 }

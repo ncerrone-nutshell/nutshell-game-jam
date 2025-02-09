@@ -44,7 +44,7 @@ type BrowserTabsProps = {
 };
 
 export function BrowserTabs(props: BrowserTabsProps) {
-    const { completedTasks, requiredTasks } = useContext(GameContextForwarded);
+    const { completedTasks } = useContext(GameContextForwarded);
 
     return (
         <div className="browser-tabs">
@@ -96,24 +96,6 @@ export function BrowserTabs(props: BrowserTabsProps) {
                 </div>
                 {getJenkinsStatus(completedTasks)}
             </button>
-            {requiredTasks.map((task) => {
-                return (
-                    <button
-                        key={task.id}
-                        className="browser-tab"
-                        data-state={
-                            props.activeTab === task.id ? 'active' : 'inactive'
-                        }
-                        onClick={() => props.setActiveTab(task.id)}
-                    >
-                        <div className="browser-tab-icon">
-                            {getTaskIcon(task)}
-                        </div>
-                        {task.startButtonText} •{' '}
-                        {(getTimeLeftPercentage(task) * 100).toFixed(1)}%
-                    </button>
-                );
-            })}
         </div>
     );
 }
