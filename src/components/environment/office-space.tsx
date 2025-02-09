@@ -1,7 +1,7 @@
 import { Euler, RepeatWrapping, TextureLoader, Vector2, Vector3 } from 'three';
 import { MainComputer } from './main-computer';
 import { CeilingLight, CeilingLightProps } from './ceiling-light';
-import { EnvironmentProps } from './helpers';
+import { EnvironmentProps, setupTexture } from './helpers';
 import { Monitor } from './Monitor';
 import { Desk } from './desk';
 import { useLoader } from '@react-three/fiber';
@@ -95,43 +95,25 @@ export function OfficeSpace(props: Props) {
     ]);
 
     useEffect(() => {
-        floorColorMap.repeat.set(5, 5);
-        floorDisplacementMap.repeat.set(5, 5);
-        floorNormalMap.repeat.set(5, 5);
-        floorAOMap.repeat.set(5, 5);
-
-        floorColorMap.wrapS = floorColorMap.wrapT = RepeatWrapping;
-        floorDisplacementMap.wrapS = floorDisplacementMap.wrapT =
-            RepeatWrapping;
-        floorNormalMap.wrapS = floorNormalMap.wrapT = RepeatWrapping;
-        floorAOMap.wrapS = floorAOMap.wrapT = RepeatWrapping;
+        setupTexture(floorColorMap, 5);
+        setupTexture(floorDisplacementMap, 5);
+        setupTexture(floorNormalMap, 5);
+        setupTexture(floorAOMap, 5);
     }, [floorColorMap, floorDisplacementMap, floorNormalMap, floorAOMap]);
 
     useEffect(() => {
-        wallColorMap.repeat.set(5, 5);
-        wallDisplacementMap.repeat.set(5, 5);
-        wallNormalMap.repeat.set(5, 5);
-        wallAOMap.repeat.set(5, 5);
-
-        wallColorMap.wrapS = wallColorMap.wrapT = RepeatWrapping;
-        wallDisplacementMap.wrapS = wallDisplacementMap.wrapT = RepeatWrapping;
-        wallNormalMap.wrapS = wallNormalMap.wrapT = RepeatWrapping;
-        wallAOMap.wrapS = wallAOMap.wrapT = RepeatWrapping;
+        setupTexture(wallColorMap, 5);
+        setupTexture(wallDisplacementMap, 5);
+        setupTexture(wallNormalMap, 5);
+        setupTexture(wallAOMap, 5);
     }, [wallColorMap, wallDisplacementMap, wallNormalMap, wallAOMap]);
 
     useEffect(() => {
-        ceilingColorMap.repeat.set(5, 5);
-        ceilingDisplacementMap.repeat.set(5, 5);
-        ceilingNormalMap.repeat.set(5, 5);
-        ceilingAOMap.repeat.set(5, 5);
-        ceilingMetalnessMap.repeat.set(5, 5);
-
-        ceilingColorMap.wrapS = ceilingColorMap.wrapT = RepeatWrapping;
-        ceilingDisplacementMap.wrapS = ceilingDisplacementMap.wrapT =
-            RepeatWrapping;
-        ceilingNormalMap.wrapS = ceilingNormalMap.wrapT = RepeatWrapping;
-        ceilingAOMap.wrapS = ceilingAOMap.wrapT = RepeatWrapping;
-        ceilingMetalnessMap.wrapS = ceilingMetalnessMap.wrapT = RepeatWrapping;
+        setupTexture(ceilingColorMap, 5);
+        setupTexture(ceilingDisplacementMap, 5);
+        setupTexture(ceilingNormalMap, 5);
+        setupTexture(ceilingAOMap, 5);
+        setupTexture(ceilingMetalnessMap, 5);
     }, [
         ceilingColorMap,
         ceilingDisplacementMap,
