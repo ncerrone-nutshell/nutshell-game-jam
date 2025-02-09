@@ -1,28 +1,42 @@
 import { useFrame, useThree } from '@react-three/fiber';
-import { useContext, useEffect } from 'react';
-import { easing } from 'maath';
-import { Euler } from 'three';
+import { useContext, useEffect, useState } from 'react';
+import { Vector2, Vector3 } from 'three';
 import { GameContext } from '../game-manager/game-manager';
 
 export function NutCamera() {
     const { camera } = useThree();
     const { isScreenFocused } = useContext(GameContext);
+    const [mouse, setMouse] = useState(new Vector2());
+    const [current, setCurrent] = useState(new Vector2());
 
     useEffect(() => {
         camera.position.set(0, 1, 5);
     }, []);
 
-    useFrame((state) => {
-        // TODO: FIX this method is only percieved on a state change, such as a
-        // console log
-        console.log(state.pointer);
+    useEffect(() => {
+        const handleMouseMove = (event: MouseEvent) => {
+            setMouse(
+                new Vector2(
+                    (event.clientX / window.innerWidth) * 2 - 1,
+                    -(event.clientY / window.innerHeight) * 2 + 1
+                )
+            );
+        };
 
-        const target = isScreenFocused
-            ? new Euler(0, 0, 0)
-            : new Euler(state.pointer.y * 0.2, -state.pointer.x * 0.2, 0);
-        const speed = isScreenFocused ? 0.001 : 0.01;
+        window.addEventListener('mousemove', handleMouseMove);
 
-        easing.dampE(camera.rotation, target, speed, state.clock.getDelta());
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
+    useFrame(() => {
+        const nextStep = isScreenFocused ? new Vector2(0, 1) : mouse;
+        const alpha = isScreenFocused ? 0.05 : 0.01;
+
+        setCurrent(current.lerp(nextStep, alpha));
+
+        camera.lookAt(new Vector3(current.x, current.y, -1));
     });
 
     return <></>;
