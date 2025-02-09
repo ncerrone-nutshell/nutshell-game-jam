@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { PingPongTable } from './ping-pong-table';
 import { WoodenDoor } from './wooden_door';
 import { Shelf } from './shelf';
+import { SprintMeter } from './Sprint_meter';
 
 const FORWARD_EULER = new Euler(0, 0, 0);
 const REVERSE_EULER = new Euler(0, Math.PI, 0);
@@ -135,6 +136,11 @@ export function OfficeSpace(props: Props) {
                     </>
                 )}
                 <MainComputer />
+                <SprintMeter
+                    scale={0.5}
+                    position={[-4, -2, 1]}
+                    rotation={[0, -Math.PI / 4, 0]}
+                />
                 {DESK_CONFIG.map((config, index) => (
                     <Desk
                         key={index}

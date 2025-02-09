@@ -4,8 +4,6 @@ import { useReducer } from 'react';
 
 import { App } from '../../app';
 
-import { GlobalUI } from './global-ui';
-
 // Currently unused, if we don't need this, let's remove it
 export enum TaskType {
     Coding = 'coding',
@@ -304,26 +302,21 @@ export const GameManager = () => {
     });
 
     return (
-        <>
-            {state.status === GameStatus.Playing && (
-                <GlobalUI sprintMeterPercentage={state.sprintMeterValue} />
-            )}
-            <GameContext.Provider
-                value={{
-                    day: state.day,
-                    sprintMeterValue: state.sprintMeterValue,
-                    completedTasks: state.completedTasks,
-                    events: state.events,
-                    score: state.score,
-                    requiredTasks: state.requiredTasks,
-                    difficulty: state.difficulty,
-                    status: state.status,
-                    isScreenFocused: state.isScreenFocused,
-                    dispatch,
-                }}
-            >
-                <App />
-            </GameContext.Provider>
-        </>
+        <GameContext.Provider
+            value={{
+                day: state.day,
+                sprintMeterValue: state.sprintMeterValue,
+                completedTasks: state.completedTasks,
+                events: state.events,
+                score: state.score,
+                requiredTasks: state.requiredTasks,
+                difficulty: state.difficulty,
+                status: state.status,
+                isScreenFocused: state.isScreenFocused,
+                dispatch,
+            }}
+        >
+            <App />
+        </GameContext.Provider>
     );
 };

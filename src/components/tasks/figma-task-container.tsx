@@ -131,7 +131,7 @@ export function FigmaTaskContainer() {
         minX: 0,
         maxX: 1300,
         minY: 0,
-        maxY: 800,
+        maxY: 600,
     };
 
     React.useEffect(() => {
