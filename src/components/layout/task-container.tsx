@@ -8,7 +8,7 @@ import {
 
 import './task-container.css';
 import { GuruCard } from '../tasks/guru-card';
-import { GameContext, TaskType } from '../game-manager/game-manager';
+import { ActionType, TaskType } from '../game-manager/game-manager';
 import { GameContextForwarded } from './computer-screen-provider';
 import { useContext } from 'react';
 
@@ -33,9 +33,12 @@ function getTaskTypeFromTab(tab: Tab) {
 
 export function TaskContainer(props: TaskContainerProps) {
     const { activeTab } = props;
-    const { requiredTasks } = useContext(GameContextForwarded);
+    const { requiredTasks, dispatch } = useContext(GameContextForwarded);
     const customTask = requiredTasks.find((task) => task.id === activeTab);
     const customTaskType = customTask?.type;
+
+    const taskEndTime =
+        customTask?.startTimestamp + customTask?.timeToCompleteDuration;
 
     const taskType = customTaskType || getTaskTypeFromTab(activeTab);
 
@@ -47,38 +50,105 @@ export function TaskContainer(props: TaskContainerProps) {
                 {taskType === TaskType.Review && <ReviewTaskContainer />}
                 {taskType === TaskType.Figma && <FigmaTaskContainer />}
                 {taskType === TaskType.Jenkins && <JenkinsTaskContainer />}
-                {taskType === TaskType.CsvImport && <CsvImportTaskContainer />}
-                {taskType === TaskType.SystemRefresh && (
-                    <SystemRefreshTaskContainer />
-                )}
-                {taskType === TaskType.AdoptionReport && (
-                    <AdoptionReportTaskContainer />
+                {customTask && (
+                    <>
+                        {taskType === TaskType.CsvImport && (
+                            <CsvImportTaskContainer
+                                eventId={customTask.id}
+                                score={customTask.penaltyScore}
+                            />
+                        )}
+                        {taskType === TaskType.ArjunPongRequest && (
+                            <ArjunPongRequestTaskContainer
+                                eventId={customTask.id}
+                                score={customTask.penaltyScore}
+                            />
+                        )}
+                        {taskType === TaskType.AdoptionReport && (
+                            <AdoptionReportTaskContainer
+                                eventId={customTask.id}
+                                score={customTask.penaltyScore}
+                            />
+                        )}
+                    </>
                 )}
             </div>
         </div>
     );
 }
 
-function CsvImportTaskContainer() {
+type TaskProps = {
+    eventId: string;
+    score: number;
+};
+
+function CsvImportTaskContainer(props: TaskProps) {
+    const { dispatch } = useContext(GameContextForwarded);
+    const { eventId, score } = props;
+
     return (
-        <div style={{ color: 'black', fontSize: 25, padding: 16 }}>
+        <button
+            style={{ color: 'black', fontSize: 25, padding: 16 }}
+            onClick={() => {
+                dispatch({
+                    type: ActionType.EndEvent,
+                    payload: {
+                        id: eventId,
+                        score,
+                        success: true,
+                    },
+                });
+            }}
+        >
             TODO: CsvImportTaskContainer
-        </div>
+        </button>
     );
 }
 
-function SystemRefreshTaskContainer() {
+function ArjunPongRequestTaskContainer(props: TaskProps) {
+    const { dispatch } = useContext(GameContextForwarded);
+
+    const { eventId, score } = props;
+
     return (
-        <div style={{ color: 'black', fontSize: 25, padding: 16 }}>
-            TODO:SystemRefreshTaskContainer
-        </div>
+        <button
+            style={{ color: 'black', fontSize: 25, padding: 16 }}
+            onClick={() => {
+                dispatch({
+                    type: ActionType.EndEvent,
+                    payload: {
+                        id: eventId,
+                        score,
+                        success: true,
+                    },
+                });
+            }}
+        >
+            TODO: ArjunPongRequestTaskContainer
+        </button>
     );
 }
 
-function AdoptionReportTaskContainer() {
+function AdoptionReportTaskContainer(props: TaskProps) {
+    const { dispatch } = useContext(GameContextForwarded);
+
+    const { eventId, score } = props;
+
     return (
-        <div style={{ color: 'black', fontSize: 25, padding: 16 }}>
+        <button
+            style={{ color: 'black', fontSize: 25, padding: 16 }}
+            onClick={() => {
+                dispatch({
+                    type: ActionType.EndEvent,
+                    payload: {
+                        id: eventId,
+                        score,
+                        success: true,
+                    },
+                });
+            }}
+        >
             TODO: AdoptionReportTaskContainer
-        </div>
+        </button>
     );
 }

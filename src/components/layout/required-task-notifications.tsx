@@ -19,7 +19,10 @@ export function RequiredTaskNotifications() {
         <div className="required-task-notifications">
             {events.map((event) => {
                 return (
-                    <RequiredTaskNotification key={event.id} event={event} />
+                    <RequiredTaskNotification
+                        key={`required-task-notification-${event.id}`}
+                        event={event}
+                    />
                 );
             })}
         </div>

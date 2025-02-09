@@ -6,8 +6,8 @@ import { GameManager } from './components/game-manager/game-manager.tsx';
 
 import './index.css';
 
-export const DEV_MODE = false;
-export const SHOW_CONSOLE = false;
+export const DEV_MODE = true;
+export const SHOW_CONSOLE = true;
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>

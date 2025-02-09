@@ -1,11 +1,11 @@
 import './browser-tabs.css';
-import { CoreTaskTypeState } from '../game-manager/game-manager';
+import { ActionType, CoreTaskTypeState } from '../game-manager/game-manager';
 
 import GithubMark from '../../icons/github';
 import CursorMark from '../../icons/cursor';
 import FigmaMark from '../../icons/figma';
 import JenkinsMark from '../../icons/jenkins';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { GameContextForwarded } from './computer-screen-provider';
 import { Tab } from './computer-screen';
 import {
@@ -44,7 +44,45 @@ type BrowserTabsProps = {
 };
 
 export function BrowserTabs(props: BrowserTabsProps) {
-    const { completedTasks, requiredTasks } = useContext(GameContextForwarded);
+    const { completedTasks, requiredTasks, dispatch } =
+        useContext(GameContextForwarded);
+
+    const [taskButtons, setTaskButtons] = useState<React.ReactNode[]>([]);
+
+    useEffect(() => {
+        const buttons = [];
+        for (const task of requiredTasks) {
+            const timeLeftPercentage = getTimeLeftPercentage(task);
+
+            const timeRemaining = task.timeToCompleteDuration;
+            setTimeout(() => {
+                dispatch({
+                    type: ActionType.EndEvent,
+                    payload: {
+                        id: task.id,
+                        score: task.penaltyScore,
+                        success: false,
+                    },
+                });
+            }, timeRemaining);
+
+            buttons.push(
+                <button
+                    key={`browser-tab-${task.id}`}
+                    className="browser-tab"
+                    data-state={
+                        props.activeTab === task.id ? 'active' : 'inactive'
+                    }
+                    onClick={() => props.setActiveTab(task.id)}
+                >
+                    <div className="browser-tab-icon">{getTaskIcon(task)}</div>
+                    {task.startButtonText} •{' '}
+                    {(timeLeftPercentage * 100).toFixed(1)}%
+                </button>
+            );
+        }
+        setTaskButtons(buttons);
+    }, [requiredTasks]);
 
     return (
         <div className="browser-tabs">
@@ -96,24 +134,7 @@ export function BrowserTabs(props: BrowserTabsProps) {
                 </div>
                 {getJenkinsStatus(completedTasks)}
             </button>
-            {requiredTasks.map((task) => {
-                return (
-                    <button
-                        key={task.id}
-                        className="browser-tab"
-                        data-state={
-                            props.activeTab === task.id ? 'active' : 'inactive'
-                        }
-                        onClick={() => props.setActiveTab(task.id)}
-                    >
-                        <div className="browser-tab-icon">
-                            {getTaskIcon(task)}
-                        </div>
-                        {task.startButtonText} •{' '}
-                        {(getTimeLeftPercentage(task) * 100).toFixed(1)}%
-                    </button>
-                );
-            })}
+            {taskButtons}
         </div>
     );
 }

@@ -11,7 +11,7 @@ export enum TaskType {
     Figma = 'figma',
     Jenkins = 'jenkins',
     CsvImport = EventType.CsvImport,
-    SystemRefresh = EventType.SystemRefresh,
+    ArjunPongRequest = EventType.ArjunPongRequest,
     AdoptionReport = EventType.AdoptionReport,
 }
 
@@ -76,6 +76,7 @@ export type GameContextType = {
     status: GameStatus;
     isScreenFocused: boolean;
     dispatch: (action: Action) => void;
+    finishedEventIds: string[];
 };
 
 export enum GameStatus {
@@ -94,6 +95,7 @@ export type GameState = {
     difficulty: Difficulty;
     isScreenFocused: boolean;
     status: GameStatus;
+    finishedEventIds: string[];
 };
 
 const SPRINT_METER_MAX = 100;
@@ -102,7 +104,7 @@ const SPRINT_METER_DECAY_RATES: { [key in Difficulty]: number } = {
     2: 1, // Normal decay for medium mode
     3: 2, // Faster decay for hard mode
 };
-const DAY_TIMER = 5; // 5 seconds
+const DAY_TIMER = 1; // 5 seconds
 
 export const GAME_STATE_DEFAULTS: GameState = {
     day: 0,
@@ -114,6 +116,7 @@ export const GAME_STATE_DEFAULTS: GameState = {
     difficulty: Difficulty.Easy,
     isScreenFocused: false,
     status: GameStatus.NotStarted,
+    finishedEventIds: [],
 };
 
 export const GAME_CONTEXT_DEFAULTS: GameContextType = {
@@ -140,14 +143,13 @@ type Action = {
 function reducer(state: GameState, action: Action) {
     switch (action.type) {
         case ActionType.IncrementDay: {
-            const newEvents = generateRandomEvents(state.day);
-
+            const events = generateRandomEvents(state.events, state.difficulty);
             const newDifficulty = getNewDifficulty(state.difficulty, state.day);
 
             return {
                 ...state,
                 day: state.day + 1,
-                events: [...state.events, ...newEvents],
+                events: events,
                 difficulty: newDifficulty,
             };
         }
@@ -232,6 +234,52 @@ function reducer(state: GameState, action: Action) {
                 isScreenFocused: action.payload.isScreenFocused,
             };
         }
+        // Takes in an Event and adds it to the finishedEventIds array if it's
+        // not already in there. If it isn't, we subtract the score from the total
+        // score. If it is, we don't have to do anything
+        case ActionType.EndEvent: {
+            const eventId = action.payload.id;
+
+            if (!eventId) {
+                return state;
+            }
+
+            const score = action.payload.score;
+
+            if (typeof score !== 'number') {
+                console.error('Score is not a number');
+                return state;
+            }
+
+            const isFinished = state.finishedEventIds.find(
+                (eventId: string) => eventId === eventId
+            );
+
+            if (!isFinished) {
+                if (action.payload.success) {
+                    return {
+                        ...state,
+                        finishedEventIds: [...state.finishedEventIds, eventId],
+                        requiredTasks: removeEventById(
+                            state.requiredTasks,
+                            eventId
+                        ),
+                    };
+                } else {
+                    return {
+                        ...state,
+                        finishedEventIds: [...state.finishedEventIds, eventId],
+                        score: state.score - score,
+                        requiredTasks: removeEventById(
+                            state.requiredTasks,
+                            eventId
+                        ),
+                    };
+                }
+            }
+
+            return state;
+        }
     }
     throw Error('Unknown action: ' + action.type);
 }
@@ -271,6 +319,7 @@ export enum ActionType {
     StartGame = 'start_game',
     ResetGame = 'reset_game',
     SetScreenFocus = 'set_screen_focus',
+    EndEvent = 'end_event',
 }
 
 export const GameManager = () => {
@@ -313,6 +362,7 @@ export const GameManager = () => {
                 difficulty: state.difficulty,
                 status: state.status,
                 isScreenFocused: state.isScreenFocused,
+                finishedEventIds: state.finishedEventIds,
                 dispatch,
             }}
         >

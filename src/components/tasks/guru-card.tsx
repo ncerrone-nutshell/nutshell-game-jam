@@ -56,8 +56,8 @@ function getGuruCardInstructions(task: TaskType) {
             return 'Click the "Build a release" button when you’re ready to push a release to production. The more well-rounded your release, the more points you’ll score.';
         case TaskType.CsvImport:
             return 'Fix the formatting of the CSV file so that it can be properly imported. When the CSV is fixed correctly, click the "Import CSV" button.';
-        case TaskType.SystemRefresh:
-            return 'To reset your password, type it in the box below. Make sure to choose a new password that matches the criteria provided.';
+        case TaskType.ArjunPongRequest:
+            return 'TODO: Figure this out';
         case TaskType.AdoptionReport:
             return 'Find the feature usage for the day provided. Hover over each day to see the usage. When you find usage for the day provided, send a message to Andy with the number of users.';
         default:
