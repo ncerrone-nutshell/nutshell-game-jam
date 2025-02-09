@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { DIFFICULTY_DISPLAY_NAME_MAP } from '../game-manager/game-manager';
 import { GameContextForwarded } from './computer-screen-provider';
 import './console-content.css';
+import { DEV_MODE } from '../../main';
 
 export enum ConsoleContentItemType {
     Console = 'console',
@@ -13,35 +14,28 @@ type ConsoleContentProps = {
     onTriggerEvent: (type: ConsoleContentItemType) => void;
 };
 
+export const COMPLETE_TASK_EVENT = 'complete-task-dev';
+
 export function ConsoleContent(props: ConsoleContentProps) {
     const { day, score, completedTasks, sprintMeterValue, difficulty } =
         useContext(GameContextForwarded);
+
     const { onTriggerEvent } = props;
 
     return (
         <div className="console-content">
             <div className="console-content-items">
-                <ConsoleContentItem
-                    onClick={() => {
-                        onTriggerEvent(ConsoleContentItemType.Console);
-                    }}
-                >
-                    Trigger hackathon
-                </ConsoleContentItem>
-                <ConsoleContentItem
-                    onClick={() => {
-                        onTriggerEvent(ConsoleContentItemType.Console);
-                    }}
-                >
-                    Trigger escalation process
-                </ConsoleContentItem>
-                <ConsoleContentItem
-                    onClick={() => {
-                        onTriggerEvent(ConsoleContentItemType.Console);
-                    }}
-                >
-                    Trigger arjun pong
-                </ConsoleContentItem>
+                {DEV_MODE && (
+                    <ConsoleContentItem
+                        onClick={() => {
+                            window.dispatchEvent(
+                                new Event(COMPLETE_TASK_EVENT)
+                            );
+                        }}
+                    >
+                        Complete current task (debug only)
+                    </ConsoleContentItem>
+                )}
             </div>
             <div className="console-content-status">
                 <div className="console-content-status-title">

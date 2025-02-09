@@ -1,14 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import './figma-task-container.css';
 
-import OrangeTriangle from '../../assets/orange-triangle.tsx';
-import OrangeTarget from '../../assets/orange-target.tsx';
+import NutshellIcon from '../../icons/figma-task/nutshell';
+import NutshellOutlineIcon from '../../icons/figma-task/nutshell-outline';
+import SquirrelIcon from '../../icons/figma-task/squirrel';
+import SquirrelOutlineIcon from '../../icons/figma-task/squirrel-outline';
+import PersonIcon from '../../icons/figma-task/person';
+import PersonOutlineIcon from '../../icons/figma-task/person-outline';
+import CompanyIcon from '../../icons/figma-task/company';
+import CompanyOutlineIcon from '../../icons/figma-task/company-outline';
+
 import { CoreTaskType } from '../game-manager/game-manager';
-import BlueTriangle from '../../assets/blue-triangle.tsx';
-import BlueTarget from '../../assets/blue-target.tsx';
 import { GameContextForwarded } from '../layout/computer-screen-provider.tsx';
 import { ActionType } from '../game-manager/game-manager';
+import { COMPLETE_TASK_EVENT } from '../layout/console-content.tsx';
+import { DEV_MODE } from '../../main.tsx';
+import { TaskCompleted } from './task-completed.tsx';
 
 interface ShapeData {
     id: number;
@@ -55,8 +63,13 @@ function generateShapes(
     numShapes: number,
     bounds: Bounds
 ): { shapes: ShapeData[]; shapeTargets: ShapeTargetData[] } {
-    const shapeAssets = [OrangeTriangle, BlueTriangle]; // Shape assets
-    const targetAssets = [OrangeTarget, BlueTarget]; // Corresponding target assets
+    const shapeAssets = [NutshellIcon, SquirrelIcon, PersonIcon, CompanyIcon]; // Shape assets
+    const targetAssets = [
+        NutshellOutlineIcon,
+        SquirrelOutlineIcon,
+        PersonOutlineIcon,
+        CompanyOutlineIcon,
+    ]; // Corresponding target assets
 
     const shapes: ShapeData[] = [];
     const shapeTargets: ShapeTargetData[] = [];
@@ -97,12 +110,27 @@ export function FigmaTaskContainer() {
     const [shapeTargets, setShapeTargets] = React.useState<ShapeTargetData[]>(
         []
     );
+    const [taskCompleted, setTaskCompleted] = React.useState<boolean>(false);
+
+    React.useEffect(() => {
+        const handleCompleteTask = () => {
+            if (DEV_MODE) {
+                handleTaskCompleted();
+            }
+        };
+
+        window.addEventListener(COMPLETE_TASK_EVENT, handleCompleteTask);
+
+        return () => {
+            window.removeEventListener(COMPLETE_TASK_EVENT, handleCompleteTask);
+        };
+    }, []);
 
     const bounds: Bounds = {
         minX: 0,
-        maxX: 700,
+        maxX: 1300,
         minY: 0,
-        maxY: 400,
+        maxY: 800,
     };
 
     React.useEffect(() => {
@@ -114,8 +142,7 @@ export function FigmaTaskContainer() {
             2,
             bounds
         );
-        setShapes([]);
-        setShapeTargets([]);
+
         setShapes(newShapes);
         setShapeTargets(newTargets);
         setCompletedShapes([]);
@@ -133,8 +160,9 @@ export function FigmaTaskContainer() {
         });
     };
 
-    React.useEffect(() => {
-        if (completedShapes.length === shapes.length) {
+    const handleTaskCompleted = () => {
+        setTaskCompleted(true);
+        setTimeout(() => {
             dispatch({
                 type: ActionType.CompleteTask,
                 payload: {
@@ -142,11 +170,25 @@ export function FigmaTaskContainer() {
                     score: 1,
                 },
             });
+            setCompletedShapes([]);
+            setShapes([]);
+            setShapeTargets([]);
             generateNewMockup();
+            setTaskCompleted(false);
+        }, 1000);
+    };
+
+    React.useEffect(() => {
+        if (
+            completedShapes.length === shapes.length &&
+            shapes.length > 0 &&
+            !taskCompleted
+        ) {
+            handleTaskCompleted();
         }
     }, [completedShapes, shapes.length, generateNewMockup]);
 
-    return (
+    return !taskCompleted ? (
         <div className="figma-task-container">
             <div className="figma-task-container-shapes">
                 {shapes.map((shape, index) => (
@@ -175,6 +217,8 @@ export function FigmaTaskContainer() {
                 ))}
             </div>
         </div>
+    ) : (
+        <TaskCompleted />
     );
 }
 
@@ -268,7 +312,15 @@ function Shape(props: ShapeProps) {
         <Asset
             transform={`translate(${position.x} ${position.y}) rotate(${rotation})`}
             onClick={props.onClick}
-            style={{ transformOrigin: 'center', position: 'absolute' }}
+            style={{
+                transformOrigin: 'center',
+                position: 'absolute',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}
+            width={150}
+            height={150}
         />
     );
 }
@@ -285,7 +337,15 @@ function ShapeTarget(props: ShapeTargetProps) {
     return (
         <Asset
             transform={`translate(${props.positionGoal.x} ${props.positionGoal.y}) rotate(${props.rotationGoal} )`}
-            style={{ transformOrigin: 'center', position: 'absolute' }}
+            style={{
+                transformOrigin: 'center',
+                position: 'absolute',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}
+            width={150}
+            height={150}
         />
     );
 }
