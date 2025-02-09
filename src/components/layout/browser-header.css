@@ -32,3 +32,13 @@
 .maximize {
     background-color: #22c55e;
 }
+
+.initials{    
+    color: white;
+    background-color: #eab308;
+    text-align: center;
+    text-transform: uppercase;
+    padding:8px;
+    margin-right: 16px;
+    border-radius: 100px;
+}

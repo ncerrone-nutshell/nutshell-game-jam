@@ -1,6 +1,9 @@
+import { useContext } from 'react';
+
 import './browser-header.css';
 import { Tab } from './computer-screen';
 import { BrowserTabs } from './browser-tabs';
+import { GameContextForwarded } from './computer-screen-provider';
 
 type BrowserHeaderProps = {
     setActiveTab: (tab: Tab) => void;
@@ -8,6 +11,8 @@ type BrowserHeaderProps = {
 };
 
 export function BrowserHeader(props: BrowserHeaderProps) {
+    const { userName } = useContext(GameContextForwarded);
+
     return (
         <div className="browser-header">
             <div className="controls-container">
@@ -19,6 +24,11 @@ export function BrowserHeader(props: BrowserHeaderProps) {
                 activeTab={props.activeTab}
                 setActiveTab={props.setActiveTab}
             />
+            <div className='initials'>
+                {userName.includes(' ') 
+                    ? userName.split(' ').map(word => word[0]).join('')
+                    : userName.slice(0, 2)}
+            </div>
         </div>
     );
 }

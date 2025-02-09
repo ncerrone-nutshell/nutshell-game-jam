@@ -39,8 +39,8 @@ function getJenkinsStatus(completedTasks: CoreTaskTypeState) {
 }
 
 type BrowserTabsProps = {
-    activeTab: string;
-    setActiveTab: (tab: string) => void;
+    activeTab: Tab;
+    setActiveTab: (tab: Tab) => void;
 };
 
 export function BrowserTabs(props: BrowserTabsProps) {
