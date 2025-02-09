@@ -3,7 +3,7 @@
 import { createContext } from 'react';
 import { GameContextType } from '../game-manager/game-manager';
 
-// TODO: figure out why we cant set a default value
+// @ts-ignore
 export const GameContextForwarded = createContext<GameContextType>(null);
 
 // Takes the context from outside of the HTML and forwards it to the context provider

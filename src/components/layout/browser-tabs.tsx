@@ -8,11 +8,7 @@ import JenkinsMark from '../../icons/jenkins';
 import { useContext } from 'react';
 import { GameContextForwarded } from './computer-screen-provider';
 import { Tab } from './computer-screen';
-import {
-    Event,
-    EventType,
-    getTimeLeftPercentage,
-} from '../game-manager/helpers';
+import { Event, EventType } from '../game-manager/helpers';
 import WebfxMark from '../../icons/webfx';
 import SheetsMark from '../../icons/sheets';
 import RedashMark from '../../icons/redash';
