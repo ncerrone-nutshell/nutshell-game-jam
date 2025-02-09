@@ -1,9 +1,8 @@
 .commit-container {
     position: relative;
-    width: 100%;
     height: 700px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     flex-direction: column;
 }
@@ -29,11 +28,9 @@
 }
 
 .commit-control-bar {
-    position: absolute;
     display: flex;
     align-items: center;
-    bottom: -64px;
-    right: 0;
+    margin-right:48px;
 }
 
 .commit-control-bar-text {
@@ -62,17 +59,16 @@
 
 .commit-container textarea {
     position: absolute;
-    font-size: 25px;
-    line-height: 1.5;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    resize: none;
     border: none;
     outline: none;
     background-color: transparent;
     opacity: 0;
+    width:100%;
+    height:400px;
 }
 
 .commit-btn {
@@ -91,4 +87,12 @@
     border-color: #9e9e9e;
     color: #eeeeee;
     opacity: 0.5;
+}
+
+.commit-btn:hover {
+    cursor: pointer;
+}
+
+.commit-btn:not(:disabled):hover {
+    background-color: rgb(2, 91, 2);
 }

@@ -184,14 +184,16 @@ function CommitMessageScored(props: {
     });
 
     return (
-        <div className={`commit-message ${props.isActive ? 'active' : ''}`}>
-            {characters}
+        <>
+            <div className={`commit-message ${props.isActive ? 'active' : ''}`}>
+                {characters}
+            </div>
             <ControlBar
-                onCommit={props.onCommit}
-                targetMessage={props.targetMessage}
-                commitMessage={props.commitMessage}
+            onCommit={props.onCommit}
+            targetMessage={props.targetMessage}
+            commitMessage={props.commitMessage}
             />
-        </div>
+        </>
     );
 }
 
