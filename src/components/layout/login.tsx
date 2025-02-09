@@ -23,6 +23,18 @@ export function Login() {
                 flexDirection: 'column',
                 gap: '32px',
             }}
+            onMouseEnter={() =>
+                dispatch({
+                    type: ActionType.SetScreenFocus,
+                    payload: { isScreenFocused: true },
+                })
+            }
+            onMouseLeave={() =>
+                dispatch({
+                    type: ActionType.SetScreenFocus,
+                    payload: { isScreenFocused: false },
+                })
+            }
         >
             <div
                 style={{
