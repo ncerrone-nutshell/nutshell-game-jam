@@ -9,7 +9,7 @@ import { SHOW_CONSOLE } from '../../main';
 import './computer-screen.css';
 import { GameContextForwarded } from './computer-screen-provider';
 import { Login } from './login';
-import { GameStatus } from '../game-manager/game-manager';
+import { ActionType, GameStatus } from '../game-manager/game-manager';
 import { LostScreen } from './lost';
 
 export enum Tab {
@@ -20,7 +20,7 @@ export enum Tab {
 }
 
 export function ComputerScreen() {
-    const { status } = useContext(GameContextForwarded);
+    const { status, dispatch } = useContext(GameContextForwarded);
 
     const [activeTab, setActiveTab] = useState<Tab>(Tab.Coding);
 
@@ -33,7 +33,21 @@ export function ComputerScreen() {
     }
 
     return (
-        <div className="screen-container">
+        <div
+            className="screen-container"
+            onMouseEnter={() =>
+                dispatch({
+                    type: ActionType.SetScreenFocus,
+                    payload: { isScreenFocused: true },
+                })
+            }
+            onMouseLeave={() =>
+                dispatch({
+                    type: ActionType.SetScreenFocus,
+                    payload: { isScreenFocused: false },
+                })
+            }
+        >
             <div className="container">
                 <BrowserHeader
                     setActiveTab={setActiveTab}

@@ -76,6 +76,7 @@ export type GameContextType = {
     requiredTasks: Event[];
     difficulty: Difficulty;
     status: GameStatus;
+    isScreenFocused: boolean;
     dispatch: (action: Action) => void;
 };
 
@@ -93,6 +94,7 @@ export type GameState = {
     sprintMeterValue: number;
     requiredTasks: Event[];
     difficulty: Difficulty;
+    isScreenFocused: boolean;
     status: GameStatus;
 };
 
@@ -112,6 +114,7 @@ export const GAME_STATE_DEFAULTS: GameState = {
     sprintMeterValue: SPRINT_METER_MAX,
     requiredTasks: [],
     difficulty: Difficulty.Easy,
+    isScreenFocused: false,
     status: GameStatus.NotStarted,
 };
 
@@ -225,6 +228,12 @@ function reducer(state: GameState, action: Action) {
                 status: GameStatus.NotStarted,
             };
         }
+        case ActionType.SetScreenFocus: {
+            return {
+                ...state,
+                isScreenFocused: action.payload.isScreenFocused,
+            };
+        }
     }
     throw Error('Unknown action: ' + action.type);
 }
@@ -263,6 +272,7 @@ export enum ActionType {
     StartRequiredTask = 'start_required_task',
     StartGame = 'start_game',
     ResetGame = 'reset_game',
+    SetScreenFocus = 'set_screen_focus',
 }
 
 export const GameManager = () => {
@@ -308,6 +318,7 @@ export const GameManager = () => {
                     requiredTasks: state.requiredTasks,
                     difficulty: state.difficulty,
                     status: state.status,
+                    isScreenFocused: state.isScreenFocused,
                     dispatch,
                 }}
             >
