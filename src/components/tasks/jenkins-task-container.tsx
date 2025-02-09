@@ -3,6 +3,7 @@ import { ActionType } from '../game-manager/game-manager';
 
 import './jenkins-task-container.css';
 import { GameContextForwarded } from '../layout/computer-screen-provider';
+import { PieChart } from 'react-minimal-pie-chart';
 
 const BASE_RELEASE_SCORE = 100;
 const BASE_RELEASE_SPRINT_METER_GAIN = 5;
@@ -95,7 +96,50 @@ export function JenkinsTaskContainer() {
                     </div>
                     <div className="jenkins-task-release-breakdown-container">
                         <div className="jenkins-task-release-breakdown-item">
-                            Unreleased commits:
+                            Commit breakdown:
+                        </div>
+                        <div
+                            style={{
+                                paddingTop: '30px',
+                                width: '65%',
+                                height: '65%',
+                            }}
+                        >
+                            <PieChart
+                                labelStyle={{
+                                    fontSize: '5px',
+                                    fontFamily: 'sans-serif',
+                                }}
+                                label={({ dataEntry }) => {
+                                    if (dataEntry.value == 0) {
+                                        return '';
+                                    }
+                                    return `${dataEntry.title}: ${dataEntry.value}`;
+                                }}
+                                data={[
+                                    {
+                                        title: 'Code',
+                                        value: completedTasks.coding
+                                            .completedCount,
+                                        color: '#E38627',
+                                        key: 'code',
+                                    },
+                                    {
+                                        title: 'Review',
+                                        value: completedTasks.review
+                                            .completedCount,
+                                        color: '#C13C37',
+                                        key: 'review',
+                                    },
+                                    {
+                                        title: 'Design',
+                                        value: completedTasks.figma
+                                            .completedCount,
+                                        color: '#6A2135',
+                                        key: 'design',
+                                    },
+                                ]}
+                            />
                         </div>
                     </div>
                 </div>
