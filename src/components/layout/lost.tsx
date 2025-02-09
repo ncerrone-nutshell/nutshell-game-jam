@@ -1,11 +1,15 @@
 import './lost.css';
 import { useContext } from 'react';
 import { GameContextForwarded } from './computer-screen-provider';
-import { ActionType } from '../game-manager/game-manager';
+import {
+    ActionType,
+    DIFFICULTY_DISPLAY_NAME_MAP,
+} from '../game-manager/game-manager';
 import NutshellIcon from '../../icons/figma-task/nutshell';
 
 export function LostScreen() {
-    const { dispatch, score, day, userName } = useContext(GameContextForwarded);
+    const { dispatch, score, day, userName, difficulty } =
+        useContext(GameContextForwarded);
 
     return (
         <div
@@ -30,6 +34,9 @@ export function LostScreen() {
             <div className="lost-stats">
                 <div>Days Survived: {day}</div>
                 <div>Total Score: {score}</div>
+                <div>
+                    Final Title: {DIFFICULTY_DISPLAY_NAME_MAP[difficulty]}
+                </div>
             </div>
             <button
                 className="lost-retry-button"
