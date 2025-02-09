@@ -1,6 +1,6 @@
 import { Euler, RepeatWrapping, TextureLoader, Vector2, Vector3 } from 'three';
 import { MainComputer } from './main-computer';
-import { CeilingLight, CeilingLightProps } from './prototype/ceiling-light';
+import { CeilingLight, CeilingLightProps } from './ceiling-light';
 import { EnvironmentProps } from './helpers';
 import { Monitor } from './Monitor';
 import { Desk } from './desk';
@@ -40,7 +40,7 @@ const COMPUTER_CONFIG: EnvironmentProps[] = [
 ];
 
 const CEILING_LIGHT_CONFIG: CeilingLightProps[] = [
-    { position: new Vector3(0, 20, -5), activeLights: true, intensity: 100 },
+    { position: new Vector3(0, 20, -5), activeLights: true, intensity: 300 },
     { position: new Vector3(50, 20, -5), activeLights: true, intensity: 1000 },
     { position: new Vector3(0, 20, -40), activeLights: true, intensity: 1000 },
     { position: new Vector3(50, 20, -40), activeLights: true, intensity: 1000 },
@@ -67,6 +67,20 @@ export function OfficeSpace(props: Props) {
             './textures/brick-wall_ao.png',
         ]);
 
+    const [
+        ceilingColorMap,
+        ceilingDisplacementMap,
+        ceilingNormalMap,
+        ceilingAOMap,
+        ceilingMetalnessMap,
+    ] = useLoader(TextureLoader, [
+        './textures/sprayed-wall-texture1_albedo.png',
+        './textures/sprayed-wall-texture1_height.png',
+        './textures/sprayed-wall-texture1_normal-ogl.png',
+        './textures/sprayed-wall-texture1_ao.png',
+        './textures/sprayed-wall-texture1_metallic.png',
+    ]);
+
     useEffect(() => {
         floorColorMap.repeat.set(5, 5);
         floorDisplacementMap.repeat.set(5, 5);
@@ -91,6 +105,26 @@ export function OfficeSpace(props: Props) {
         wallNormalMap.wrapS = wallNormalMap.wrapT = RepeatWrapping;
         wallAOMap.wrapS = wallAOMap.wrapT = RepeatWrapping;
     }, [wallColorMap, wallDisplacementMap, wallNormalMap, wallAOMap]);
+
+    useEffect(() => {
+        ceilingColorMap.repeat.set(5, 5);
+        ceilingDisplacementMap.repeat.set(5, 5);
+        ceilingNormalMap.repeat.set(5, 5);
+        ceilingAOMap.repeat.set(5, 5);
+        ceilingMetalnessMap.repeat.set(5, 5);
+
+        ceilingColorMap.wrapS = ceilingColorMap.wrapT = RepeatWrapping;
+        ceilingDisplacementMap.wrapS = ceilingDisplacementMap.wrapT =
+            RepeatWrapping;
+        ceilingNormalMap.wrapS = ceilingNormalMap.wrapT = RepeatWrapping;
+        ceilingAOMap.wrapS = ceilingAOMap.wrapT = RepeatWrapping;
+        ceilingMetalnessMap.wrapS = ceilingMetalnessMap.wrapT = RepeatWrapping;
+    }, [
+        ceilingColorMap,
+        ceilingDisplacementMap,
+        ceilingNormalMap,
+        ceilingAOMap,
+    ]);
 
     return (
         <>
@@ -181,7 +215,14 @@ export function OfficeSpace(props: Props) {
                 {/* CEILING */}
                 <mesh position={[40, 31.5, -35]} scale={[125, 0.1, 100]}>
                     <boxGeometry />
-                    <meshStandardMaterial color={'#fff'} />
+                    <meshStandardMaterial
+                        map={ceilingColorMap}
+                        displacementMap={ceilingDisplacementMap}
+                        normalMap={ceilingNormalMap}
+                        aoMap={ceilingAOMap}
+                        normalScale={new Vector2(2, 2)}
+                        displacementScale={2}
+                    />
                 </mesh>
                 {/* CEILING LIGHTS */}
                 {CEILING_LIGHT_CONFIG.map((config, index) => (

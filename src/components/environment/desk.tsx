@@ -30,6 +30,7 @@ export function Desk(props: JSX.IntrinsicElements['group']) {
                 material={materials.material_0}
                 rotation={[-Math.PI / 2, 0, 0]}
                 scale={0.05}
+                receiveShadow
             />
         </group>
     );
