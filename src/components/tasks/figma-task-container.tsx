@@ -16,6 +16,7 @@ import { GameContextForwarded } from '../layout/computer-screen-provider.tsx';
 import { ActionType } from '../game-manager/game-manager';
 import { COMPLETE_TASK_EVENT } from '../layout/console-content.tsx';
 import { DEV_MODE } from '../../main.tsx';
+import { TaskControls } from './figma/task-controls.tsx';
 import { TaskCompleted } from './task-completed.tsx';
 
 interface ShapeData {
@@ -216,6 +217,7 @@ export function FigmaTaskContainer() {
                     </React.Fragment>
                 ))}
             </div>
+            <TaskControls />
         </div>
     ) : (
         <TaskCompleted />

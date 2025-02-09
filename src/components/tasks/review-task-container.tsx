@@ -77,7 +77,7 @@ export function ReviewTaskContainer() {
             },
         });
 
-        resetTask(MAX_LINES_EASY);
+        resetTask(MAX_LINES[difficulty]);
     };
 
     useEffect(() => {
@@ -122,6 +122,7 @@ export function ReviewTaskContainer() {
             const bugCharacterIndex = Math.floor(
                 Math.random() * LINES[randomBugIndex].length
             );
+            console.log(randomBugIndex, bugCharacterIndex);
             setBugCharacterIndex(bugCharacterIndex);
         },
         [failedTask]
@@ -264,6 +265,9 @@ function Character({
     char: string;
     isBugCharacter: boolean;
 }) {
+    if (isBugCharacter) {
+        console.log(char, isBugCharacter);
+    }
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
     return (
