@@ -60,9 +60,9 @@ export const DIFFICULTY_DAY_THRESHOLDS: {
 export const DIFFICULTY_DISPLAY_NAME_MAP: {
     [key in Difficulty]: string;
 } = {
-    [Difficulty.Easy]: 'Jr. Software Engineer',
-    [Difficulty.Medium]: 'Software Engineer',
-    [Difficulty.Hard]: 'Senior Software Engineer',
+    [Difficulty.Easy]: 'Jr. Nutshell Employee',
+    [Difficulty.Medium]: 'Nutshell Employee',
+    [Difficulty.Hard]: 'Senior Nutshell Employee',
 };
 
 export type GameContextType = {
@@ -98,11 +98,11 @@ export type GameState = {
 
 const SPRINT_METER_MAX = 100;
 const SPRINT_METER_DECAY_RATES: { [key in Difficulty]: number } = {
-    1: 0.5, // Slower decay for easy mode
-    2: 1, // Normal decay for medium mode
-    3: 2, // Faster decay for hard mode
+    1: 0.2, // Slower decay for easy mode
+    2: 0.4, // Normal decay for medium mode
+    3: 0.6, // Faster decay for hard mode
 };
-const DAY_TIMER = 5; // 5 seconds
+const DAY_TIMER = 12; // 10 seconds
 
 export const GAME_STATE_DEFAULTS: GameState = {
     day: 0,
