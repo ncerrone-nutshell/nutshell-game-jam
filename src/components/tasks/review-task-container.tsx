@@ -55,6 +55,9 @@ const MAX_LINES = {
 
 export function ReviewTaskContainer() {
     const [randomBugIndex, setRandomBugIndex] = useState<number | null>(null);
+    const [bugCharacterIndex, setBugCharacterIndex] = useState<number | null>(
+        null
+    );
     const [numLines, setNumLines] = useState<number>(1);
     const [failedTask, setFailedTask] = useState<boolean>(false);
     const [hoveredLineIndex, setHoveredLineIndex] = useState<number | null>(
@@ -112,7 +115,14 @@ export function ReviewTaskContainer() {
             setIsReviewingLineIndex(null);
             setHoveredLineIndex(null);
             setNumLines(randomizedNumLines);
-            setRandomBugIndex(Math.floor(Math.random() * randomizedNumLines));
+            const randomBugIndex = Math.floor(
+                Math.random() * randomizedNumLines
+            );
+            setRandomBugIndex(randomBugIndex);
+            const bugCharacterIndex = Math.floor(
+                Math.random() * LINES[randomBugIndex].length
+            );
+            setBugCharacterIndex(bugCharacterIndex);
         },
         [failedTask]
     );
@@ -220,12 +230,22 @@ export function ReviewTaskContainer() {
                                         <span style={{ color: 'white' }}>
                                             +
                                         </span>{' '}
-                                        {line}
-                                        {randomBugIndex === index && (
-                                            <span style={{ color: 'red' }}>
-                                                {'<--- this line has a bug'}
-                                            </span>
-                                        )}
+                                        {line
+                                            .split('')
+                                            .map((char, charIndex) => {
+                                                return (
+                                                    <Character
+                                                        key={charIndex}
+                                                        char={char}
+                                                        isBugCharacter={
+                                                            charIndex ===
+                                                                bugCharacterIndex &&
+                                                            index ===
+                                                                randomBugIndex
+                                                        }
+                                                    />
+                                                );
+                                            })}
                                     </div>
                                 </div>
                             );
@@ -234,6 +254,27 @@ export function ReviewTaskContainer() {
                 </div>
             </div>
         </div>
+    );
+}
+
+function Character({
+    char,
+    isBugCharacter,
+}: {
+    char: string;
+    isBugCharacter: boolean;
+}) {
+    const [isHovered, setIsHovered] = useState<boolean>(false);
+
+    return (
+        <span
+            onMouseEnter={isBugCharacter ? () => setIsHovered(true) : undefined}
+            onMouseLeave={
+                isBugCharacter ? () => setIsHovered(false) : undefined
+            }
+        >
+            {isHovered ? '🐛' : char}
+        </span>
     );
 }
 
