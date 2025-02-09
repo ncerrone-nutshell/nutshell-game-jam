@@ -1,11 +1,4 @@
-import {
-    Euler,
-    PointLight,
-    RepeatWrapping,
-    TextureLoader,
-    Vector2,
-    Vector3,
-} from 'three';
+import { Euler, TextureLoader, Vector2, Vector3 } from 'three';
 import { MainComputer } from './main-computer';
 import { CeilingLight, CeilingLightProps } from './ceiling-light';
 import { EnvironmentProps, setupTexture } from './helpers';

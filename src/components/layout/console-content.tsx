@@ -20,6 +20,7 @@ export function ConsoleContent(props: ConsoleContentProps) {
     const { day, score, completedTasks, sprintMeterValue, difficulty } =
         useContext(GameContextForwarded);
 
+    // @ts-ignore
     const { onTriggerEvent } = props;
 
     return (

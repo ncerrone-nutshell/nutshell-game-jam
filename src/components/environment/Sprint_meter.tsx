@@ -4,10 +4,9 @@ Command: npx gltfjsx@6.5.0 ./public/sprint_meter.glb --types
 */
 
 import * as THREE from 'three';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Html, useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
-import JiraFullIcon from '../../icons/jira-full';
 import { GameContext } from '../game-manager/game-manager';
 
 type GLTFResult = GLTF & {
@@ -25,7 +24,6 @@ type GLTFResult = GLTF & {
 };
 
 const MAX_JIRA_SCALE = 2.605;
-const MIN_JIRA_SCALE = 0.2;
 
 export function SprintMeter(props: JSX.IntrinsicElements['group']) {
     const { sprintMeterValue } = useContext(GameContext);
