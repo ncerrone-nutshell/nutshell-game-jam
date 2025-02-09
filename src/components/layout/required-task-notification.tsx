@@ -54,6 +54,11 @@ export function RequiredTaskNotification(props: { event: Event }) {
                     className="required-task-notification-progress-bar-fill"
                     style={{
                         width: `${timeLeftPercentage * 100}%`,
+                        backgroundColor: `rgb(${
+                            255 * (1 - timeLeftPercentage)
+                        }, ${46 * timeLeftPercentage}, ${
+                            136 * timeLeftPercentage
+                        })`,
                     }}
                 ></div>
             </div>

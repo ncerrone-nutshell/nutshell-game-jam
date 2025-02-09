@@ -138,7 +138,7 @@ export function OfficeSpace(props: Props) {
                 <MainComputer />
                 <SprintMeter
                     scale={0.5}
-                    position={[-4, -2, 1]}
+                    position={[-4, -2.6, 1]}
                     rotation={[0, -Math.PI / 4, 0]}
                 />
                 {DESK_CONFIG.map((config, index) => (
