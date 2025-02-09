@@ -1,4 +1,4 @@
-import { useCallback, useContext, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import './coding-task-container.css';
 
 import commits from '../../data/ccain-commits-sorted.json';
@@ -9,6 +9,7 @@ import {
     Difficulty,
 } from '../game-manager/game-manager';
 import { DEV_MODE } from '../../main';
+import { COMPLETE_TASK_EVENT } from '../layout/console-content';
 
 const MAX_SCORE = 100;
 
@@ -88,6 +89,10 @@ export function CodingTaskContainer() {
     const [commitMessage, setCommitMessage] = useState<string>('');
 
     const handleCommit = useCallback(() => {
+        handleTaskCompleted();
+    }, [commitMessage, targetMessage]);
+
+    const handleTaskCompleted = () => {
         dispatch({
             type: ActionType.CompleteTask,
             payload: {
@@ -97,7 +102,21 @@ export function CodingTaskContainer() {
         });
         setTargetMessage(pickRandomCommitMessage(difficulty));
         setCommitMessage('');
-    }, [commitMessage, targetMessage]);
+    };
+
+    useEffect(() => {
+        const handleCompleteTask = () => {
+            if (DEV_MODE) {
+                handleTaskCompleted();
+            }
+        };
+
+        window.addEventListener(COMPLETE_TASK_EVENT, handleCompleteTask);
+
+        return () => {
+            window.removeEventListener(COMPLETE_TASK_EVENT, handleCompleteTask);
+        };
+    }, []);
 
     return (
         <div className="commit-container">
@@ -123,25 +142,6 @@ export function CodingTaskContainer() {
                 style={{ color: '#fff' }}
                 onChange={(e) => setCommitMessage(e.target.value)}
             />
-            {DEV_MODE && (
-                <button
-                    onClick={() => {
-                        setCommitMessage(targetMessage);
-                        handleCommit();
-                    }}
-                    style={{
-                        marginTop: '8px',
-                        padding: '32px',
-                        background: '#444',
-                        border: 'none',
-                        color: '#fff',
-                        cursor: 'pointer',
-                        zIndex: 2,
-                    }}
-                >
-                    Debug: Auto Complete
-                </button>
-            )}
         </div>
     );
 }

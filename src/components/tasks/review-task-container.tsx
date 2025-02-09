@@ -4,6 +4,8 @@ import './review-task-container.css';
 
 import { GameContextForwarded } from '../layout/computer-screen-provider';
 import { ActionType, CoreTaskType } from '../game-manager/game-manager';
+import { DEV_MODE } from '../../main';
+import { COMPLETE_TASK_EVENT } from '../layout/console-content';
 
 const LINES = [
     'const handleSubmit = (event) => {',
@@ -63,17 +65,35 @@ export function ReviewTaskContainer() {
     >(null);
     const { dispatch, difficulty } = useContext(GameContextForwarded);
 
+    const handleTaskCompleted = () => {
+        dispatch({
+            type: ActionType.CompleteTask,
+            payload: {
+                type: CoreTaskType.Review,
+                score: 1,
+            },
+        });
+
+        resetTask(MAX_LINES_EASY);
+    };
+
+    useEffect(() => {
+        const handleCompleteTask = () => {
+            if (DEV_MODE) {
+                handleTaskCompleted();
+            }
+        };
+
+        window.addEventListener(COMPLETE_TASK_EVENT, handleCompleteTask);
+
+        return () => {
+            window.removeEventListener(COMPLETE_TASK_EVENT, handleCompleteTask);
+        };
+    }, []);
+
     const handleAttemptToReport = (index: number) => {
         if (index === randomBugIndex) {
-            dispatch({
-                type: ActionType.CompleteTask,
-                payload: {
-                    type: CoreTaskType.Review,
-                    score: 1,
-                },
-            });
-
-            resetTask(MAX_LINES_EASY);
+            handleTaskCompleted();
         } else {
             setFailedTask(true);
         }

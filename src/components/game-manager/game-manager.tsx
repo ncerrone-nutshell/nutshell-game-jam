@@ -94,7 +94,11 @@ export type GameState = {
 };
 
 const SPRINT_METER_MAX = 100;
-const SPRINT_METER_DECAY_RATE = 1; // The rate at which the sprint meter decays per second
+const SPRINT_METER_DECAY_RATES: { [key in Difficulty]: number } = {
+    1: 0.5, // Slower decay for easy mode
+    2: 1, // Normal decay for medium mode
+    3: 2, // Faster decay for hard mode
+};
 const DAY_TIMER = 5; // 5 seconds
 
 export const GAME_STATE_DEFAULTS: GameState = {
@@ -141,7 +145,8 @@ function reducer(state: GameState, action: Action) {
         case ActionType.DecrementSprintMeter: {
             const newSprintMeterValue =
                 state.sprintMeterValue -
-                SPRINT_METER_DECAY_RATE * action.payload.delta;
+                SPRINT_METER_DECAY_RATES[state.difficulty] *
+                    action.payload.delta;
 
             if (newSprintMeterValue <= 0) {
                 // Handle losing

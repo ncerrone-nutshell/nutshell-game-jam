@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { GameContextForwarded } from './computer-screen-provider';
 import { ActionType } from '../game-manager/game-manager';
-import NutshellIcon from '../../icons/nutshell';
+import NutshellIcon from '../../icons/figma-task/nutshell';
 
 export function Login() {
     const { dispatch } = useContext(GameContextForwarded);
