@@ -143,3 +143,33 @@
     flex-direction: column;
     width: 100%;
 }
+
+.jenkins-task-multiplier-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 16px;
+    column-gap: 10px;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.jenkins-task-coding-multiplier {
+    color: #e38627;
+    font-weight: bold;
+}
+
+.jenkins-task-review-multiplier {
+    color: #0f46bd;
+    font-weight: bold;
+}
+
+.jenkins-task-design-multiplier {
+    color: #2ab711;
+    font-weight: bold;
+}
+
+.jenkins-task-multipler-result {
+    font-weight: bold;
+    font-size: 32px;
+}

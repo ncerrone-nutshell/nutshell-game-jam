@@ -96,25 +96,25 @@ export function OfficeSpace(props: Props) {
     ]);
 
     useEffect(() => {
-        setupTexture(floorColorMap, 5);
-        setupTexture(floorDisplacementMap, 5);
-        setupTexture(floorNormalMap, 5);
-        setupTexture(floorAOMap, 5);
+        setupTexture(floorColorMap, 5, 5);
+        setupTexture(floorDisplacementMap, 5, 5);
+        setupTexture(floorNormalMap, 5, 5);
+        setupTexture(floorAOMap, 5, 5);
     }, [floorColorMap, floorDisplacementMap, floorNormalMap, floorAOMap]);
 
     useEffect(() => {
-        setupTexture(wallColorMap, 5);
-        setupTexture(wallDisplacementMap, 5);
-        setupTexture(wallNormalMap, 5);
-        setupTexture(wallAOMap, 5);
+        setupTexture(wallColorMap, 7, 4);
+        setupTexture(wallDisplacementMap, 7, 4);
+        setupTexture(wallNormalMap, 7, 4);
+        setupTexture(wallAOMap, 7, 4);
     }, [wallColorMap, wallDisplacementMap, wallNormalMap, wallAOMap]);
 
     useEffect(() => {
-        setupTexture(ceilingColorMap, 5);
-        setupTexture(ceilingDisplacementMap, 5);
-        setupTexture(ceilingNormalMap, 5);
-        setupTexture(ceilingAOMap, 5);
-        setupTexture(ceilingMetalnessMap, 5);
+        setupTexture(ceilingColorMap, 5, 5);
+        setupTexture(ceilingDisplacementMap, 5, 5);
+        setupTexture(ceilingNormalMap, 5, 5);
+        setupTexture(ceilingAOMap, 5, 5);
+        setupTexture(ceilingMetalnessMap, 5, 5);
     }, [
         ceilingColorMap,
         ceilingDisplacementMap,

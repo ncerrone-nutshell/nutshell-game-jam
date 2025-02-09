@@ -5,8 +5,12 @@ export type EnvironmentProps = {
     rotation?: Euler;
 };
 
-export function setupTexture(texture: Texture, repeat: number): void {
+export function setupTexture(
+    texture: Texture,
+    repeatX: number,
+    repeatY: number
+): void {
     texture.wrapS = texture.wrapT = RepeatWrapping;
-    texture.repeat.set(repeat, repeat);
+    texture.repeat.set(repeatX, repeatY);
     texture.needsUpdate = true;
 }

@@ -4,25 +4,17 @@ import { ActionType } from '../game-manager/game-manager';
 import './jenkins-task-container.css';
 import { GameContextForwarded } from '../layout/computer-screen-provider';
 import { PieChart } from 'react-minimal-pie-chart';
-
-const BASE_RELEASE_SCORE = 100;
-const BASE_RELEASE_SPRINT_METER_GAIN = 5;
+import { getReleaseScoreGain, getReleaseSprintMeterGain } from './helpers';
 
 export function JenkinsTaskContainer() {
     const { dispatch, completedTasks } = useContext(GameContextForwarded);
 
     const handlePushRelease = () => {
-        const releaseMultiplier = Object.values(completedTasks).reduce(
-            (acc: number, task: any) => acc * (task.score || 0),
-            1
-        );
-
         dispatch({
             type: ActionType.PushRelease,
             payload: {
-                score: BASE_RELEASE_SCORE * releaseMultiplier,
-                sprintMeterGain:
-                    BASE_RELEASE_SPRINT_METER_GAIN * releaseMultiplier,
+                score: getReleaseScoreGain(completedTasks),
+                sprintMeterGain: getReleaseSprintMeterGain(completedTasks),
             },
         });
     };
@@ -96,51 +88,78 @@ export function JenkinsTaskContainer() {
                     </div>
                     <div className="jenkins-task-release-breakdown-container">
                         <div className="jenkins-task-release-breakdown-item">
-                            Commit breakdown:
+                            Commit breakdown:{' '}
+                            {completedTasks.coding.completedCount ||
+                            completedTasks.review.completedCount ||
+                            completedTasks.figma.completedCount
+                                ? ''
+                                : 'up to date with main'}
                         </div>
-                        <div
-                            style={{
-                                paddingTop: '30px',
-                                width: '65%',
-                                height: '65%',
-                            }}
-                        >
-                            <PieChart
-                                labelStyle={{
-                                    fontSize: '5px',
-                                    fontFamily: 'sans-serif',
+                        {completedTasks.coding.completedCount ||
+                        completedTasks.review.completedCount ||
+                        completedTasks.figma.completedCount ? (
+                            <div
+                                style={{
+                                    paddingTop: '30px',
+                                    width: '65%',
+                                    height: '65%',
                                 }}
-                                label={({ dataEntry }) => {
-                                    if (dataEntry.value == 0) {
-                                        return '';
-                                    }
-                                    return `${dataEntry.title}: ${dataEntry.value}`;
-                                }}
-                                data={[
-                                    {
-                                        title: 'Code',
-                                        value: completedTasks.coding
-                                            .completedCount,
-                                        color: '#E38627',
-                                        key: 'code',
-                                    },
-                                    {
-                                        title: 'Review',
-                                        value: completedTasks.review
-                                            .completedCount,
-                                        color: '#C13C37',
-                                        key: 'review',
-                                    },
-                                    {
-                                        title: 'Design',
-                                        value: completedTasks.figma
-                                            .completedCount,
-                                        color: '#6A2135',
-                                        key: 'design',
-                                    },
-                                ]}
-                            />
-                        </div>
+                            >
+                                <PieChart
+                                    labelStyle={{
+                                        fontSize: '5px',
+                                        color: 'white',
+                                        fontWeight: 'bold',
+                                    }}
+                                    label={({ dataEntry }) => {
+                                        if (dataEntry.value == 0) {
+                                            return '';
+                                        }
+                                        return `${dataEntry.title}`;
+                                    }}
+                                    data={[
+                                        {
+                                            title: 'Code',
+                                            value: completedTasks.coding
+                                                .completedCount,
+                                            color: '#e38627',
+                                            key: 'code',
+                                        },
+                                        {
+                                            title: 'Review',
+                                            value: completedTasks.review
+                                                .completedCount,
+                                            color: '#0f46bd',
+                                            key: 'review',
+                                        },
+                                        {
+                                            title: 'Design',
+                                            value: completedTasks.figma
+                                                .completedCount,
+                                            color: '#2ab711',
+                                            key: 'design',
+                                        },
+                                    ]}
+                                />
+                                <div className="jenkins-task-multiplier-container">
+                                    <div className="jenkins-task-coding-multiplier">
+                                        {completedTasks.coding.completedCount}
+                                    </div>
+                                    x
+                                    <div className="jenkins-task-review-multiplier">
+                                        {completedTasks.review.completedCount}
+                                    </div>
+                                    x
+                                    <div className="jenkins-task-design-multiplier">
+                                        {completedTasks.figma.completedCount}
+                                    </div>
+                                    x 100 =
+                                    <div className="jenkins-task-multiplier-result">
+                                        {getReleaseScoreGain(completedTasks)}
+                                    </div>
+                                </div>
+                            </div>
+                        ) : null}
                     </div>
                 </div>
             </div>
