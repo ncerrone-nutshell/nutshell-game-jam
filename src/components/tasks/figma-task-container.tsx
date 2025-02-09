@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import './figma-task-container.css';
 
@@ -323,6 +323,7 @@ function Shape(props: ShapeProps) {
             }}
             width={150}
             height={150}
+            opacity={props.isActive ? 1 : 0.5}
         />
     );
 }
