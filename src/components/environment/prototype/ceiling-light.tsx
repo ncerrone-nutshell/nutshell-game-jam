@@ -32,6 +32,7 @@ export function CeilingLight(props: CeilingLightProps) {
                             intensity={props.intensity}
                             penumbra={0.5}
                             castShadow
+                            distance={40}
                         />
                         <primitive
                             object={spotlight.target}
