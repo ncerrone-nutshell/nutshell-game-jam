@@ -17,14 +17,14 @@
     pointer-events: none;
     padding: 48px;
     box-sizing: border-box;
-    border: 1px solid #1f2020;
+    border: 2px solid #1f2020;
     border-radius: 8px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    background-color: #e8e8e8ef;
 }
 
 .commit-message.active {
-    border-color: #1f2020;
+    border-color: #008001;
     background-color: #fff;
 }
 
