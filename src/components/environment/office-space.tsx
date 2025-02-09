@@ -1,4 +1,11 @@
-import { Euler, RepeatWrapping, TextureLoader, Vector2, Vector3 } from 'three';
+import {
+    Euler,
+    PointLight,
+    RepeatWrapping,
+    TextureLoader,
+    Vector2,
+    Vector3,
+} from 'three';
 import { MainComputer } from './main-computer';
 import { CeilingLight, CeilingLightProps } from './ceiling-light';
 import { EnvironmentProps, setupTexture } from './helpers';
@@ -10,6 +17,7 @@ import { PingPongTable } from './ping-pong-table';
 import { WoodenDoor } from './wooden_door';
 import { Shelf } from './shelf';
 import { SprintMeter } from './Sprint_meter';
+import { NameTag } from './Name-tag';
 
 const FORWARD_EULER = new Euler(0, 0, 0);
 const REVERSE_EULER = new Euler(0, Math.PI, 0);
@@ -141,6 +149,13 @@ export function OfficeSpace(props: Props) {
                     position={[-4, -2.6, 1]}
                     rotation={[0, -Math.PI / 4, 0]}
                 />
+                <NameTag
+                    position={[4, -2.2, 0]}
+                    scale={0.5}
+                    rotation={[0, -Math.PI / 2, 0]}
+                />
+                {/* Light for nametag */}
+                <pointLight position={[4, -1.5, 0.5]} intensity={2} />
                 {DESK_CONFIG.map((config, index) => (
                     <Desk
                         key={index}

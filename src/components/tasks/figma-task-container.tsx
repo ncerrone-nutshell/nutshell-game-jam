@@ -168,7 +168,7 @@ export function FigmaTaskContainer() {
                 type: ActionType.CompleteTask,
                 payload: {
                     type: CoreTaskType.Figma,
-                    score: 1,
+                    score: 100,
                 },
             });
             setCompletedShapes([]);

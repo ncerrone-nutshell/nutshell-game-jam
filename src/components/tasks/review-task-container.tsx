@@ -78,7 +78,7 @@ export function ReviewTaskContainer() {
             type: ActionType.CompleteTask,
             payload: {
                 type: CoreTaskType.Review,
-                score: 1,
+                score: 100,
             },
         });
 
